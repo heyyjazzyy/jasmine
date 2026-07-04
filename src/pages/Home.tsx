@@ -38,11 +38,11 @@ const linkBase =
   "underline decoration-2 underline-offset-4 decoration-foreground/40 transition-colors";
 
 const HeroSentence = () => (
-  <p className="body-text max-w-lg text-base md:text-lg">
+  <p className="body-text max-w-lg text-base md:text-lg whitespace-pre-line">
     In my free time, I{" "}
     <Link to="/music" className={`${linkBase} hover:text-[#E8687B] hover:decoration-[#E8687B]`}>
       compose music for video games
-    </Link>,{" "}
+    </Link>,{"\n"}
     <Link to="/jasmine-supper-club" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
       host dinners
     </Link>,{" "}
@@ -126,7 +126,8 @@ const Home = () => {
           >
             <section className="mb-14">
               <p className="body-text max-w-lg whitespace-pre-line">
-                Hi, I'm Jasmine! I strive to build impactful tech with heart and vision.{"\n\n"}
+                Hi, I'm Jasmine!&nbsp;{"\n"}
+                I strive to build impactful tech with heart and vision.{"\n\n"}
                 I'm so glad you're here!
               </p>
             </section>
