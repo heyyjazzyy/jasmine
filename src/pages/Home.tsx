@@ -132,12 +132,12 @@ const Home = () => {
                     transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
                   >
                     <Link to={`/work/${p.slug}`} className="group block">
-                      <div className="font-display text-3xl md:text-4xl leading-tight inline-flex items-start gap-2">
+                      <div className="font-display text-3xl md:text-4xl leading-tight">
                         {p.title}
-                        <ArrowUpRight className="w-5 h-5 mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
                       </div>
                       <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
                     </Link>
+
                   </motion.li>
                 ))}
               </ul>
