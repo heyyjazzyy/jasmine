@@ -34,7 +34,9 @@ const trogonsVideos: Video[] = [
     caption: (
       <>
         <div className="font-medium">6:52 – Gunjou by YOASOBI</div>
-        <div className="text-muted-foreground">Solo by Cana I. and Davie C.</div>
+        <div className="text-muted-foreground mb-4">Solo by Cana I. and Davie C.</div>
+        <div className="font-medium">20:47 – Russian Roulette by Red Velvet</div>
+        <div className="text-muted-foreground">Solo by Harrison M. and Monica C.</div>
       </>
     ),
   },
