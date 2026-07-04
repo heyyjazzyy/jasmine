@@ -6,18 +6,18 @@ import SiteFooter from "@/components/SiteFooter";
 type Entry = { label: string; href: string; color: string };
 
 const gamesPlaying: Entry[] = [
-  { label: "Galactic Cruise", href: "https://boardgamegeek.com/boardgame/391137/galactic-cruise", color: "#9B72CF" },
-  { label: "Ticket to Ride", href: "https://boardgamegeek.com/boardgame/9209/ticket-to-ride", color: "#E8687B" },
+  { label: "Galactic Cruise\n\u00a0", href: "https://boardgamegeek.com/boardgame/391137/galactic-cruise", color: "#9B72CF" },
+  { label: "Ticket to Ride\n", href: "https://boardgamegeek.com/boardgame/9209/ticket-to-ride", color: "#E8687B" },
   { label: "Pokopia", href: "https://pokopia.pokemon.com/en-us/", color: "#7D9B76" },
-  { label: "Dave the Diver", href: "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/", color: "#2D8A9E" },
-  { label: "Skyteam", href: "https://boardgamegeek.com/boardgame/373106/sky-team", color: "#E5B547" },
+  { label: "\nDave the Diver", href: "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/", color: "#2D8A9E" },
+  { label: "\nSkyteam", href: "https://boardgamegeek.com/boardgame/373106/sky-team", color: "#E5B547" },
 ];
 
 const listening: Entry[] = [
-  { label: "you seem pretty sad for a girl so in love", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
-  { label: "Japanese indie", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF" },
+  { label: "you seem pretty sad for a girl so in love\n\u00a0", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
+  { label: "Japanese and\u00a0", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF" },
   { label: "Spanish indie", href: "https://open.spotify.com/track/1UtlYwIzZtj2tvtsqixSJv?si=5be1dae4325743fc", color: "#E5B547" },
-  { label: "Bloc Party", href: "https://open.spotify.com/track/5OVHnu9SgsdAravy4UyGq4?si=0942c37e9cc641f1", color: "#2D8A9E" },
+  { label: "\nBloc Party", href: "https://open.spotify.com/track/5OVHnu9SgsdAravy4UyGq4?si=0942c37e9cc641f1", color: "#2D8A9E" },
 ];
 
 const allTimeGames: Entry[] = [
@@ -37,7 +37,7 @@ const EntryLink = ({
     href={entry.href}
     target="_blank"
     rel="noopener noreferrer"
-    className="body-text no-underline transition-colors"
+    className="body-text no-underline transition-colors whitespace-pre-wrap"
     onMouseEnter={(e) => {
       e.currentTarget.style.color = entry.color;
       e.currentTarget.style.textDecoration = "underline";
@@ -50,7 +50,7 @@ const EntryLink = ({
     }}
   >
     {entry.label}
-    {!isLast && ", "}
+    {!isLast && !entry.label.includes("\n") && ", "}
   </a>
 );
 
