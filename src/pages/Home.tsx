@@ -257,7 +257,9 @@ const Home = () => {
           <SiteFooter />
         </div>
       </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 
 };
