@@ -40,7 +40,7 @@ const linkBase =
 const HeroSentence = () => (
   <p className="body-text max-w-3xl text-base md:text-lg">
     In my free time, I{" "}
-    <Link to="/music" className={`${linkBase} hover:text-[#E85D3A] hover:decoration-[#E85D3A]`}>
+    <Link to="/music" className={`${linkBase} hover:text-[#E8687B] hover:decoration-[#E8687B]`}>
       compose music for video games
     </Link>,{" "}
     <Link to="/media-log" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
