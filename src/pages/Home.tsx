@@ -149,9 +149,6 @@ const Home = () => {
               </ul>
             </section>
 
-            <section id="free-time" className="mt-8">
-              <HeroSentence />
-            </section>
           </motion.div>
 
         </div>
@@ -234,6 +231,14 @@ const Home = () => {
         </section>
 
       </main>
+
+      <section id="contact" className="border-t border-border/60">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 py-16 lg:py-20">
+            <HeroSentence />
+          </div>
+        </div>
+      </section>
 
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-full border-t border-border/60" />
