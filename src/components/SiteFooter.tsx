@@ -5,7 +5,6 @@ const SiteFooter = () => (
       <div className="flex gap-5">
         <a href="mailto:hello@example.com" className="hover:text-foreground transition-colors">Email</a>
         <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-        <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
       </div>
     </div>
   </footer>
