@@ -181,7 +181,7 @@ const Home = () => {
 
                 <div>
                   <h3 className="template-header">Tools</h3>
-                  <div className="space-y-0 border-t border-border/60">
+                  <div className="space-y-0">
                     {toolGroups.map((group) => {
                       const isOpen = openTools.has(group.category);
                       return (
