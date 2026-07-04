@@ -87,6 +87,30 @@ const ItemDetail = () => {
   const firstH1 = item.body.split("\n").find((l) => l.startsWith("# "));
   const tagline = firstH1 ? firstH1.slice(2) : "";
 
+  // Interleave narrow text blocks and full-width images.
+  const bodyElements = renderBody(item.body);
+  const interleaved: JSX.Element[] = [];
+  let textChunk: JSX.Element[] = [];
+  const flushText = () => {
+    if (textChunk.length) {
+      interleaved.push(
+        <div key={`text-${interleaved.length}`} className="px-6 lg:px-12 max-w-3xl">
+          {textChunk}
+        </div>
+      );
+      textChunk = [];
+    }
+  };
+  bodyElements.forEach((el) => {
+    if (el.type === "img") {
+      flushText();
+      interleaved.push(el);
+    } else {
+      textChunk.push(el);
+    }
+  });
+  flushText();
+
   return (
     <main className="min-h-screen bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
@@ -111,8 +135,8 @@ const ItemDetail = () => {
 
         {/* Content */}
         <div className="lg:col-span-10">
-          <article className="p-6 lg:p-12 py-12 lg:py-20">
-            <div className="max-w-3xl mb-16">
+          <article className="py-12 lg:py-20">
+            <div className="px-6 lg:px-12 max-w-3xl mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -167,7 +191,7 @@ const ItemDetail = () => {
               )}
             </div>
 
-            <div className="max-w-3xl">{renderBody(item.body)}</div>
+            {interleaved}
           </article>
 
           <footer className="border-t border-border/60 p-6 lg:p-12 font-ui text-sm text-muted-foreground">
