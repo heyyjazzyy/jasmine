@@ -37,7 +37,7 @@ const CategoryPage = ({ category, title, description }: Props) => {
             {description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
 
 
-            <div className="mt-12">
+            <div className={isPhotography ? "mt-4" : "mt-12"}>
               {isPhotography ? (
                 <PhotoGallery />
               ) : items.length === 0 ? (
