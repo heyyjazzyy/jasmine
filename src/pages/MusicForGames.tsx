@@ -36,13 +36,9 @@ const YouTube = ({ id }: { id: string }) => (
 );
 
 const AudioPlayer = ({ title, src }: { title: string; src: string }) => (
-  <div className="flex items-center gap-4 rounded-md bg-neutral-900 text-neutral-100 p-4">
-    <Play className="w-6 h-6 shrink-0 opacity-90" />
-    <div className="min-w-0 flex-1">
-      <div className="font-display text-lg leading-tight truncate">{title}</div>
-      <div className="text-sm text-neutral-400 mb-2">Jasmine Liao</div>
-      <audio controls src={src} className="w-full h-8" preload="none" />
-    </div>
+  <div className="flex flex-col gap-2">
+    <div className="font-display text-lg leading-tight">{title}</div>
+    <audio controls src={src} className="w-full" preload="none" />
   </div>
 );
 
@@ -54,14 +50,14 @@ const GameSection = ({
   children: React.ReactNode;
 }) => (
   <section>
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
       <div className="lg:col-span-2 flex flex-col gap-4">
+        <h2 className="template-header">{game.title}</h2>
         <img
           src={game.image}
           alt={game.title}
           className="w-full rounded-md object-cover"
         />
-        <h2 className="template-header">{game.title}</h2>
         <p className="body-text text-sm text-muted-foreground">{game.synopsis}</p>
         <a
           href={game.linkHref}
