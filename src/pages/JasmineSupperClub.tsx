@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
+import LoadingScreen from "@/components/LoadingScreen";
+import { useImagesLoaded } from "@/hooks/useImagesLoaded";
 
 import dishesSavory from "@/assets/supper-club/pdf-dishes-savory.jpg.asset.json";
 import dishesSweet from "@/assets/supper-club/pdf-dishes-sweet.jpg.asset.json";
