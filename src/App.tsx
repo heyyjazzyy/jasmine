@@ -82,7 +82,7 @@ const AnimatedRoutes = () => {
                 category="writing"
                 title="Writing about Tech"
                 titleColor="#7D9B76"
-                description="Essays and field notes on product management, AI, and building software that respects the person using it."
+                description="\n"
               />
             </PageTransition>
           }
