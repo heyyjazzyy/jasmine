@@ -14,15 +14,15 @@ const PhotoGallery = () => {
   return (
     <div
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-      style={{ gap: "116px" }}
+      style={{ gap: "20px" }}
     >
       {photos.map((p, i) => (
-        <figure key={p.url} className="aspect-[4/5] overflow-hidden bg-muted">
+        <figure key={p.url} className="bg-muted">
           <img
             src={p.url}
             alt={`Photograph ${i + 1}`}
             loading="lazy"
-            className="w-full h-full object-cover"
+            className="w-full h-auto block"
           />
         </figure>
       ))}
