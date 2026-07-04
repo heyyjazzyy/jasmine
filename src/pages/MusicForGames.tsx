@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Play } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 
 import sorelleImg from "@/assets/sorelle.jpeg.asset.json";
