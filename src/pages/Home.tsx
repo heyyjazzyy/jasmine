@@ -164,7 +164,7 @@ const Home = () => {
                 From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
               </p>
 
-              <div className="border-b border-border/60 mb-10" />
+              <div className="border-b border-border/60 -mx-6 lg:-mx-10 mb-6" />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
