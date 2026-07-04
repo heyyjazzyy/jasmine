@@ -144,7 +144,7 @@ Driven by our user research initiatives, I successfully scale-recruited a beta t
 
 Across two consecutive summers, I tackled four platform initiatives split between core PayPal.com and Mobile Checkout, blending data-driven personalization with technical standardization to drive transaction success, explore emerging economies, and improve web compliance.
 
-## AI/ML for Shipping Address Predictions
+## Core Projects
 
 Built a predictive model to correct shipping-address errors and enhance checkout delivery accuracy. Designed personalization models analyzing quantitative + behavioral data to predict drop-off in the funnel.
 
