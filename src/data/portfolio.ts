@@ -137,7 +137,7 @@ Driven by our user research initiatives, I successfully scale-recruited a beta t
     fridgeStyle: "memo",
     year: "2023",
     accent: "sky",
-    body: `# Optimizing Mobile Checkout Efficiency & Platform Integration
+    body: `# Optimizing Mobile Checkout Efficiency & Website Integration
 
 
 
