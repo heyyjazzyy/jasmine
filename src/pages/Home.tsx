@@ -12,7 +12,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Business",
     subgroups: [
-      { items: ["Accounting", "Statistics", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau"] },
+      { items: ["Accounting", "Statistics", "Linear Regression", "Logistic Regression", "Hypothesis Testing", "A/B Testing", "Forecasting", "Econometrics", "Financial Modeling", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau", "Power BI", "Excel"] },
     ],
   },
   {
@@ -26,7 +26,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Art and Design",
     subgroups: [
-      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Procreate", "Unity"] },
+      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Illustrator", "Premiere Pro", "After Effects", "Lightroom", "InDesign", "Procreate", "Unity"] },
       { label: "Music Creation", items: ["Logic Pro", "Ableton Live", "Wwise", "Musescore", "Piano"] },
     ],
   },
@@ -46,7 +46,7 @@ const HeroSentence = () => (
 
 const Home = () => {
   const { mode, toggle } = useMode();
-  const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
+  const [openTools, setOpenTools] = useState<Set<string>>(new Set());
 
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
@@ -60,7 +60,7 @@ const Home = () => {
   if (mode === "fridge") {
     return (
       <div className="min-h-screen bg-background">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
           <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
             <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
               Jasmine Liao
@@ -181,7 +181,7 @@ const Home = () => {
 
                 <div>
                   <h3 className="template-header">Tools</h3>
-                  <div className="space-y-0 border-t border-border/60">
+                  <div className="space-y-0">
                     {toolGroups.map((group) => {
                       const isOpen = openTools.has(group.category);
                       return (
@@ -190,7 +190,7 @@ const Home = () => {
                             onClick={() => toggleTool(group.category)}
                             className="w-full flex items-center justify-between py-3 text-left group"
                           >
-                            <span className="font-display text-lg">{group.category}</span>
+                            <span className="font-display text-base">{group.category}</span>
 
                             <ChevronDown
                               className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
