@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
-import SideNav from "@/components/SideNav";
 import ListView from "@/components/ListView";
 import FridgeBoard from "@/components/FridgeBoard";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -21,22 +21,32 @@ const CategoryPage = ({ category, title, description, titleColor }: Props) => {
   const isPhotography = category === "photography";
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-background">
-      <div className="hidden lg:block absolute left-[16.666667%] top-0 bottom-0 z-10 w-px bg-border/60 pointer-events-none" />
-      <main className="flex-1 pt-10 md:pt-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
-          <SideNav />
-          <div className="lg:col-span-10 p-6 lg:p-10">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back
-            </Link>
+    <main className="relative min-h-screen bg-background">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+        {/* Left sticky sidebar */}
+        <motion.aside
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
+        >
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Link>
+        </motion.aside>
+
+        {/* Content */}
+        <div className="lg:col-span-10 flex flex-col">
+          <div className="flex-1 p-6 lg:p-10 pt-10 md:pt-14">
             <h1 className="display-heading" style={titleColor ? { color: titleColor } : undefined}>{title}</h1>
             {description && description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
-
 
             <div className={isPhotography ? "mt-4" : "mt-12"}>
               {isPhotography ? (
@@ -50,16 +60,13 @@ const CategoryPage = ({ category, title, description, titleColor }: Props) => {
               )}
             </div>
           </div>
-        </div>
-      </main>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-full border-t border-border/60" />
-        <div className="lg:col-start-3 lg:col-end-13">
-          <SiteFooter />
+          <div className="border-t border-border/60">
+            <SiteFooter />
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
