@@ -82,7 +82,7 @@ const AnimatedRoutes = () => {
                 category="writing"
                 title="Writing about Tech"
                 titleColor="#7D9B76"
-                description="\n"
+                description=""
               />
             </PageTransition>
           }
