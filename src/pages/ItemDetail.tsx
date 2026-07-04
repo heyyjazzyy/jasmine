@@ -84,7 +84,8 @@ const ItemDetail = () => {
   if (!item) return <Navigate to="/404" replace />;
 
   const backHref = item.category === "pm" ? "/" : `/${item.category}`;
-  const { role, team, timeline } = parseSubtitle(item.subtitle);
+  const isWriting = item.category === "writing";
+  const { role, team, timeline } = parseSubtitle(item.subtitle, item.category);
 
   // Pull first H1 as the tagline / hero subtitle if present.
   const firstH1 = item.body.split("\n").find((l) => l.startsWith("# "));
