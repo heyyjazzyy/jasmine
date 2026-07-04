@@ -172,12 +172,12 @@ const JasmineSupperClub = () => {
             </div>
 
             {/* Photos */}
-            <section className="mt-24 max-w-5xl">
+            <section className="mt-16 max-w-4xl">
               <div className="flex items-baseline gap-4 mb-6">
-                <h2 className="template-header !mb-0">Photos</h2>
+                <h2 className="font-ui text-xs uppercase tracking-[0.2em] text-muted-foreground">Photos</h2>
                 <div className="flex-1 h-px bg-border/60" />
               </div>
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <img
                   src={dishesSavory.url}
                   alt="Savory dishes from the Jasmine Supper Club menu"
