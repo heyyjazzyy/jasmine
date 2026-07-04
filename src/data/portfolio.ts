@@ -97,7 +97,7 @@ Using this composite framework, I proved that migrating our global control promp
     body: `# Re-engineering Bra Sizing with Computer Vision
 
 
-80% of women end up wearing bras that don't fit properly due to inconsistent, outdated sizing methods? This is an issue of comfort, long-lasting health implications and e-commerce, forcing retailers to contend with a staggering 50% return rate for bras.
+80% of women end up wearing bras that don't fit properly due to inconsistent, outdated sizing methods. This is an issue of comfort, long-lasting health implications and e-commerce, forcing retailers to contend with a staggering 50% return rate for bras.
 
 
 As the Co-Founder and Head of Product, my team and I set out to build a win-win ecosystem for both apparel shoppers and fashion brands. We launched Loop, a women-led bra sizing startup using advanced computer vision and machine learning to accurately match women with their perfect bra recommendations.
