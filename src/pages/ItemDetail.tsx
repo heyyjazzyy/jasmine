@@ -169,7 +169,7 @@ const ItemDetail = () => {
                   transition={{ duration: 0.5, delay: 0.15 }}
                   className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-b border-border/60 py-8"
                 >
-                  {role && (
+                  {role && role !== "\n" && (
                     <div>
                       <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Role</p>
                       <p className="text-foreground">{role}</p>
