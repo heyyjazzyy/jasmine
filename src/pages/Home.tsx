@@ -47,6 +47,16 @@ const HeroSentence = () => (
 
 const Home = () => {
   const { mode } = useMode();
+  const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
+
+  const toggleTool = (cat: string) => {
+    setOpenTools((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      return next;
+    });
+  };
 
   if (mode === "fridge") {
     return (
