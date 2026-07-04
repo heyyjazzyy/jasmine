@@ -107,7 +107,7 @@ Traditional sizing charts rely on tape measurements that fail to account for uni
 
 ## Solution
 
-![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
+![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/6f1a54cd-5a0f-4aba-964d-9bd6f92bc824/Frame_22_1.png)
 
 As CPO, I bridged the gap between complex computer vision technologies and consumer-facing design patterns, managing our feature roadmap from ideation to data modeling:
 
