@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 type Entry = { label: string; href: string; color: string };
 
 const gamesPlaying: Entry[] = [
-  { label: "Galactic Cruise\n\u00a0", href: "https://boardgamegeek.com/boardgame/391137/galactic-cruise", color: "#9B72CF" },
+  { label: "Galactic Cruise\n", href: "https://boardgamegeek.com/boardgame/391137/galactic-cruise", color: "#9B72CF" },
   { label: "Ticket to Ride\n", href: "https://boardgamegeek.com/boardgame/9209/ticket-to-ride", color: "#E8687B" },
   { label: "Pokopia", href: "https://pokopia.pokemon.com/en-us/", color: "#7D9B76" },
   { label: "\nDave the Diver", href: "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/", color: "#2D8A9E" },
@@ -14,9 +14,9 @@ const gamesPlaying: Entry[] = [
 ];
 
 const listening: Entry[] = [
-  { label: "you seem pretty sad for a girl so in love\n\u00a0", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
+  { label: "you seem pretty sad for a girl so in love\n", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
   { label: "Japanese\n", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF" },
-  { label: " and ", href: "", color: "" },
+  { label: "and ", href: "", color: "" },
   { label: "Spanish indie", href: "https://open.spotify.com/track/1UtlYwIzZtj2tvtsqixSJv?si=5be1dae4325743fc", color: "#E5B547" },
   { label: "\nBloc Party", href: "https://open.spotify.com/track/5OVHnu9SgsdAravy4UyGq4?si=0942c37e9cc641f1", color: "#2D8A9E" },
 ];
