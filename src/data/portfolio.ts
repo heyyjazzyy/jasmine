@@ -263,7 +263,7 @@ export const writingItems: PortfolioItem[] = [
     accent: "sky",
     body: `# A constitution for a general-purpose AI, stress-tested against real prompts and long-horizon futures.
 
-*Task: write a constitution for AI, stress test, and reflect.*
+
 
 ## Part I. The Constitution
 
