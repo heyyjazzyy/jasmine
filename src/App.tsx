@@ -13,6 +13,7 @@ import ItemDetail from "./pages/ItemDetail";
 import NotFound from "./pages/NotFound";
 import JasmineSupperClub from "./pages/JasmineSupperClub";
 import NowPlaying from "./pages/NowPlaying";
+import ACappella from "./pages/ACappella";
 
 const queryClient = new QueryClient();
 
@@ -53,12 +54,7 @@ const AnimatedRoutes = () => {
           path="/singing"
           element={
             <PageTransition>
-              <CategoryPage
-                category="singing"
-                title="Singing"
-                titleColor="#E5B547"
-                description="Live-tracked living-room sessions — folk, jazz standards, occasional originals."
-              />
+              <ACappella />
             </PageTransition>
           }
         />
@@ -94,7 +90,7 @@ const AnimatedRoutes = () => {
         {/* Detail pages */}
         <Route path="/work/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
         <Route path="/music/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
-        <Route path="/singing/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        
         <Route path="/photography/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
         <Route path="/writing/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
         <Route path="/media-log/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />

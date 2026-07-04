@@ -1,56 +1,39 @@
-## Goal
+Rebuild `/singing` as a custom "A Cappella" page and shift the accent color from mustard to buttery yellow across the site.
 
-Turn the current `/media-log` route into a dedicated **Jasmine Supper Club** page. Hero feature only — no tile grid, no reflection essay. Menu items pair with their dish photos.
+## Page content
 
-## Route change
+**Header**
+- h1: "A Cappella"
+- Intro: "I've been singing in a cappella groups for 9 years!"
 
-- Rename `/media-log` → `/jasmine-supper-club` in `src/App.tsx`.
-- Update the "host dinners" link in `src/pages/Home.tsx` (`HeroSentence`) to point at the new path.
-- Also update `SideNav` if it references `/media-log`.
-- Retire the media-log `CategoryPage` usage for that route. The existing `mediaLogItems` data and detail routes can stay untouched for now (not linked from anywhere).
+**Section 1 — Yale Citations**
+- Small group photo (uploaded citations.jpeg, capped ~360px wide)
+- Caption: "Yale's only graduate a cappella group"
+- Two video cards (16:9 YouTube embeds, side-by-side on desktop):
+  - Honeymoon Avenue — Soloist: Shreya R.
+  - Pink Pony Club — Soloist: Jordan P.
 
-## New page: `src/pages/JasmineSupperClub.tsx`
+**Divider** (thin horizontal rule)
 
-Same left sticky sidebar pattern as `CategoryPage` (name at top, "← Back to Home" pinned at bottom).
+**Section 2 — Trogons**
+- Small group photo (uploaded EW-4.14-Trogons-4.jpg, capped ~360px wide)
+- Five video cards, 2-col grid on desktop:
+  - Fall Showcase 2024
+  - Spring Showcase 2024
+  - Fall Showcase 2022
+  - Spring Showcase 2022
+  - Fall 2021
 
-Content, in order:
+## Color change
 
-1. **Hero block**
-   - Display title: **Jasmine Supper Club**
-   - Tagline: *exploring food, memory, and migration*
-   - Accent color matches current media-log teal (`#2D8A9E`).
-2. **Letter excerpt** (short, from page 2 of the menu PDF)
-   - 2–3 paragraph condensed version of the "Dear friends" letter, signed *— Jasmine*.
-3. **Menu sections** — three headings: **To Start**, **Mains**, **Dessert**.
-   - Each dish rendered as a card: **square dish photo** on one side, dish name + memory blurb on the other.
-   - Alternating image/text sides on desktop; stacked on mobile.
-   - Dishes:
-     - To Start: Japanese-Peruvian Ceviche, Crab Rangoon Garlic Bread
-     - Mains: Gochujang Carbonara, Tomato and Egg, Braised Pork Belly
-     - Dessert: Black Sesame Tangyuan Cookie, Earl Grey Crème Brûlée, Filipino Mango Ice Box Cake
-   - Blurb text taken verbatim from the menu PDF.
-4. **Footer** — reuse `SiteFooter`.
+Update the current mustard accent `#E5B547` to a softer buttery yellow `#F0CE6E` everywhere it's used (Home nav link hover, page title colors, entry colors in NowPlaying, etc.). Still legible on the cream background.
 
-No photo grid, no reflection, no prep/guests photos.
+## Technical notes
 
-## Photos
-
-Extract the 8 dish photos from `Photos_and_Reflections.pdf` (page 2 has the 5 savory dishes as a strip; page 3 has crème brûlée + mango float). Because they are combined page images, I'll crop the strip into individual square dish images with Python (Pillow) and upload each via `lovable-assets` so no binaries live in the repo. Tangyuan cookie has no photo in the PDF — that card will show a styled placeholder tile in the accent color (same treatment as existing `PolaroidCard` gradient) unless you'd rather I skip that dish visually.
-
-Pointer files land at `src/assets/supper-club/<dish-slug>.jpg.asset.json` and are imported in the page component.
-
-## Content data
-
-Menu copy is small and page-specific, so I'll inline it as a typed array at the top of `JasmineSupperClub.tsx` rather than adding to `portfolio.ts`. Each entry: `{ slug, name, blurb, image }`.
-
-## Files touched
-
-- `src/App.tsx` — route rename + import new page.
-- `src/pages/Home.tsx` — update "host dinners" link target.
-- `src/components/SideNav.tsx` — update media-log link if present.
-- `src/pages/JasmineSupperClub.tsx` — new file.
-- `src/assets/supper-club/*.asset.json` — 7 new asset pointers.
-
-## Open question (proceeding with default unless you say otherwise)
-
-Tangyuan cookie has no photo in the PDF. Default: render a warm-accent placeholder tile so the layout stays consistent. Say the word if you'd rather omit the card or skip its image.
+- New `src/pages/ACappella.tsx` — layout mirrors `NowPlaying.tsx` (sidebar with name + back link, main column with SiteFooter).
+- Upload both group photos via `lovable-assets` CLI → `src/assets/citations.jpeg.asset.json` and `src/assets/trogons.jpg.asset.json`.
+- YouTube embeds: `<iframe src="https://www.youtube.com/embed/{id}">` wrapped in `aspect-video` container, `loading="lazy"`.
+- `src/App.tsx`: replace `/singing` route element with `<ACappella />`; remove unused `/singing/:slug` detail route.
+- `src/pages/Home.tsx`: rename nav link "Singing" → "A Cappella"; keep `/singing` URL.
+- `src/data/portfolio.ts`: remove `singingItems` array and its inclusion in the combined list. Leave the `"singing"` category union value in place (unused but harmless — removing it would require touching `PortfolioItem` consumers).
+- Global find/replace of `#E5B547` → `#F0CE6E` across `src/` (App.tsx, Home.tsx, NowPlaying.tsx, portfolio.ts, any others).

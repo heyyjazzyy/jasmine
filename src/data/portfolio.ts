@@ -193,21 +193,9 @@ export const musicItems: PortfolioItem[] = [
 ];
 
 // -----------------------------
-// Singing
+// Singing (moved to /singing custom page)
 // -----------------------------
-export const singingItems: PortfolioItem[] = [
-  {
-    id: "sing-01",
-    slug: "living-room-sessions",
-    title: "Living Room Sessions",
-    subtitle: "Covers + originals, live-tracked",
-    category: "singing",
-    fridgeStyle: "cassette",
-    year: "2024",
-    accent: "peach",
-    body: `A rolling series of one-take living-room sessions — mostly folk/jazz standards, occasional originals. Recorded on an SM7B into a Scarlett, mixed the same afternoon.`,
-  },
-];
+export const singingItems: PortfolioItem[] = [];
 
 // -----------------------------
 // Photography
