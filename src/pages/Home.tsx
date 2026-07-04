@@ -186,7 +186,7 @@ const Home = () => {
 
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-                <div>
+                <div className="lg:col-span-3">
                   <h3 className="template-header">Education</h3>
                   <ul className="space-y-4">
                     {education.map((e) => (
@@ -199,7 +199,7 @@ const Home = () => {
                   </ul>
                 </div>
 
-                <div>
+                <div className="lg:col-span-2">
                   <h3 className="template-header">Tools</h3>
                   <div className="space-y-0">
                     {toolGroups.map((group) => {
