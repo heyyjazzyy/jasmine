@@ -8,7 +8,7 @@ import { useMode } from "@/context/ModeContext";
 import { pmProjects, allItems, education, courses, tools } from "@/data/portfolio";
 
 const HeroSentence = () => (
-  <p className="font-display text-2xl md:text-3xl leading-snug tracking-tight max-w-3xl">
+  <p className="body-text max-w-3xl">
     In my free time, I{" "}
     <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
     <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
