@@ -34,14 +34,22 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
 ];
 
 
+const heroLinkColors = [
+  "inline-link-coral",
+  "inline-link-teal",
+  "inline-link-butter",
+  "inline-link-lilac",
+  "inline-link-mint",
+];
+
 const HeroSentence = () => (
   <p className="body-text max-w-3xl">
     In my free time, I{" "}
-    <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
-    <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
-    <Link to="/singing" className="inline-link">sing</Link>,{" "}
-    <Link to="/photography" className="inline-link">take photos</Link>, and{" "}
-    <Link to="/writing" className="inline-link">write about tech</Link>.
+    <Link to="/music" className={heroLinkColors[0]}>compose music for video games</Link>,{" "}
+    <Link to="/media-log" className={heroLinkColors[1]}>host dinners</Link>,{" "}
+    <Link to="/singing" className={heroLinkColors[2]}>sing</Link>,{" "}
+    <Link to="/photography" className={heroLinkColors[3]}>take photos</Link>, and{" "}
+    <Link to="/writing" className={heroLinkColors[4]}>write about tech</Link>.
   </p>
 );
 
