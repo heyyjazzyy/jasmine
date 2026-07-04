@@ -90,7 +90,7 @@ const Home = () => {
             <section className="mb-14">
               <div className="flex items-start justify-between gap-6">
                 <p className="body-text max-w-lg whitespace-pre-line">
-                  Hi, I’m Jasmine! I strive to build impactful tech with heart and vision. {"\n\n\n\n\n"}
+                  Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
                   I'm so glad you're here!
                 </p>
                 <ModeSwitch />
@@ -133,10 +133,9 @@ const Home = () => {
             <div className="lg:col-span-10 p-6 lg:p-10 py-16 lg:py-20">
               <h2 className="section-header">About Me</h2>
 
-              <p className="body-text max-w-3xl mb-14">
-                I'm a product manager who loves building thoughtful, human software.
-                My background sits at the intersection of business, technology, and creative
-                practice — and I bring all three to the way I ship product.
+              <p className="body-text max-w-3xl mb-14 whitespace-pre-line">
+                I’m a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n\n"}
+                From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation that has prepared me to create and lead in a rapidly evolving digital landscape.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mb-16">

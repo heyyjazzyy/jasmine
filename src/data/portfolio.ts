@@ -282,9 +282,9 @@ export const bySlug = (slug: string) => allItems.find((i) => i.slug === slug);
 // -----------------------------
 export const education = [
   {
-    degree: "B.S. Information Systems + HCI",
-    institution: "Carnegie Mellon University",
-    dateRange: "2021 – 2025",
+    degree: "B.S. Arts, Technology, and Business of Innovation",
+    institution: "Iovine and Young Academy, University of Southern California",
+    dateRange: "2020 – 2024",
   },
   {
     degree: "Study Abroad — Design & Innovation",
