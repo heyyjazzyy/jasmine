@@ -148,7 +148,7 @@ Across two consecutive summers, I tackled four platform initiatives split betwee
 
 Built a predictive model to correct shipping-address errors and enhance checkout delivery accuracy. Designed personalization models analyzing quantitative + behavioral data to predict drop-off in the funnel.
 
-## Metaverse Integration Analysis & Strategy
+### Metaverse Integration Analysis & Strategy
 
 Researched decentralized checkout architectures and digital payment frameworks. Formulated implementation recommendations for gaming and Web3 metaverses to deliver executive-level integration frameworks scoped to a $200B emerging consumer landscape.
 
