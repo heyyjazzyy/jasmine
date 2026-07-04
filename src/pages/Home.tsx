@@ -232,8 +232,9 @@ const Home = () => {
 
       </main>
 
+      <div className="border-t border-border/60 mt-24" />
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="hidden lg:block lg:col-span-2 border-r border-border/60" />
+        <div className="hidden lg:block lg:col-span-2" />
         <div className="lg:col-span-10">
           <SiteFooter />
         </div>
