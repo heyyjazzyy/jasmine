@@ -149,7 +149,7 @@ const Home = () => {
               </ul>
             </section>
 
-            <section id="free-time" className="mt-8">
+            <section id="free-time" className="mt-auto">
               <HeroSentence />
             </section>
 
