@@ -8,7 +8,7 @@ import { useMode } from "@/context/ModeContext";
 import { pmProjects, allItems, education, courses, tools } from "@/data/portfolio";
 
 const HeroSentence = () => (
-  <p className="font-display text-2xl md:text-3xl leading-snug tracking-tight max-w-3xl">
+  <p className="body-text max-w-3xl">
     In my free time, I{" "}
     <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
     <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
@@ -61,7 +61,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="lg:col-span-6 border-r border-border/60 p-6 lg:p-10 flex flex-col"
+            className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
               <p className="body-text max-w-lg">
@@ -99,38 +99,10 @@ const Home = () => {
             </section>
 
             <section id="free-time" className="mt-auto">
-              <h2 className="section-header">In my free time</h2>
               <HeroSentence />
             </section>
           </motion.div>
 
-          {/* Right: contact */}
-          <motion.div
-            id="contact"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-4 p-6 lg:p-10 flex flex-col justify-between"
-          >
-            <div>
-              <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Get in<br />touch
-              </h2>
-            </div>
-            <div className="flex items-end justify-between gap-6 mt-16">
-              <div className="font-ui text-sm text-muted-foreground">
-                <p>Bay Area, CA</p>
-                <p>hello@jasmineliao.com</p>
-              </div>
-              <a
-                href="mailto:hello@jasmineliao.com"
-                className="group"
-                aria-label="Send email"
-              >
-                <ArrowUpRight className="w-20 h-20 md:w-28 md:h-28 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </a>
-            </div>
-          </motion.div>
         </div>
 
         {/* About */}
