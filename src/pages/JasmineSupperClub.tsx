@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
+import LoadingScreen from "@/components/LoadingScreen";
+import { useImagesLoaded } from "@/hooks/useImagesLoaded";
 
 import dishesSavory from "@/assets/supper-club/pdf-dishes-savory.jpg.asset.json";
 import dishesSweet from "@/assets/supper-club/pdf-dishes-sweet.jpg.asset.json";
@@ -85,6 +87,8 @@ const DishRow = ({ dish }: { dish: Dish }) => (
 );
 
 const JasmineSupperClub = () => {
+  const imagesLoaded = useImagesLoaded([dishesSavory.url, dishesSweet.url, prepSupper.url]);
+  if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">

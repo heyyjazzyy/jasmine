@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 import SideNav from "@/components/SideNav";
@@ -72,31 +72,45 @@ const Home = () => {
     });
   };
 
-  if (mode === "fridge") {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
-          <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
-            <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
-              Jasmine Liao
-            </Link>
-            <button
-              onClick={toggle}
-              className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
-            >
-              professional mode →
-            </button>
-          </aside>
-          <div className="lg:col-span-10" />
-        </div>
+  const fridgeContent = (
+    <motion.div
+      key="fridge"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-screen bg-background"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
+        <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <button
+            onClick={toggle}
+            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+          >
+            professional mode →
+          </button>
+        </aside>
+        <div className="lg:col-span-10" />
       </div>
-    );
-  }
-
-
+    </motion.div>
+  );
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-background">
+    <AnimatePresence mode="wait">
+      {mode === "fridge" ? (
+        fridgeContent
+      ) : (
+        <motion.div
+          key="pro"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="relative min-h-screen flex flex-col bg-background"
+        >
       <div className="hidden lg:block absolute left-[16.666667%] top-0 bottom-0 z-10 w-px bg-border/60 pointer-events-none" />
       <main className="flex-1 pt-10 md:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
@@ -243,7 +257,9 @@ const Home = () => {
           <SiteFooter />
         </div>
       </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 
 };
