@@ -183,8 +183,11 @@ const Home = () => {
               </div>
             </section>
 
-            <div className="w-full border-t border-border/60" />
+          </motion.div>
 
+          <div className="col-span-full border-t border-border/60" />
+
+          <div className="lg:col-span-10 p-6 lg:p-10 flex flex-col">
             <section className="py-14">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
@@ -243,8 +246,7 @@ const Home = () => {
                 </div>
               </div>
             </section>
-
-          </motion.div>
+          </div>
 
         </div>
 
