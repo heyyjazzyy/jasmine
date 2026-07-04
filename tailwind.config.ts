@@ -28,13 +28,6 @@ export default {
           peach: "#F4A261",
           sky: "#7DD3FC",
         },
-      },
-      fontFamily: {
-        sans: ['Source Serif 4', 'Georgia', 'serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
-      },
-      colors: {
         border: "hsl(var(--border))",
         "border-subtle": "hsl(var(--border-subtle))",
         input: "hsl(var(--input))",
@@ -83,6 +76,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ['Source Serif 4', 'Georgia', 'serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
