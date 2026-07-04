@@ -55,29 +55,35 @@ I authored and launched system specifications to grant users  +1 extra conversat
 
 After analyzing the v2 experiment—where users hit the maximum extension cap because breakdowns naturally cluster—I completely overhauled the prompt logic for v3. I pivoted the LLM classifier to focus strictly on perceived user breakdowns rather than objective ones.
 
-### Breakdown Recovery Evaluator
+## Breakdown Recovery Evaluator
 Before my internship, parsing true breakdowns vs. AI overfiring was a black box. I created a Python backend/Colab evaluation pipeline that pulls raw call transcripts from Arize, runs automated dual-tier LLM evaluations (detecting \`breakdown\` vs \`no_breakdown\`, then sorting into \`recovered\` vs \`unrecovered\`), and pushes the validated accuracy metrics right back to the data engineering dashboard.
 
 
 I utilized meta-prompts via OpenAI models to fine-tune the classifier, increasing the system's breakdown evaluation accuracy from 69% to 78%, and doubling the Recovered Breakdown F1 classification score.
 
-### Dynamic Difficulty
+## Dynamic Difficulty
 I developed the system architecture to shift a learner's CEFR level between calls based on direct user feedback loops and performance indicators.
 
 
 If a user rates a call "Too Easy," the engine increments their profile by +1 CEFR step, unlocking longer turns, advanced sentence lengths, and lower Flesch readability text. If they choose "Too Hard," it steps down their rating and activates automated scaffolding features.
 
-### Scaffolding
-- If a user rates a call "Too Easy," the engine increments their profile by +1 CEFR step, unlocking longer turns, advanced sentence lengths, and lower Flesch readability text. If they choose "Too Hard," it steps down their rating and activates automated scaffolding features.
-- I Spec'd and shipped real-time adjustments to Lily's Text-to-Speech (TTS) behavior, injecting fluid phrasing pauses immediately after a user breakdown to increase user comprehension.
+## Scaffolding
+I Spec'd and shipped real-time adjustments to Lily's Text-to-Speech (TTS) behavior, injecting fluid phrasing pauses immediately after a user breakdown to increase user comprehension.
+
 I also designed a system-prompt override feature to deliver situational survival prompts (e.g., "No entiendo" / "Slow down, please") on the loading screens for early-stage (A1) learners
 
 ## Impact
-- **+14.9%** Total Words Spoken per Max DAU
-- **+17.9%** user turns per session
-- **−62%** baseline false-positive breakdown overfires per day (GPT-4.1 Mini/Nano arms)
-- Built a cost-to-value formula proving **GPT-4.1-Nano** delivered optimal margins → approved for deployment
-- Breakdown-recovery dashboard went **100% live** as the team's core metric.`,
+**Increase in User Speaking Volume:** My Turn-Extension feature successfully unlocked extended, low-stakes conversations, driving a **+14.9% increase in Total Words Spoken per Max DAU** and a **+17.9% jump in user turns per session**.
+
+**Reduction in AI Overfiring:** By rolling out the updated control prompts on next-generation LLM architectures (GPT-4.1 Mini and Nano arms), I **cut baseline false-positive breakdown overfires by 62% per day**.
+
+**Infrastructure Cost Optimization:** Through systematic benchmarking, I built a custom cost-to-value business formula:
+
+Value = (Words per Max DAU × Session Completion Rate) / Total TTS Cost
+
+Using this composite framework, I proved that migrating our global control prompts to **GPT-4.1-Nano** minimized reasoning latency and delivered optimal financial margins, leading to an approved recommendation for architecture deployment.
+
+**System Automation Approved:** My engineered breakdown recovery metric dashboard went **100% live** in the core metrics framework, establishing the definitive internal tool the team uses to trace conversational flow and user retention.`,
   },
   {
     id: "pm-02",
