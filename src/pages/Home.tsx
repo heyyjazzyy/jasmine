@@ -60,15 +60,22 @@ const Home = () => {
 
   if (mode === "fridge") {
     return (
-      <div className="min-h-screen flex flex-col">
-        <SiteHeader />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 md:px-10 pt-24 md:pt-28 pb-16">
-          <FridgeBoard items={allItems} title="everything on the fridge" />
-        </main>
-        <SiteFooter />
+      <div className="min-h-screen bg-background p-6 lg:p-8">
+        <div>
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <button
+            onClick={toggle}
+            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+          >
+            professional mode →
+          </button>
+        </div>
       </div>
     );
   }
+
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
