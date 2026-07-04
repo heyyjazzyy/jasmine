@@ -108,7 +108,7 @@ const Home = () => {
           >
             <section className="mb-14">
               <p className="body-text max-w-lg whitespace-pre-line">
-                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
+                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n"}
                 I'm so glad you're here!
               </p>
             </section>
