@@ -140,7 +140,7 @@ const MusicForGames = () => {
               Game Scoring
             </h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground">
-              At USC, I collaborated with students studying game production.&nbsp;&nbsp;
+              While at USC, I collaborated with game design students to compose and produce original scores for student-led projects.
             </p>
 
             <div className="mt-12 max-w-6xl space-y-16">
