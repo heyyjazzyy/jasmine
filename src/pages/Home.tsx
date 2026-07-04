@@ -157,8 +157,8 @@ const Home = () => {
               <h2 className="font-display text-2xl mb-6">About Me</h2>
 
               <p className="body-text max-w-3xl mb-14 whitespace-pre-line">
-                I’m a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n\n"}
-                From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation that has prepared me to create and lead in a rapidly evolving digital landscape.
+                I’m a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
+                From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
               </p>
 
               <div className="max-w-5xl mb-16">
