@@ -87,6 +87,30 @@ const ItemDetail = () => {
   const firstH1 = item.body.split("\n").find((l) => l.startsWith("# "));
   const tagline = firstH1 ? firstH1.slice(2) : "";
 
+  // Interleave narrow text blocks and full-width images.
+  const bodyElements = renderBody(item.body);
+  const interleaved: JSX.Element[] = [];
+  let textChunk: JSX.Element[] = [];
+  const flushText = () => {
+    if (textChunk.length) {
+      interleaved.push(
+        <div key={`text-${interleaved.length}`} className="px-6 lg:px-12 max-w-3xl">
+          {textChunk}
+        </div>
+      );
+      textChunk = [];
+    }
+  };
+  bodyElements.forEach((el) => {
+    if (el.type === "img") {
+      flushText();
+      interleaved.push(el);
+    } else {
+      textChunk.push(el);
+    }
+  });
+  flushText();
+
   return (
     <main className="min-h-screen bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
