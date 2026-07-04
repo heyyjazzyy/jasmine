@@ -110,7 +110,6 @@ Traditional sizing charts rely on tape measurements that fail to account for uni
 ![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/6f1a54cd-5a0f-4aba-964d-9bd6f92bc824/Frame_22_1.png)
 
 \n
-
 ## Computer Vision Optimization
 I worked hand-in-hand with our Chief Technology Officer (CTO) to design feature development loops and train computer vision models that convert raw 2D photos into an accurate, private 3-D body model.
 
@@ -139,20 +138,27 @@ Driven by our user research initiatives, I successfully scale-recruited a beta t
     year: "2023",
     accent: "sky",
     body: `# Optimizing Mobile Checkout Efficiency & Platform Integration
-\n
-\n
-\n
+
+
+
+
 Across two consecutive summers, I tackled four platform initiatives split between core PayPal.com and Mobile Checkout, blending data-driven personalization with technical standardization to drive transaction success, explore emerging economies, and improve web compliance.
 
-## Core Projects
-### AI/ML for Shipping Address Predictions
+## AI/ML for Shipping Address Predictions
+
 Built a predictive model to correct shipping-address errors and enhance checkout delivery accuracy. Designed personalization models analyzing quantitative + behavioral data to predict drop-off in the funnel.
 
-### Metaverse Integration Analysis & Strategy
-Researched decentralized checkout architectures and digital payment frameworks. Delivered executive-level integration frameworks scoped to a **$200B emerging consumer landscape**.
+## Metaverse Integration Analysis & Strategy
 
-### Website Integration & Compliance
-Standardized integration flows across PayPal.com surfaces to improve compliance and reduce checkout friction.`,
+Researched decentralized checkout architectures and digital payment frameworks. Formulated implementation recommendations for gaming and Web3 metaverses to deliver executive-level integration frameworks scoped to a $200B emerging consumer landscape.
+
+## Website Integration Playbook
+
+Tasked with creating a unified strategy to merge legacy consumer web assets. Conducted cross-functional interviews across 20 product and engineering teams to trace cross-domain integration, ultimately authoring and scaling PayPal's first-ever Website Integration Playbook to standardize complex deprecation protocols.
+
+## Drive Quality & Digital Accessibility Compliance
+
+Promoted internal product quality and compliance initiatives by introducing inclusive design enhancements to executives. Audited 10 major product lines to implement color contrast, screen reader compatibility, and targeted branding mechanics, successfully boosting digital web accessibility metrics by 14% across 5 core applications.`,
   },
 ];
 
