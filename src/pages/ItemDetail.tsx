@@ -171,7 +171,7 @@ const ItemDetail = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-6 border-t border-b border-border/60 py-8"
+                  className={`grid grid-cols-2 gap-x-6 gap-y-6 border-t border-b border-border/60 py-8 ${isWriting ? "" : "md:grid-cols-3"}`}
                 >
                   {role && role !== "\n" && (
                     <div>
@@ -181,13 +181,13 @@ const ItemDetail = () => {
                   )}
                   {timeline && (
                     <div>
-                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Timeline</p>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">{isWriting ? "Date" : "Timeline"}</p>
                       <p className="text-foreground">{timeline}</p>
                     </div>
                   )}
                   {team && team !== "\n" && (
                     <div>
-                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Team</p>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">{isWriting ? "Class" : "Team"}</p>
                       <p className="text-foreground">{team}</p>
                     </div>
                   )}
