@@ -81,7 +81,8 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="relative min-h-screen flex flex-col bg-background">
+      <div className="hidden lg:block absolute left-[16.666667%] top-0 bottom-0 z-10 w-px bg-border/60 pointer-events-none" />
       <main className="flex-1 pt-10 md:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
           {/* Left: name + nav */}
@@ -89,7 +90,7 @@ const Home = () => {
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
+            className="lg:col-span-2 p-6 lg:p-8 flex flex-col justify-between"
           >
             <div>
               <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
@@ -226,8 +227,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Left sidebar — masks horizontal lines, provides vertical divider */}
-            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-4 bg-background border-r border-border/60" />
           </div>
         </section>
 
@@ -235,10 +234,9 @@ const Home = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-full border-t border-border/60" />
-        <div className="lg:col-start-3 lg:col-end-13 pt-24">
+        <div className="lg:col-start-3 lg:col-end-13">
           <SiteFooter />
         </div>
-        <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-3 bg-background border-r border-border/60" />
       </div>
     </div>
   );
