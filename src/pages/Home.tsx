@@ -26,7 +26,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Art and Design",
     subgroups: [
-      { label: "Visual/Multimedia", items: ["Figma", "Adobe Suite (Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom, etc.)", "Procreate", "Unity"] },
+      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Procreate", "Unity"] },
       { label: "Music Creation", items: ["Logic Pro", "Ableton Live", "Wwise", "Musescore", "Piano"] },
     ],
   },
