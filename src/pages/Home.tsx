@@ -61,7 +61,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="lg:col-span-6 border-r border-border/60 p-6 lg:p-10 flex flex-col"
+            className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
               <p className="body-text max-w-lg">
