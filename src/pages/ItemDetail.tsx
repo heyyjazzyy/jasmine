@@ -65,9 +65,12 @@ const renderBody = (body: string) => {
 
 // Extract role / timeline / team from subtitle segments like
 // "PM Intern · Video Call w/ Lily · Summer 2025".
-const parseSubtitle = (subtitle?: string) => {
+const parseSubtitle = (subtitle?: string, category?: string) => {
   if (!subtitle) return { role: "", team: "", timeline: "" };
   const parts = subtitle.split("·").map((s) => s.trim()).filter(Boolean);
+  if (category === "writing" && parts.length >= 3) {
+    return { role: "", team: parts[1] || "", timeline: parts[2] || "" };
+  }
   return {
     role: parts[0] || "",
     team: parts.length >= 3 ? parts[1] : "",
@@ -81,7 +84,8 @@ const ItemDetail = () => {
   if (!item) return <Navigate to="/404" replace />;
 
   const backHref = item.category === "pm" ? "/" : `/${item.category}`;
-  const { role, team, timeline } = parseSubtitle(item.subtitle);
+  const isWriting = item.category === "writing";
+  const { role, team, timeline } = parseSubtitle(item.subtitle, item.category);
 
   // Pull first H1 as the tagline / hero subtitle if present.
   const firstH1 = item.body.split("\n").find((l) => l.startsWith("# "));
@@ -167,7 +171,7 @@ const ItemDetail = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-6 border-t border-b border-border/60 py-8"
+                  className={`grid grid-cols-2 gap-x-6 gap-y-6 border-t border-b border-border/60 py-8 ${isWriting ? "" : "md:grid-cols-3"}`}
                 >
                   {role && role !== "\n" && (
                     <div>
@@ -177,13 +181,13 @@ const ItemDetail = () => {
                   )}
                   {timeline && (
                     <div>
-                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Timeline</p>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">{isWriting ? "Date" : "Timeline"}</p>
                       <p className="text-foreground">{timeline}</p>
                     </div>
                   )}
                   {team && team !== "\n" && (
                     <div>
-                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Team</p>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">{isWriting ? "Class" : "Team"}</p>
                       <p className="text-foreground">{team}</p>
                     </div>
                   )}
