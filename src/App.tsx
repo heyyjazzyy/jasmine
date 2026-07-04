@@ -12,6 +12,7 @@ import CategoryPage from "./pages/CategoryPage";
 import ItemDetail from "./pages/ItemDetail";
 import NotFound from "./pages/NotFound";
 import JasmineSupperClub from "./pages/JasmineSupperClub";
+import NowPlaying from "./pages/NowPlaying";
 
 const queryClient = new QueryClient();
 
@@ -88,6 +89,7 @@ const AnimatedRoutes = () => {
           }
         />
         <Route path="/jasmine-supper-club" element={<PageTransition><JasmineSupperClub /></PageTransition>} />
+        <Route path="/now-playing" element={<PageTransition><NowPlaying /></PageTransition>} />
 
         {/* Detail pages */}
         <Route path="/work/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
