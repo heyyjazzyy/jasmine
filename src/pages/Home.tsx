@@ -64,9 +64,9 @@ const Home = () => {
             className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
-              <p className="body-text max-w-lg">
-                I'm a product manager based in the Bay Area. I ship AI-driven product experiences —
-                and design refreshing digital things packed with delightful interactions along the way.
+              <p className="body-text max-w-lg whitespace-pre-line">
+                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision. {"\n\n\n\n\n"}
+                I'm so glad you're here!
               </p>
               <a
                 href="#about"
