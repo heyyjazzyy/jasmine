@@ -152,7 +152,7 @@ const Home = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
                     >
-                      <Link to={`/work/${p.slug}`} className="group block">
+                      <Link to={`/work/${p.slug}`} className="group inline-block">
                         <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
                           {p.title}
                         </div>
