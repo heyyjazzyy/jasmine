@@ -28,7 +28,7 @@ const App = () => (
                 <CategoryPage
                   category="pm"
                   title="Product Work"
-                  description="Selected product management case studies — from AI language learning to computer-vision fashion tech and global payments."
+                  description=""
                 />
               }
             />
