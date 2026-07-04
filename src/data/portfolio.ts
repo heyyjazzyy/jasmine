@@ -89,7 +89,7 @@ Using this composite framework, I proved that migrating our global control promp
     id: "pm-02",
     slug: "loop",
     title: "Loop",
-    subtitle: "Co-Founder & Head of Product · · May 2023 – Jun 2024",
+    subtitle: "\n · \n · May 2023 – Jun 2024",
     category: "pm",
     fridgeStyle: "memo",
     year: "2024",
