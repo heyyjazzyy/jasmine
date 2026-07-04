@@ -5,19 +5,74 @@ import SiteFooter from "@/components/SiteFooter";
 import citationsPhoto from "@/assets/citations.jpeg.asset.json";
 import trogonsPhoto from "@/assets/trogons.jpg.asset.json";
 
-type Video = { title: string; youtubeId: string; soloist?: string };
+type Video = { youtubeId: string; caption: React.ReactNode };
 
 const citationsVideos: Video[] = [
-  { title: "Honeymoon Avenue", youtubeId: "6nfgWB2Gsuc", soloist: "Shreya R." },
-  { title: "Pink Pony Club", youtubeId: "R14-ULdoxkM", soloist: "Jordan P." },
+  {
+    youtubeId: "6nfgWB2Gsuc",
+    caption: (
+      <>
+        <div className="font-medium">Honeymoon Avenue</div>
+        <div className="text-muted-foreground">Soloist: Shreya R.</div>
+      </>
+    ),
+  },
+  {
+    youtubeId: "R14-ULdoxkM",
+    caption: (
+      <>
+        <div className="font-medium">Pink Pony Club</div>
+        <div className="text-muted-foreground">Soloist: Jordan P.</div>
+      </>
+    ),
+  },
 ];
 
 const trogonsVideos: Video[] = [
-  { title: "Fall Showcase 2024", youtubeId: "LL2vDL5epTc" },
-  { title: "Spring Showcase 2024", youtubeId: "waRWiPqrC34" },
-  { title: "Fall Showcase 2022", youtubeId: "sOzXw_CeTqE" },
-  { title: "Spring Showcase 2022", youtubeId: "7TwxU8n3bFs" },
-  { title: "Fall 2021", youtubeId: "9ZBm5x_Yxsc" },
+  {
+    youtubeId: "LL2vDL5epTc",
+    caption: (
+      <>
+        <div className="font-medium">6:52 – Gunjou by YOASOBI</div>
+        <div className="text-muted-foreground">Solo by Cana I. and Davie C.</div>
+      </>
+    ),
+  },
+  {
+    youtubeId: "waRWiPqrC34",
+    caption: (
+      <>
+        <div className="font-medium">10:05 – Outta My Head by Khalid</div>
+      </>
+    ),
+  },
+  {
+    youtubeId: "sOzXw_CeTqE",
+    caption: (
+      <>
+        <div className="font-medium">10:11 – 一剪梅 by Fei Yu-ching</div>
+        <div className="text-muted-foreground">Solo by Troy T.</div>
+      </>
+    ),
+  },
+  {
+    youtubeId: "7TwxU8n3bFs",
+    caption: (
+      <>
+        <div className="font-medium">Way Back Home – Shaun</div>
+        <div className="text-muted-foreground">Solo by Rosie D. and Andy K.</div>
+      </>
+    ),
+  },
+  {
+    youtubeId: "9ZBm5x_Yxsc",
+    caption: (
+      <>
+        <div className="font-medium">0:32 – 夜に駆ける by YOASOBI</div>
+        <div className="text-muted-foreground">Solo by Rosie D. and Xenia W.</div>
+      </>
+    ),
+  },
 ];
 
 const VideoCard = ({ video }: { video: Video }) => (
@@ -25,19 +80,13 @@ const VideoCard = ({ video }: { video: Video }) => (
     <div className="aspect-video overflow-hidden rounded-md border border-border/60 bg-muted">
       <iframe
         src={`https://www.youtube.com/embed/${video.youtubeId}`}
-        title={video.title}
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         className="h-full w-full"
       />
     </div>
-    <div className="body-text text-sm">
-      <span className="font-medium">{video.title}</span>
-      {video.soloist && (
-        <span className="text-muted-foreground"> — Soloist: {video.soloist}</span>
-      )}
-    </div>
+    <div className="body-text text-sm">{video.caption}</div>
   </div>
 );
 
@@ -75,24 +124,26 @@ const ACappella = () => {
               I've been singing in a cappella groups for 9 years!
             </p>
 
-            <div className="mt-12 max-w-4xl space-y-14">
+            <div className="mt-12 max-w-6xl space-y-14">
               {/* Yale Citations */}
               <section>
                 <h2 className="template-header">Yale Citations</h2>
-                <div className="mt-4 flex flex-col sm:flex-row gap-6 items-start">
-                  <img
-                    src={citationsPhoto.url}
-                    alt="Yale Citations group photo"
-                    className="w-full sm:w-[280px] rounded-md border border-border/60"
-                  />
-                  <p className="body-text text-muted-foreground italic max-w-sm">
-                    Yale's only graduate a cappella group.
-                  </p>
-                </div>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {citationsVideos.map((v) => (
-                    <VideoCard key={v.youtubeId} video={v} />
-                  ))}
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                  <div className="flex flex-col gap-4">
+                    <img
+                      src={citationsPhoto.url}
+                      alt="Yale Citations group photo"
+                      className="w-full rounded-md border border-border/60"
+                    />
+                    <p className="body-text text-muted-foreground">
+                      Throughout my time in business school, I sang in the Yale Citations, Yale's only graduate a cappella group. I served as assistant music director and arranged music. Here are some of my arrangements!
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-6">
+                    {citationsVideos.map((v) => (
+                      <VideoCard key={v.youtubeId} video={v} />
+                    ))}
+                  </div>
                 </div>
               </section>
 
@@ -101,21 +152,27 @@ const ACappella = () => {
               {/* Trogons */}
               <section>
                 <h2 className="template-header">Trogons</h2>
-                <div className="mt-4">
-                  <img
-                    src={trogonsPhoto.url}
-                    alt="Trogons group photo"
-                    className="w-full sm:w-[360px] rounded-md border border-border/60"
-                  />
-                </div>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {trogonsVideos.map((v) => (
-                    <VideoCard key={v.youtubeId} video={v} />
-                  ))}
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                  <div className="flex flex-col gap-4">
+                    <img
+                      src={trogonsPhoto.url}
+                      alt="Trogons group photo"
+                      className="w-full rounded-md border border-border/60"
+                    />
+                    <p className="body-text text-muted-foreground">
+                      I've been so incredibly grateful to be a part of Trogons A Cappella at USC from 2021–2024. Here are some of the performances of the arrangements I've written!
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-6">
+                    {trogonsVideos.map((v) => (
+                      <VideoCard key={v.youtubeId} video={v} />
+                    ))}
+                  </div>
                 </div>
               </section>
             </div>
           </div>
+
 
           <div className="border-t border-border/60">
             <SiteFooter />
