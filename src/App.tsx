@@ -38,6 +38,7 @@ const App = () => (
                 <CategoryPage
                   category="music"
                   title="Music for Games"
+                  titleColor="#E85D3A"
                   description="Original scores, ambient loops, and interactive audio written for indie games and interactive media."
                 />
               }
@@ -48,6 +49,7 @@ const App = () => (
                 <CategoryPage
                   category="singing"
                   title="Singing"
+                  titleColor="#E5B547"
                   description="Live-tracked living-room sessions — folk, jazz standards, occasional originals."
                 />
               }
@@ -58,6 +60,7 @@ const App = () => (
                 <CategoryPage
                   category="photography"
                   title="Photography"
+                  titleColor="#9B72CF"
                   description="\n"
                 />
               }
@@ -68,6 +71,7 @@ const App = () => (
                 <CategoryPage
                   category="writing"
                   title="Writing about Tech"
+                  titleColor="#7D9B76"
                   description="Essays and field notes on product management, AI, and building software that respects the person using it."
                 />
               }
@@ -78,6 +82,7 @@ const App = () => (
                 <CategoryPage
                   category="media-log"
                   title="Dinners & Media Log"
+                  titleColor="#2D8A9E"
                   description="Menus, timing sheets, and playlists from dinners I've hosted — plus the occasional media diary."
                 />
               }

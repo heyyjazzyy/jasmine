@@ -34,14 +34,27 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
 ];
 
 
+const linkBase =
+  "underline decoration-2 underline-offset-4 decoration-foreground/40 transition-colors";
+
 const HeroSentence = () => (
   <p className="body-text max-w-3xl text-base md:text-lg">
     In my free time, I{" "}
-    <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
-    <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
-    <Link to="/singing" className="inline-link">sing</Link>,{" "}
-    <Link to="/photography" className="inline-link">take photos</Link>, and{" "}
-    <Link to="/writing" className="inline-link">write about tech</Link>.
+    <Link to="/music" className={`${linkBase} hover:text-[#E85D3A] hover:decoration-[#E85D3A]`}>
+      compose music for video games
+    </Link>,{" "}
+    <Link to="/media-log" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
+      host dinners
+    </Link>,{" "}
+    <Link to="/singing" className={`${linkBase} hover:text-[#E5B547] hover:decoration-[#E5B547]`}>
+      sing
+    </Link>,{" "}
+    <Link to="/photography" className={`${linkBase} hover:text-[#9B72CF] hover:decoration-[#9B72CF]`}>
+      take photos
+    </Link>, and{" "}
+    <Link to="/writing" className={`${linkBase} hover:text-[#7D9B76] hover:decoration-[#7D9B76]`}>
+      write about tech
+    </Link>.
   </p>
 );
 
@@ -136,7 +149,7 @@ const Home = () => {
               </ul>
             </section>
 
-            <section id="free-time" className="mt-auto">
+            <section id="free-time" className="mt-8">
               <HeroSentence />
             </section>
           </motion.div>

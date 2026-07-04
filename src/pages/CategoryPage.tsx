@@ -12,9 +12,10 @@ interface Props {
   category: Category;
   title: string;
   description: string;
+  titleColor?: string;
 }
 
-const CategoryPage = ({ category, title, description }: Props) => {
+const CategoryPage = ({ category, title, description, titleColor }: Props) => {
   const { mode } = useMode();
   const items = byCategory(category);
   const isPhotography = category === "photography";
@@ -33,7 +34,7 @@ const CategoryPage = ({ category, title, description }: Props) => {
               <ArrowLeft className="w-4 h-4" />
               Back
             </Link>
-            <h1 className="display-heading">{title}</h1>
+            <h1 className="display-heading" style={titleColor ? { color: titleColor } : undefined}>{title}</h1>
             {description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
 
 
