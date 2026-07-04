@@ -34,14 +34,40 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
 ];
 
 
+const heroLinkColors = [
+  "inline-link-coral",
+  "inline-link-teal",
+  "inline-link-butter",
+  "inline-link-lilac",
+  "inline-link-mint",
+];
+
+const badgePalette = [
+  "#F3D68A", // butter
+  "#E85D3A", // tomato / coral
+  "#7DD3FC", // sky
+  "#C9A0DC", // lilac
+  "#A8D5BA", // mint
+  "#F4A261", // peach
+];
+
+const badgeColorFor = (item: string) => {
+  let hash = 0;
+  for (let i = 0; i < item.length; i++) {
+    hash = item.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const idx = Math.abs(hash) % badgePalette.length;
+  return badgePalette[idx];
+};
+
 const HeroSentence = () => (
   <p className="body-text max-w-3xl">
     In my free time, I{" "}
-    <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
-    <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
-    <Link to="/singing" className="inline-link">sing</Link>,{" "}
-    <Link to="/photography" className="inline-link">take photos</Link>, and{" "}
-    <Link to="/writing" className="inline-link">write about tech</Link>.
+    <Link to="/music" className={heroLinkColors[0]}>compose music for video games</Link>,{" "}
+    <Link to="/media-log" className={heroLinkColors[1]}>host dinners</Link>,{" "}
+    <Link to="/singing" className={heroLinkColors[2]}>sing</Link>,{" "}
+    <Link to="/photography" className={heroLinkColors[3]}>take photos</Link>, and{" "}
+    <Link to="/writing" className={heroLinkColors[4]}>write about tech</Link>.
   </p>
 );
 
@@ -106,22 +132,31 @@ const Home = () => {
             <section id="work" className="mb-10">
               <h2 className="template-header">Work</h2>
               <ul className="space-y-6">
-                {pmProjects.map((p, i) => (
-                  <motion.li
-                    key={p.id}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-                  >
-                    <Link to={`/work/${p.slug}`} className="group block">
-                      <div className="font-display text-3xl md:text-4xl leading-tight transition-colors group-hover:text-primary">
-                        {p.title}
-                      </div>
-                      <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
-                    </Link>
-
-                  </motion.li>
-                ))}
+                {pmProjects.map((p, i) => {
+                  const hoverColor =
+                    p.slug === "duolingo"
+                      ? "group-hover:text-[#58CC02]"
+                      : p.slug === "loop"
+                        ? "group-hover:text-[#DF7FB9]"
+                        : p.slug === "paypal"
+                          ? "group-hover:text-[#003087]"
+                          : "group-hover:text-primary";
+                  return (
+                    <motion.li
+                      key={p.id}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                    >
+                      <Link to={`/work/${p.slug}`} className="group block">
+                        <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
+                          {p.title}
+                        </div>
+                        <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </section>
 
@@ -188,7 +223,11 @@ const Home = () => {
                                   )}
                                   <div className="flex flex-wrap gap-2">
                                     {sg.items.map((item) => (
-                                      <span key={item} className="tool-badge">
+                                      <span
+                                        key={item}
+                                        className="tool-badge"
+                                        style={{ backgroundColor: badgeColorFor(item) }}
+                                      >
                                         {item}
                                       </span>
                                     ))}

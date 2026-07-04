@@ -107,6 +107,31 @@
     @apply relative text-primary underline decoration-primary/40 decoration-2 underline-offset-4
            hover:decoration-primary hover:text-primary/90 transition-colors;
   }
+  .inline-link-coral {
+    @apply relative underline decoration-cycle-coral/40 decoration-2 underline-offset-4
+           hover:decoration-cycle-coral hover:text-cycle-coral transition-colors;
+    color: #E85D3A;
+  }
+  .inline-link-teal {
+    @apply relative underline decoration-cycle-teal/40 decoration-2 underline-offset-4
+           hover:decoration-cycle-teal hover:text-cycle-teal transition-colors;
+    color: #2D8A9E;
+  }
+  .inline-link-butter {
+    @apply relative underline decoration-cycle-butter/40 decoration-2 underline-offset-4
+           hover:decoration-cycle-butter hover:text-cycle-butter transition-colors;
+    color: #C9A04C;
+  }
+  .inline-link-lilac {
+    @apply relative underline decoration-cycle-lilac/40 decoration-2 underline-offset-4
+           hover:decoration-cycle-lilac hover:text-cycle-lilac transition-colors;
+    color: #9B72CF;
+  }
+  .inline-link-mint {
+    @apply relative underline decoration-cycle-mint/40 decoration-2 underline-offset-4
+           hover:decoration-cycle-mint hover:text-cycle-mint transition-colors;
+    color: #7D9B76;
+  }
 
   .mode-switch {
     @apply inline-flex items-center gap-1 p-1 rounded-full border border-border bg-card text-sm;

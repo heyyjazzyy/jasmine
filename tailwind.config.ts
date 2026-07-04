@@ -13,12 +13,21 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ['Source Serif 4', 'Georgia', 'serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
-      },
       colors: {
+        brand: {
+          duolingo: "#58CC02",
+          loop: "#DF7FB9",
+          paypal: "#003087",
+        },
+        cycle: {
+          coral: "#E85D3A",
+          teal: "#2D8A9E",
+          butter: "#F3D68A",
+          lilac: "#C9A0DC",
+          mint: "#A8D5BA",
+          peach: "#F4A261",
+          sky: "#7DD3FC",
+        },
         border: "hsl(var(--border))",
         "border-subtle": "hsl(var(--border-subtle))",
         input: "hsl(var(--input))",
@@ -67,6 +76,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ['Source Serif 4', 'Georgia', 'serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
