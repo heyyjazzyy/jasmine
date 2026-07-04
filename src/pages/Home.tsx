@@ -154,10 +154,7 @@ const Home = () => {
         </div>
 
 
-        <section id="about" className="border-t border-border/60 relative">
-          {/* Continuous left vertical line */}
-          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-1/6 border-r border-border/60" />
-
+        <section id="about" className="border-t border-border/60">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <h2 className="template-header">About</h2>
@@ -167,7 +164,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="col-span-full lg:col-start-3 lg:col-end-13 border-b border-border/60" />
+            <div className="col-span-full border-b border-border/60" />
 
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -228,20 +225,20 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            {/* Left sidebar — masks horizontal lines, provides vertical divider */}
+            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-4 bg-background border-r border-border/60" />
           </div>
         </section>
 
       </main>
 
-      <div className="relative">
-        <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-1/6 border-r border-border/60" />
-        <div className="border-t border-border/60" />
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="hidden lg:block lg:col-span-2" />
-          <div className="lg:col-span-10 pt-24">
-            <SiteFooter />
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="col-span-full border-t border-border/60" />
+        <div className="lg:col-start-3 lg:col-end-13 pt-24">
+          <SiteFooter />
         </div>
+        <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-3 bg-background border-r border-border/60" />
       </div>
     </div>
   );
