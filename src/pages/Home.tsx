@@ -94,10 +94,11 @@ const Home = () => {
               </Link>
               <button
                 onClick={toggle}
-                className="font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+                className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
               >
-                fun →
+                fun mode →
               </button>
+
             </div>
             <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
