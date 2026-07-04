@@ -94,7 +94,7 @@
   }
 
   .template-header {
-    @apply font-display text-base mb-4 pb-2 border-b border-border/60;
+    @apply font-display text-base mb-4 pb-2 border-b border-border/60 w-fit;
   }
 
 
