@@ -124,7 +124,7 @@ const Home = () => {
               </p>
             </section>
 
-            <section id="work" className="mb-16">
+            <section id="work" className="mb-10">
               <h2 className="template-header">Work</h2>
               <ul className="space-y-6">
                 {pmProjects.map((p, i) => (
@@ -159,11 +159,12 @@ const Home = () => {
             <div className="lg:col-span-2 border-r border-border/60" />
             <div className="lg:col-span-10 p-6 lg:p-10 py-16 lg:py-20">
               <h2 className="template-header">About</h2>
-
-              <p className="body-text max-w-3xl mb-16 whitespace-pre-line">
+              <p className="body-text max-w-3xl mb-10 whitespace-pre-line">
                 I’m a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
                 From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
               </p>
+
+              <div className="border-b border-border/60 mb-10" />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
