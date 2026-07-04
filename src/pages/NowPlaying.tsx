@@ -37,7 +37,7 @@ const EntryLink = ({
     href={entry.href}
     target="_blank"
     rel="noopener noreferrer"
-    className="body-text no-underline transition-colors"
+    className="body-text no-underline transition-colors whitespace-pre-wrap"
     onMouseEnter={(e) => {
       e.currentTarget.style.color = entry.color;
       e.currentTarget.style.textDecoration = "underline";
@@ -50,7 +50,7 @@ const EntryLink = ({
     }}
   >
     {entry.label}
-    {!isLast && ", "}
+    {!isLast && !entry.label.includes("\n") && ", "}
   </a>
 );
 
