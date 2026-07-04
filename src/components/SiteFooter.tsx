@@ -1,5 +1,5 @@
 const SiteFooter = () => (
-  <footer className="border-t border-border/60 mt-24">
+  <footer>
     <div className="max-w-6xl mx-auto px-6 md:px-10 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 font-ui text-sm text-muted-foreground">
       <p>© {new Date().getFullYear()} — Made with {"<3"}</p>
       <div className="flex gap-5">
