@@ -39,6 +39,17 @@ const renderBody = (body: string) => {
     } else if (line.startsWith("### ")) {
       flushList();
       out.push(<h3 key={idx} className="font-display text-xl mt-8 mb-2">{line.slice(4)}</h3>);
+    } else if (/^!\[[^\]]*\]\([^)]+\)$/.test(line)) {
+      flushList();
+      const m = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/)!;
+      out.push(
+        <img
+          key={idx}
+          src={m[2]}
+          alt={m[1]}
+          className="w-full h-auto my-8 rounded-md"
+        />
+      );
     } else if (/^[-*]\s/.test(line)) {
       listBuf.push(line.replace(/^[-*]\s/, ""));
     } else {
