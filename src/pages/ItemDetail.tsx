@@ -65,9 +65,12 @@ const renderBody = (body: string) => {
 
 // Extract role / timeline / team from subtitle segments like
 // "PM Intern · Video Call w/ Lily · Summer 2025".
-const parseSubtitle = (subtitle?: string) => {
+const parseSubtitle = (subtitle?: string, category?: string) => {
   if (!subtitle) return { role: "", team: "", timeline: "" };
   const parts = subtitle.split("·").map((s) => s.trim()).filter(Boolean);
+  if (category === "writing" && parts.length >= 3) {
+    return { role: "", team: parts[1] || "", timeline: parts[2] || "" };
+  }
   return {
     role: parts[0] || "",
     team: parts.length >= 3 ? parts[1] : "",
