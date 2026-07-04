@@ -146,6 +146,8 @@ Across two consecutive summers, I tackled four platform initiatives split betwee
 
 ## Core Projects
 
+### AI/ML for Shipping Address Predictions
+
 Built a predictive model to correct shipping-address errors and enhance checkout delivery accuracy. Designed personalization models analyzing quantitative + behavioral data to predict drop-off in the funnel.
 
 ### Metaverse Integration Analysis & Strategy
