@@ -38,7 +38,7 @@ const linkBase =
   "underline decoration-2 underline-offset-4 decoration-foreground/40 transition-colors";
 
 const HeroSentence = () => (
-  <p className="body-text max-w-3xl text-base md:text-lg">
+  <p className="body-text max-w-lg text-base md:text-lg">
     In my free time, I{" "}
     <Link to="/music" className={`${linkBase} hover:text-[#E8687B] hover:decoration-[#E8687B]`}>
       compose music for video games
@@ -185,7 +185,7 @@ const Home = () => {
             <div className="col-span-full border-b border-border/60" />
 
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
                 <div>
                   <h3 className="template-header">Education</h3>
                   <ul className="space-y-4">
