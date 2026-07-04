@@ -71,13 +71,13 @@ Shifts a learner's CEFR level between calls based on feedback. "Too Easy" → **
     id: "pm-02",
     slug: "loop",
     title: "Loop",
-    subtitle: "Co-Founder & CPO · AI Fashion Tech · May 2023 – Jun 2024",
+    subtitle: "Co-Founder & Head of Product · AI Fashion Tech · May 2023 – Jun 2024",
     category: "pm",
     fridgeStyle: "memo",
     year: "2024",
     accent: "peach",
-    body: `# Loop — Re-engineering Bra Sizing with Computer Vision
-**Co-Founder & Chief Product Officer** · Pre-Seed AI Fashion Startup · May 2023 – Jun 2024
+    body: `# Re-engineering Bra Sizing with Computer Vision
+
 
 ## Intro
 **80% of women wear bras that don't fit** due to outdated sizing methods — driving a **50% return rate** for bras online. As Co-Founder and CPO, my team and I built **Loop**: a women-led sizing startup using computer vision and ML to match women with their perfect bra.
