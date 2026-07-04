@@ -54,12 +54,7 @@ const AnimatedRoutes = () => {
           path="/singing"
           element={
             <PageTransition>
-              <CategoryPage
-                category="singing"
-                title="Singing"
-                titleColor="#E5B547"
-                description="Live-tracked living-room sessions — folk, jazz standards, occasional originals."
-              />
+              <ACappella />
             </PageTransition>
           }
         />
