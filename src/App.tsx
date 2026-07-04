@@ -2,8 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { ModeProvider } from "@/context/ModeContext";
+import ScrollToTop from "@/components/ScrollToTop";
+import PageTransition from "@/components/PageTransition";
 import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import ItemDetail from "./pages/ItemDetail";
@@ -12,6 +15,94 @@ import JasmineSupperClub from "./pages/JasmineSupperClub";
 
 const queryClient = new QueryClient();
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+
+        {/* Category listing pages */}
+        <Route
+          path="/work"
+          element={
+            <PageTransition>
+              <CategoryPage
+                category="pm"
+                title="Product Work"
+                description=""
+              />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/music"
+          element={
+            <PageTransition>
+              <CategoryPage
+                category="music"
+                title="Music for Games"
+                titleColor="#E8687B"
+                description="Original scores, ambient loops, and interactive audio written for indie games and interactive media."
+              />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/singing"
+          element={
+            <PageTransition>
+              <CategoryPage
+                category="singing"
+                title="Singing"
+                titleColor="#E5B547"
+                description="Live-tracked living-room sessions — folk, jazz standards, occasional originals."
+              />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/photography"
+          element={
+            <PageTransition>
+              <CategoryPage
+                category="photography"
+                title="Photography"
+                titleColor="#9B72CF"
+                description=""
+              />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/writing"
+          element={
+            <PageTransition>
+              <CategoryPage
+                category="writing"
+                title="Writing about Tech"
+                titleColor="#7D9B76"
+                description="Essays and field notes on product management, AI, and building software that respects the person using it."
+              />
+            </PageTransition>
+          }
+        />
+        <Route path="/jasmine-supper-club" element={<PageTransition><JasmineSupperClub /></PageTransition>} />
+
+        {/* Detail pages */}
+        <Route path="/work/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        <Route path="/music/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        <Route path="/singing/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        <Route path="/photography/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        <Route path="/writing/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+        <Route path="/media-log/:slug" element={<PageTransition><ItemDetail /></PageTransition>} />
+
+        <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -19,76 +110,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-
-            {/* Category listing pages */}
-            <Route
-              path="/work"
-              element={
-                <CategoryPage
-                  category="pm"
-                  title="Product Work"
-                  description=""
-                />
-              }
-            />
-            <Route
-              path="/music"
-              element={
-                <CategoryPage
-                  category="music"
-                  title="Music for Games"
-                  titleColor="#E8687B"
-                  description="Original scores, ambient loops, and interactive audio written for indie games and interactive media."
-                />
-              }
-            />
-            <Route
-              path="/singing"
-              element={
-                <CategoryPage
-                  category="singing"
-                  title="Singing"
-                  titleColor="#E5B547"
-                  description="Live-tracked living-room sessions — folk, jazz standards, occasional originals."
-                />
-              }
-            />
-            <Route
-              path="/photography"
-              element={
-                <CategoryPage
-                  category="photography"
-                  title="Photography"
-                  titleColor="#9B72CF"
-                  description=""
-                />
-              }
-            />
-            <Route
-              path="/writing"
-              element={
-                <CategoryPage
-                  category="writing"
-                  title="Writing about Tech"
-                  titleColor="#7D9B76"
-                  description="Essays and field notes on product management, AI, and building software that respects the person using it."
-                />
-              }
-            />
-            <Route path="/jasmine-supper-club" element={<JasmineSupperClub />} />
-
-            {/* Detail pages */}
-            <Route path="/work/:slug" element={<ItemDetail />} />
-            <Route path="/music/:slug" element={<ItemDetail />} />
-            <Route path="/singing/:slug" element={<ItemDetail />} />
-            <Route path="/photography/:slug" element={<ItemDetail />} />
-            <Route path="/writing/:slug" element={<ItemDetail />} />
-            <Route path="/media-log/:slug" element={<ItemDetail />} />
-
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <ScrollToTop />
+          <AnimatedRoutes />
         </BrowserRouter>
       </ModeProvider>
     </TooltipProvider>
