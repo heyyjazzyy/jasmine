@@ -56,7 +56,7 @@ const EntryLink = ({
       }}
     >
       {entry.label}
-      {!isLast && !entry.label.includes("\n") && ", "}
+      {!isLast && !entry.label.includes("\n") && !entry.noComma && ", "}
     </a>
   );
 };
