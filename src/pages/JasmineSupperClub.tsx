@@ -72,16 +72,15 @@ const menu: Course[] = [
 
 const DishRow = ({ dish }: { dish: Dish }) => (
   <motion.div
-    initial={{ opacity: 0, y: 12 }}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-80px" }}
+    viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4 }}
-    className="py-6"
   >
-    <h3 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: ACCENT }}>
+    <h3 className="font-ui text-xs font-medium uppercase tracking-[0.18em] leading-snug" style={{ color: ACCENT }}>
       {dish.name}
     </h3>
-    <p className="body-text mt-2 text-muted-foreground">{dish.blurb}</p>
+    <p className="font-ui text-xs text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
   </motion.div>
 );
 
@@ -157,14 +156,13 @@ const JasmineSupperClub = () => {
             </motion.section>
 
             {/* Menu */}
-            <div className="mt-20 space-y-16 max-w-3xl">
-              {menu.map((course) => (
-                <section key={course.heading}>
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <h2 className="template-header !mb-0">{course.heading}</h2>
-                    <div className="flex-1 h-px bg-border/60" />
-                  </div>
-                  <div className="divide-y divide-border/60">
+            <div className="mt-14 max-w-4xl space-y-10">
+              {menu.map((course, i) => (
+                <section key={course.heading} className={i > 0 ? "border-t border-border/40 pt-10" : ""}>
+                  <h2 className="font-ui text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                    {course.heading}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
                     {course.dishes.map((dish) => (
                       <DishRow key={dish.name} dish={dish} />
                     ))}
@@ -174,12 +172,12 @@ const JasmineSupperClub = () => {
             </div>
 
             {/* Photos */}
-            <section className="mt-24 max-w-5xl">
+            <section className="mt-16 max-w-4xl">
               <div className="flex items-baseline gap-4 mb-6">
-                <h2 className="template-header !mb-0">Photos</h2>
+                <h2 className="font-ui text-xs uppercase tracking-[0.2em] text-muted-foreground">Photos</h2>
                 <div className="flex-1 h-px bg-border/60" />
               </div>
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <img
                   src={dishesSavory.url}
                   alt="Savory dishes from the Jasmine Supper Club menu"
