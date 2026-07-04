@@ -170,13 +170,13 @@ const JasmineSupperClub = () => {
                 className="font-ui text-xs uppercase tracking-[0.28em] mb-4"
                 style={{ color: ACCENT }}
               >
-                A one-night supper club · Spring 2025
+                A SERIES OF DINNERS
               </p>
               <h1 className="display-heading" style={{ color: ACCENT }}>
                 Jasmine Supper Club
               </h1>
               <p className="font-hand text-2xl md:text-3xl mt-4 text-foreground/70">
-                exploring food, memory, and migration
+                {"\n"}
               </p>
             </motion.header>
 
@@ -202,7 +202,7 @@ const JasmineSupperClub = () => {
                 comfort foods, and the dishes I've discovered along the way — reimagined and set
                 on one table.
               </p>
-              <p className="font-hand text-xl text-foreground/80 pt-1">— Jasmine</p>
+              <p className="font-hand text-xl text-foreground/80 pt-1">{"\n"}</p>
             </motion.section>
 
             {/* Menu */}
