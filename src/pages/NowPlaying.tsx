@@ -15,7 +15,8 @@ const gamesPlaying: Entry[] = [
 
 const listening: Entry[] = [
   { label: "you seem pretty sad for a girl so in love\n\u00a0", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
-  { label: "Japanese and ", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF" },
+  { label: "Japanese", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF" },
+  { label: " and ", href: "", color: "" },
   { label: "Spanish indie", href: "https://open.spotify.com/track/1UtlYwIzZtj2tvtsqixSJv?si=5be1dae4325743fc", color: "#E5B547" },
   { label: "\nBloc Party", href: "https://open.spotify.com/track/5OVHnu9SgsdAravy4UyGq4?si=0942c37e9cc641f1", color: "#2D8A9E" },
 ];
@@ -32,27 +33,33 @@ const EntryLink = ({
 }: {
   entry: Entry;
   isLast: boolean;
-}) => (
-  <a
-    href={entry.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="body-text no-underline transition-colors whitespace-pre-wrap"
-    onMouseEnter={(e) => {
-      e.currentTarget.style.color = entry.color;
-      e.currentTarget.style.textDecoration = "underline";
-      e.currentTarget.style.textDecorationColor = entry.color;
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.color = "";
-      e.currentTarget.style.textDecoration = "";
-      e.currentTarget.style.textDecorationColor = "";
-    }}
-  >
-    {entry.label}
-    {!isLast && !entry.label.includes("\n") && ", "}
-  </a>
-);
+}) => {
+  if (!entry.href) {
+    return <span className="body-text whitespace-pre-wrap">{entry.label}</span>;
+  }
+  
+  return (
+    <a
+      href={entry.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="body-text no-underline transition-colors whitespace-pre-wrap"
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = entry.color;
+        e.currentTarget.style.textDecoration = "underline";
+        e.currentTarget.style.textDecorationColor = entry.color;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = "";
+        e.currentTarget.style.textDecoration = "";
+        e.currentTarget.style.textDecorationColor = "";
+      }}
+    >
+      {entry.label}
+      {!isLast && !entry.label.includes("\n") && ", "}
+    </a>
+  );
+};
 
 const SectionList = ({ title, entries }: { title: string; entries: Entry[] }) => (
   <section className="mb-12">
