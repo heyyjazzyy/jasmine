@@ -49,7 +49,7 @@ const menu: Course[] = [
     ],
   },
   {
-    heading: "Dessert",
+    heading: "Desserts",
     dishes: [
       {
         name: "Black Sesame Tangyuan Cookie",
@@ -77,10 +77,10 @@ const DishRow = ({ dish }: { dish: Dish }) => (
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4 }}
   >
-    <h3 className="font-ui text-xs font-medium uppercase tracking-[0.18em] leading-snug" style={{ color: ACCENT }}>
+    <h3 className="font-display text-sm font-medium uppercase tracking-[0.15em] leading-snug" style={{ color: ACCENT }}>
       {dish.name}
     </h3>
-    <p className="font-ui text-xs text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
+    <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
   </motion.div>
 );
 
@@ -159,7 +159,7 @@ const JasmineSupperClub = () => {
             <div className="mt-14 max-w-4xl space-y-10">
               {menu.map((course, i) => (
                 <section key={course.heading} className={i > 0 ? "border-t border-border/40 pt-10" : ""}>
-                  <h2 className="font-ui text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                  <h2 className="template-header uppercase">
                     {course.heading}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
