@@ -130,7 +130,7 @@ const ACappella = () => {
               {/* Yale Citations */}
               <section>
                 <h2 className="template-header">Yale Citations</h2>
-                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                   <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
                       src={citationsPhoto.url}
@@ -154,7 +154,7 @@ const ACappella = () => {
               {/* Trogons */}
               <section>
                 <h2 className="template-header">Trogons</h2>
-                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                   <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
                       src={trogonsPhoto.url}
