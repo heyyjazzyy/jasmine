@@ -89,7 +89,7 @@ const Home = () => {
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
+            className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
           >
             <div>
               <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
@@ -115,7 +115,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="lg:col-span-9 p-6 lg:p-10 flex flex-col"
+            className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
               <p className="body-text max-w-lg whitespace-pre-line">
@@ -125,7 +125,7 @@ const Home = () => {
             </section>
 
             <section id="work" className="mb-16">
-              <h2 className="section-header">Work</h2>
+              <h2 className="template-header">Work</h2>
               <ul className="space-y-6">
                 {pmProjects.map((p, i) => (
                   <motion.li
@@ -135,7 +135,7 @@ const Home = () => {
                     transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
                   >
                     <Link to={`/work/${p.slug}`} className="group block">
-                      <div className="font-display text-3xl md:text-4xl leading-tight">
+                      <div className="font-display text-3xl md:text-4xl leading-tight transition-colors group-hover:text-primary">
                         {p.title}
                       </div>
                       <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
@@ -152,6 +152,7 @@ const Home = () => {
           </motion.div>
 
         </div>
+
 
         {/* About */}
         <section id="about" className="border-t border-border/60">
