@@ -85,6 +85,8 @@ Shifts a learner's CEFR level between calls based on feedback. "Too Easy" → **
 ## Intro
 **80% of women wear bras that don't fit** due to outdated sizing methods — driving a **50% return rate** for bras online. As Co-Founder and CPO, my team and I built **Loop**: a women-led sizing startup using computer vision and ML to match women with their perfect bra.
 
+![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
+
 ## The 3-Step Journey
 1. **Scan** — front + side photo in a snug tube top via web/mobile.
 2. **Select** — preference filters for support, style, color, occasion.
