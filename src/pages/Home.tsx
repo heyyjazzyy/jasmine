@@ -87,30 +87,7 @@ const Home = () => {
       <main className="flex-1 pt-10 md:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
           {/* Left: name + nav */}
-          <motion.aside
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-2 p-6 lg:p-8 flex flex-col justify-between"
-          >
-            <div>
-              <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
-                Jasmine Liao
-              </Link>
-              <button
-                onClick={toggle}
-                className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
-              >
-                fun mode →
-              </button>
-
-            </div>
-            <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
-              <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
-              <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
-              <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
-            </nav>
-          </motion.aside>
+          <SideNav />
 
           {/* Center: intro + work + free time */}
           <motion.div
