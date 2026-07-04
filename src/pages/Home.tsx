@@ -225,6 +225,9 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            {/* Left sidebar — masks horizontal lines, provides vertical divider */}
+            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-4 bg-background border-r border-border/60" />
           </div>
         </section>
 
