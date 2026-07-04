@@ -87,6 +87,8 @@ const DishRow = ({ dish }: { dish: Dish }) => (
 );
 
 const JasmineSupperClub = () => {
+  const imagesLoaded = useImagesLoaded([dishesSavory.url, dishesSweet.url, prepSupper.url]);
+  if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
