@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
+import SideNav from "@/components/SideNav";
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
