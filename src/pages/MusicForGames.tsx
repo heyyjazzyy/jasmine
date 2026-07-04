@@ -137,10 +137,10 @@ const MusicForGames = () => {
         <div className="lg:col-span-10 flex flex-col">
           <div className="flex-1 p-6 lg:p-10 pt-16 md:pt-24">
             <h1 className="display-heading" style={{ color: "#E8687B" }}>
-              Music for Games
+              Game Scoring
             </h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground">
-              Original scores, ambient loops, and interactive audio written for indie games and interactive media.
+              At USC, I collaborated with students studying game production.&nbsp;&nbsp;
             </p>
 
             <div className="mt-12 max-w-6xl space-y-16">
