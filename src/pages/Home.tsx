@@ -1,13 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 import SideNav from "@/components/SideNav";
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
-import headshot from "@/assets/headshot.jpg.asset.json";
+
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
   {
@@ -32,7 +32,6 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
     ],
   },
 ];
-
 
 
 const linkBase =
@@ -63,6 +62,7 @@ const HeroSentence = () => (
 const Home = () => {
   const { mode, toggle } = useMode();
   const [openTools, setOpenTools] = useState<Set<string>>(new Set());
+
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
       const next = new Set(prev);
@@ -71,7 +71,6 @@ const Home = () => {
       return next;
     });
   };
-
 
   const fridgeContent = (
     <motion.div
@@ -164,31 +163,28 @@ const Home = () => {
               </ul>
             </section>
 
-            <section id="free-time" className="mb-14">
+            <section id="free-time" className="mt-auto">
               <HeroSentence />
-            </section>
-
-            <section id="about" className="mb-14">
-              <h2 className="template-header">About</h2>
-              <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-6 md:gap-8 items-start">
-                <img
-                  src={headshot.url}
-                  alt="Portrait of Jasmine Liao"
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover object-center border border-border/60"
-                />
-                <p className="body-text max-w-3xl whitespace-pre-line">
-                  I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
-                  From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
-                </p>
-              </div>
             </section>
 
           </motion.div>
 
-          <div className="col-span-full border-t border-border/60" />
+        </div>
 
-          <div className="lg:col-span-10 p-6 lg:p-10 flex flex-col">
-            <section className="py-14">
+
+        <section id="about" className="border-t border-border/60">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
+              <h2 className="template-header">About</h2>
+              <p className="body-text max-w-3xl whitespace-pre-line">
+                I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
+                From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
+              </p>
+            </div>
+
+            <div className="col-span-full border-b border-border/60" />
+
+            <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
                   <h3 className="template-header">Education</h3>
@@ -215,6 +211,7 @@ const Home = () => {
                             className="w-full flex items-center justify-between py-3 text-left group"
                           >
                             <span className="font-display text-base">{group.category}</span>
+
                             <ChevronDown
                               className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                             />
@@ -234,6 +231,7 @@ const Home = () => {
                                         {item}
                                       </span>
                                     ))}
+
                                   </div>
                                 </div>
                               ))}
@@ -245,13 +243,10 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+
           </div>
-
-        </div>
-
-
-
+        </section>
 
       </main>
 

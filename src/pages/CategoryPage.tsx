@@ -44,7 +44,7 @@ const CategoryPage = ({ category, title, description, titleColor }: Props) => {
 
         {/* Content */}
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-10 pt-10 md:pt-14">
+          <div className="flex-1 p-6 lg:p-10 pt-16 md:pt-24">
             <h1 className="display-heading" style={titleColor ? { color: titleColor } : undefined}>{title}</h1>
             {description && description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
 

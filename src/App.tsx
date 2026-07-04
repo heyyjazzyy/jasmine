@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import JasmineSupperClub from "./pages/JasmineSupperClub";
 import NowPlaying from "./pages/NowPlaying";
 import ACappella from "./pages/ACappella";
+
 const queryClient = new QueryClient();
 
 const AnimatedRoutes = () => {
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+
         {/* Category listing pages */}
         <Route
           path="/work"
