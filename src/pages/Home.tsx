@@ -12,7 +12,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Business",
     subgroups: [
-      { items: ["Accounting", "Statistics", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau"] },
+      { items: ["Accounting", "Statistics", "Linear Regression", "Logistic Regression", "Hypothesis Testing", "A/B Testing", "Forecasting", "Econometrics", "Financial Modeling", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau", "Power BI", "Excel"] },
     ],
   },
   {
@@ -26,7 +26,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Art and Design",
     subgroups: [
-      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Procreate", "Unity"] },
+      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Illustrator", "Premiere Pro", "After Effects", "Lightroom", "InDesign", "Procreate", "Unity"] },
       { label: "Music Creation", items: ["Logic Pro", "Ableton Live", "Wwise", "Musescore", "Piano"] },
     ],
   },
