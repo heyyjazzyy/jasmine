@@ -49,7 +49,7 @@ const menu: Course[] = [
     ],
   },
   {
-    heading: "Dessert",
+    heading: "Desserts",
     dishes: [
       {
         name: "Black Sesame Tangyuan Cookie",
