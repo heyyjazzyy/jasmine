@@ -172,7 +172,7 @@ const ItemDetail = () => {
                   {role && role !== "\n" && (
                     <div>
                       <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Role</p>
-                      <p className="text-foreground">{role}</p>
+                      <p className="text-foreground whitespace-pre-line">{role}</p>
                     </div>
                   )}
                   {timeline && (
