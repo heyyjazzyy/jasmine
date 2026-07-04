@@ -46,7 +46,7 @@ const HeroSentence = () => (
 
 const Home = () => {
   const { mode, toggle } = useMode();
-  const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
+  const [openTools, setOpenTools] = useState<Set<string>>(new Set());
 
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
