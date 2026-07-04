@@ -8,7 +8,7 @@ import { useMode } from "@/context/ModeContext";
 import { allItems, pmProjects, education, courses, tools } from "@/data/portfolio";
 
 const HeroSentence = () => (
-  <p className="display-heading">
+  <p className="font-display text-2xl md:text-3xl leading-snug tracking-tight max-w-3xl">
     In my free time, I{" "}
     <Link to="/music" className="inline-link">compose music for video games</Link>,{" "}
     <Link to="/media-log" className="inline-link">host dinners</Link>,{" "}
@@ -25,25 +25,23 @@ const Home = () => {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <main className="flex-1">
-        {/* Hero */}
-        <section className="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="font-ui text-xs uppercase tracking-[0.2em] text-primary mb-6">
-              Product Manager · Composer · Photographer
-            </div>
-            <HeroSentence />
-            <p className="body-text mt-8 max-w-2xl">
-              By day I ship AI-driven product experiences. By evening I'm usually somewhere between
-              a Logic Pro session and a hot pan. This site is both — flip the header switch to see
-              it as a clean list or as a fridge full of magnets.
-            </p>
-          </motion.div>
-        </section>
+      <main className="flex-1 pt-24 md:pt-28">
+        {/* Hero — hidden in fridge mode */}
+        {mode === "list" && (
+          <section className="max-w-6xl mx-auto px-6 md:px-10 pt-8 md:pt-12 pb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="font-ui text-xs uppercase tracking-[0.2em] text-primary mb-4">
+                Product Manager · Composer · Photographer
+              </div>
+              <HeroSentence />
+            </motion.div>
+          </section>
+        )}
+
 
         {/* Work */}
         <section id="work" className="max-w-6xl mx-auto px-6 md:px-10">
