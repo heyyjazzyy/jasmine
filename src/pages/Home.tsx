@@ -43,7 +43,7 @@ const HeroSentence = () => (
     <Link to="/music" className={`${linkBase} hover:text-[#E8687B] hover:decoration-[#E8687B]`}>
       compose music for video games
     </Link>,{" "}
-    <Link to="/media-log" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
+    <Link to="/jasmine-supper-club" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
       host dinners
     </Link>,{" "}
     <Link to="/singing" className={`${linkBase} hover:text-[#E5B547] hover:decoration-[#E5B547]`}>

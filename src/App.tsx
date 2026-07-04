@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import ItemDetail from "./pages/ItemDetail";
 import NotFound from "./pages/NotFound";
+import JasmineSupperClub from "./pages/JasmineSupperClub";
 
 const queryClient = new QueryClient();
 
@@ -76,17 +77,7 @@ const App = () => (
                 />
               }
             />
-            <Route
-              path="/media-log"
-              element={
-                <CategoryPage
-                  category="media-log"
-                  title="Dinners & Media Log"
-                  titleColor="#2D8A9E"
-                  description="Menus, timing sheets, and playlists from dinners I've hosted — plus the occasional media diary."
-                />
-              }
-            />
+            <Route path="/jasmine-supper-club" element={<JasmineSupperClub />} />
 
             {/* Detail pages */}
             <Route path="/work/:slug" element={<ItemDetail />} />
