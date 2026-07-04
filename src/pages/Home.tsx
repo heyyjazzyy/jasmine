@@ -1,10 +1,37 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 import SideNav from "@/components/SideNav";
 
 import { useMode } from "@/context/ModeContext";
-import { pmProjects } from "@/data/portfolio";
+import { pmProjects, education } from "@/data/portfolio";
+import headshot from "@/assets/headshot.jpg.asset.json";
+
+const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
+  {
+    category: "Business",
+    subgroups: [
+      { items: ["Accounting", "Statistics", "Linear Regression", "Logistic Regression", "Hypothesis Testing", "A/B Testing", "Financial Modeling", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau", "Excel"] },
+    ],
+  },
+  {
+    category: "Technology",
+    subgroups: [
+      { label: "Dev", items: ["Web (CSS, HTML, JS)", "iOS (Swift)", "PHP", "Python", "Git"] },
+      { label: "Data", items: ["Node.js", "SQL", "MongoDB"] },
+      { label: "Creative", items: ["Unity (C#)", "AutoCAD", "Blender"] },
+    ],
+  },
+  {
+    category: "Art and Design",
+    subgroups: [
+      { label: "Visual/Multimedia", items: ["Figma", "Photoshop", "Illustrator", "Premiere Pro", "After Effects", "Lightroom", "InDesign", "Procreate", "Unity"] },
+      { label: "Music Creation", items: ["Logic Pro", "Ableton Live", "Wwise", "Musescore", "Piano"] },
+    ],
+  },
+];
 
 
 
