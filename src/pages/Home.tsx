@@ -61,9 +61,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SiteHeader />
-
-      <main className="flex-1 pt-20 md:pt-24">
+      <main className="flex-1 pt-10 md:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
           {/* Left: name + nav */}
           <motion.aside
@@ -90,16 +88,13 @@ const Home = () => {
             className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
-              <p className="body-text max-w-lg whitespace-pre-line">
-                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision. {"\n\n\n\n\n"}
-                I'm so glad you're here!
-              </p>
-              <a
-                href="#about"
-                className="inline-flex items-center gap-1 mt-6 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                About Me <ArrowUpRight className="w-4 h-4" />
-              </a>
+              <div className="flex items-start justify-between gap-6">
+                <p className="body-text max-w-lg whitespace-pre-line">
+                  Hi, I’m Jasmine! I strive to build impactful tech with heart and vision. {"\n\n\n\n\n"}
+                  I'm so glad you're here!
+                </p>
+                <ModeSwitch />
+              </div>
             </section>
 
             <section id="work" className="mb-16">
@@ -137,7 +132,14 @@ const Home = () => {
             <div className="lg:col-span-2 border-r border-border/60" />
             <div className="lg:col-span-10 p-6 lg:p-10 py-16 lg:py-20">
               <h2 className="section-header">About Me</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 max-w-5xl">
+
+              <p className="body-text max-w-3xl mb-14">
+                I'm a product manager who loves building thoughtful, human software.
+                My background sits at the intersection of business, technology, and creative
+                practice — and I bring all three to the way I ship product.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mb-16">
                 <div>
                   <h3 className="font-display text-2xl mb-4">Education</h3>
                   <ul className="space-y-4">
@@ -161,13 +163,30 @@ const Home = () => {
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <h3 className="font-display text-2xl mb-4">Tools</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {tools.map((t) => (
-                      <span key={t} className="tool-badge">{t}</span>
-                    ))}
-                  </div>
+              </div>
+
+              <div>
+                <h3 className="font-display text-2xl mb-6">Tools</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
+                  {toolGroups.map((group) => (
+                    <div key={group.category}>
+                      <div className="section-header !mb-3">{group.category}</div>
+                      <div className="space-y-3">
+                        {group.subgroups.map((sg, i) => (
+                          <div key={i}>
+                            {sg.label && (
+                              <div className="font-ui text-xs text-muted-foreground mb-1.5">{sg.label}</div>
+                            )}
+                            <div className="flex flex-wrap gap-1.5">
+                              {sg.items.map((t) => (
+                                <span key={t} className="tool-badge">{t}</span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -178,6 +197,7 @@ const Home = () => {
       <SiteFooter />
     </div>
   );
+
 };
 
 export default Home;
