@@ -8,7 +8,7 @@ type Entry = { label: string; href: string; color: string; noComma?: boolean };
 const gamesPlaying: Entry[] = [
   { label: "Galactic Cruise\n", href: "https://boardgamegeek.com/boardgame/391137/galactic-cruise", color: "#9B72CF" },
   { label: "Ticket to Ride\n", href: "https://boardgamegeek.com/boardgame/9209/ticket-to-ride", color: "#E8687B" },
-  { label: "Pokopia", href: "https://pokopia.pokemon.com/en-us/", color: "#7D9B76" },
+  { label: "Pokopia", href: "https://pokopia.pokemon.com/en-us/", color: "#7D9B76", noComma: true },
   { label: "\nDave the Diver", href: "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/", color: "#2D8A9E" },
   { label: "\nSkyteam", href: "https://boardgamegeek.com/boardgame/373106/sky-team", color: "#F0CE6E" },
 ];
