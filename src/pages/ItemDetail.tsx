@@ -1,6 +1,6 @@
 import { Link, useParams, Navigate } from "react-router-dom";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
+import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
 import { bySlug } from "@/data/portfolio";
 
 // Very small markdown-ish renderer (headings, bold, lists, paragraphs).
@@ -30,14 +30,15 @@ const renderBody = (body: string) => {
     const line = raw.trimEnd();
     if (!line.trim()) { flushList(); return; }
     if (line.startsWith("# ")) {
+      // Skip the first H1 — we render the title in the hero.
       flushList();
-      out.push(<h1 key={idx} className="display-heading mt-8 mb-4">{line.slice(2)}</h1>);
+      return;
     } else if (line.startsWith("## ")) {
       flushList();
-      out.push(<h2 key={idx} className="font-display text-2xl md:text-3xl mt-10 mb-3">{line.slice(3)}</h2>);
+      out.push(<h2 key={idx} className="font-display text-2xl md:text-3xl mt-12 mb-4">{line.slice(3)}</h2>);
     } else if (line.startsWith("### ")) {
       flushList();
-      out.push(<h3 key={idx} className="font-display text-xl mt-6 mb-2">{line.slice(4)}</h3>);
+      out.push(<h3 key={idx} className="font-display text-xl mt-8 mb-2">{line.slice(4)}</h3>);
     } else if (/^[-*]\s/.test(line)) {
       listBuf.push(line.replace(/^[-*]\s/, ""));
     } else {
@@ -51,31 +52,120 @@ const renderBody = (body: string) => {
   return out;
 };
 
+// Extract role / timeline / team from subtitle segments like
+// "PM Intern · Video Call w/ Lily · Summer 2025".
+const parseSubtitle = (subtitle?: string) => {
+  if (!subtitle) return { role: "", team: "", timeline: "" };
+  const parts = subtitle.split("·").map((s) => s.trim()).filter(Boolean);
+  return {
+    role: parts[0] || "",
+    team: parts.length >= 3 ? parts[1] : "",
+    timeline: parts[parts.length - 1] || "",
+  };
+};
+
 const ItemDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const item = slug ? bySlug(slug) : undefined;
   if (!item) return <Navigate to="/404" replace />;
 
-  const backHref =
-    item.category === "pm" ? "/work" : `/${item.category}`;
+  const backHref = item.category === "pm" ? "/" : `/${item.category}`;
+  const { role, team, timeline } = parseSubtitle(item.subtitle);
+
+  // Pull first H1 as the tagline / hero subtitle if present.
+  const firstH1 = item.body.split("\n").find((l) => l.startsWith("# "));
+  const tagline = firstH1 ? firstH1.slice(2) : "";
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1 max-w-3xl mx-auto px-6 md:px-10 py-16 md:py-24 w-full">
-        <Link to={backHref} className="font-ui text-xs text-muted-foreground hover:text-foreground">
-          ← Back
-        </Link>
-        <div className="font-ui text-xs uppercase tracking-[0.2em] text-primary mt-6 mb-2">
-          {item.category === "pm" ? "Case Study" : item.category} · {item.year}
+    <main className="min-h-screen bg-background">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+        {/* Left sidebar */}
+        <motion.aside
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
+        >
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <Link
+            to={backHref}
+            className="inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Link>
+        </motion.aside>
+
+        {/* Content */}
+        <div className="lg:col-span-10">
+          <article className="p-6 lg:p-12 py-12 lg:py-20">
+            <div className="max-w-3xl mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-baseline gap-4 mb-6"
+              >
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-none">
+                  {item.title}
+                </h1>
+                {item.year && (
+                  <span className="font-ui text-sm text-muted-foreground">{item.year}</span>
+                )}
+              </motion.div>
+
+              {tagline && (
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="body-text text-muted-foreground mb-10"
+                >
+                  {tagline}
+                </motion.p>
+              )}
+
+              {(role || timeline || team) && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-b border-border/60 py-8"
+                >
+                  {role && (
+                    <div>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Role</p>
+                      <p className="text-foreground">{role}</p>
+                    </div>
+                  )}
+                  {timeline && (
+                    <div>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Timeline</p>
+                      <p className="text-foreground">{timeline}</p>
+                    </div>
+                  )}
+                  {team && (
+                    <div>
+                      <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Team</p>
+                      <p className="text-foreground">{team}</p>
+                    </div>
+                  )}
+                </motion.div>
+              )}
+            </div>
+
+            <div className="max-w-3xl">{renderBody(item.body)}</div>
+          </article>
+
+          <footer className="border-t border-border/60 p-6 lg:p-12 flex justify-between items-center font-ui text-sm text-muted-foreground">
+            <p>© {new Date().getFullYear()} Jasmine Liao</p>
+            <Link to={backHref} className="hover:text-foreground transition-colors">← Back</Link>
+          </footer>
         </div>
-        {item.subtitle && (
-          <p className="font-ui text-sm text-muted-foreground mb-2">{item.subtitle}</p>
-        )}
-        <article className="prose-invert">{renderBody(item.body)}</article>
-      </main>
-      <SiteFooter />
-    </div>
+      </div>
+    </main>
   );
 };
 

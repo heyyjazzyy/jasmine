@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
-import SiteHeader from "@/components/SiteHeader";
+import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
-import FridgeBoard from "@/components/FridgeBoard";
 
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, allItems, education } from "@/data/portfolio";
+import { pmProjects, education } from "@/data/portfolio";
+
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
   {
@@ -60,15 +59,22 @@ const Home = () => {
 
   if (mode === "fridge") {
     return (
-      <div className="min-h-screen flex flex-col">
-        <SiteHeader />
-        <main className="flex-1 max-w-6xl mx-auto w-full px-6 md:px-10 pt-24 md:pt-28 pb-16">
-          <FridgeBoard items={allItems} title="everything on the fridge" />
-        </main>
-        <SiteFooter />
+      <div className="min-h-screen bg-background p-6 lg:p-8">
+        <div>
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <button
+            onClick={toggle}
+            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+          >
+            professional mode →
+          </button>
+        </div>
       </div>
     );
   }
+
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -87,10 +93,11 @@ const Home = () => {
               </Link>
               <button
                 onClick={toggle}
-                className="font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+                className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
               >
-                fun →
+                fun mode →
               </button>
+
             </div>
             <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
@@ -124,12 +131,12 @@ const Home = () => {
                     transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
                   >
                     <Link to={`/work/${p.slug}`} className="group block">
-                      <div className="font-display text-3xl md:text-4xl leading-tight inline-flex items-start gap-2">
+                      <div className="font-display text-3xl md:text-4xl leading-tight">
                         {p.title}
-                        <ArrowUpRight className="w-5 h-5 mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
                       </div>
                       <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
                     </Link>
+
                   </motion.li>
                 ))}
               </ul>
@@ -147,7 +154,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-3 border-r border-border/60" />
             <div className="lg:col-span-9 p-6 lg:p-10 py-16 lg:py-20">
-              <h2 className="section-header">About Me</h2>
+              <h2 className="font-display text-2xl mb-6">About Me</h2>
 
               <p className="body-text max-w-3xl mb-14 whitespace-pre-line">
                 I’m a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n\n"}
@@ -178,11 +185,8 @@ const Home = () => {
                           onClick={() => toggleTool(group.category)}
                           className="w-full flex items-center justify-between py-3 text-left group"
                         >
-                          <span className={`font-display ${
-                            group.category === "Business" ? "text-2xl" :
-                            group.category === "Technology" ? "text-xl" :
-                            "text-lg"
-                          }`}>{group.category}</span>
+                          <span className="font-display text-lg">{group.category}</span>
+
                           <ChevronDown
                             className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                           />
