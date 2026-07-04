@@ -35,7 +35,7 @@ const CategoryPage = ({ category, title, description, titleColor }: Props) => {
               Back
             </Link>
             <h1 className="display-heading" style={titleColor ? { color: titleColor } : undefined}>{title}</h1>
-            {description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
+            {description && description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
 
 
             <div className={isPhotography ? "mt-4" : "mt-12"}>
