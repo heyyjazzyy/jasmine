@@ -98,14 +98,19 @@ const Home = () => {
     </motion.div>
   );
 
-  if (mode === "fridge") {
-    return <AnimatePresence mode="wait">{fridgeContent}</AnimatePresence>;
-  }
-
-
-
   return (
-    <div className="relative min-h-screen flex flex-col bg-background">
+    <AnimatePresence mode="wait">
+      {mode === "fridge" ? (
+        fridgeContent
+      ) : (
+        <motion.div
+          key="pro"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="relative min-h-screen flex flex-col bg-background"
+        >
       <div className="hidden lg:block absolute left-[16.666667%] top-0 bottom-0 z-10 w-px bg-border/60 pointer-events-none" />
       <main className="flex-1 pt-10 md:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
