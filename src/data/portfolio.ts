@@ -109,7 +109,7 @@ Traditional sizing charts rely on tape measurements that fail to account for uni
 
 ![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/6f1a54cd-5a0f-4aba-964d-9bd6f92bc824/Frame_22_1.png)
 
-As CPO, I bridged the gap between complex computer vision technologies and consumer-facing design patterns, managing our feature roadmap from ideation to data modeling:
+\n
 
 ## Computer Vision Optimization
 I worked hand-in-hand with our Chief Technology Officer (CTO) to design feature development loops and train computer vision models that convert raw 2D photos into an accurate, private 3-D body model.
