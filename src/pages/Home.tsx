@@ -154,7 +154,10 @@ const Home = () => {
         </div>
 
 
-        <section id="about" className="border-t border-border/60">
+        <section id="about" className="border-t border-border/60 relative">
+          {/* Continuous left vertical line */}
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-1/6 border-r border-border/60" />
+
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <h2 className="template-header">About</h2>
@@ -164,7 +167,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="col-span-full border-b border-border/60" />
+            <div className="col-span-full lg:col-start-3 lg:col-end-13 border-b border-border/60" />
 
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -225,8 +228,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-5 bg-background border-r border-border/60" />
           </div>
         </section>
 
