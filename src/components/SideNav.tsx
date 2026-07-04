@@ -33,7 +33,7 @@ const SideNav = () => {
         )}
       </div>
       <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
-        <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link>
+        <a href={link("about")} className="text-muted-foreground hover:text-foreground transition-colors">About</a>
         <a href={link("work")} className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
         <Link to="/now-playing" className="text-muted-foreground hover:text-foreground transition-colors">Now Playing</Link>
         <a href={link("contact")} className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
