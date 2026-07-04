@@ -131,7 +131,7 @@ const NowPlaying = () => {
         </motion.aside>
 
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-10 pt-16 md:pt-24">
+          <div className="flex-1 p-6 lg:p-10 pt-10 md:pt-14">
             <h1 className="display-heading">Now Playing</h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground">
               A media log of what's on rotation
