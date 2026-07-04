@@ -68,7 +68,7 @@ I developed the system architecture to shift a learner's CEFR level between call
 If a user rates a call "Too Easy," the engine increments their profile by +1 CEFR step, unlocking longer turns, advanced sentence lengths, and lower Flesch readability text. If they choose "Too Hard," it steps down their rating and activates automated scaffolding features.
 
 ## Scaffolding
-I Spec'd and shipped real-time adjustments to Lily's Text-to-Speech (TTS) behavior, injecting fluid phrasing pauses immediately after a user breakdown to increase user comprehension.
+I spec'd and shipped real-time adjustments to Lily's Text-to-Speech (TTS) behavior, injecting fluid phrasing pauses immediately after a user breakdown to increase user comprehension.
 
 I also designed a system-prompt override feature to deliver situational survival prompts (e.g., "No entiendo" / "Slow down, please") on the loading screens for early-stage (A1) learners
 
