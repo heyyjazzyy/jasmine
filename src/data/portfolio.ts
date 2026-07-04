@@ -105,6 +105,8 @@ As the Co-Founder and Head of Product, my team and I set out to build a win-win 
 ![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
 
 ## The Challenge
+Traditional sizing charts rely on  tape measurements that fail to account for unique, three-dimensional human anatomy. Our objective was to create a frictionless, privacy-first mobile scanning experience that turns a consumer's smartphone into an exact digital tailor.
+
 - **Computer Vision Optimization:** partnered with our CTO to design training loops that convert 2D photos into a private 3D body model.
 - **Database & Recommendation Architecture:** scalable SQL with indexing + normalization; backend algorithms cross-reference profiles against **150,000+ distinct bra measurement data points**.
 - **User Research:** led studies with **150+ individuals and 15+ apparel clients** to capture qualitative feature preferences.
