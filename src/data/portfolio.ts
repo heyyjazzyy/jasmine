@@ -89,7 +89,7 @@ Using this composite framework, I proved that migrating our global control promp
     id: "pm-02",
     slug: "loop",
     title: "Loop",
-    subtitle: "\n · \n · May 2023 – Jun 2024",
+    subtitle: "Co-Founder & Head of Product · Loop · May 2023 – Jun 2024",
     category: "pm",
     fridgeStyle: "memo",
     year: "2024",
@@ -100,21 +100,34 @@ Using this composite framework, I proved that migrating our global control promp
 80% of women end up wearing bras that don't fit properly due to inconsistent, outdated sizing methods? This is an issue of comfort, long-lasting health implications and e-commerce, forcing retailers to contend with a staggering 50% return rate for bras.
 
 
-As the Co-Founder and Head of Product, my team and I set out to build a win-win ecosystem for both apparel shoppers and fashion brands. We launched Loop, a women-led bra sizing startup using advanced computer vision and machine learning to accurately match women with their perfect bra recommendations.
+As the Co-Founder and Head of Product, my team and I set out to build a win-win ecosystem for both apparel shoppers and fashion brands. We launched Loop, a women-led bra sizing startup using advanced computer vision and machine learning to accurately match women with their perfect bra recommendations.
+
+## The Challenge
+Traditional sizing charts rely on tape measurements that fail to account for unique, three-dimensional human anatomy. Our objective was to create a frictionless, privacy-first mobile scanning experience that turns a consumer's smartphone into an exact digital tailor.
+
+## Solution
 
 ![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
 
-## The Challenge
-Traditional sizing charts rely on  tape measurements that fail to account for unique, three-dimensional human anatomy. Our objective was to create a frictionless, privacy-first mobile scanning experience that turns a consumer's smartphone into an exact digital tailor.
+As CPO, I bridged the gap between complex computer vision technologies and consumer-facing design patterns, managing our feature roadmap from ideation to data modeling:
 
-- **Computer Vision Optimization:** partnered with our CTO to design training loops that convert 2D photos into a private 3D body model.
-- **Database & Recommendation Architecture:** scalable SQL with indexing + normalization; backend algorithms cross-reference profiles against **150,000+ distinct bra measurement data points**.
-- **User Research:** led studies with **150+ individuals and 15+ apparel clients** to capture qualitative feature preferences.
+## Computer Vision Optimization
+I worked hand-in-hand with our Chief Technology Officer (CTO) to design feature development loops and train computer vision models that convert raw 2D photos into an accurate, private 3-D body model.
+
+## Database & Recommendation Architecture
+I Integrated scalable SQL databases optimized with advanced indexing strategies and data normalization techniques. Built the backend algorithms that successfully cross-reference personal shape profiles against an expansive database containing over **150,000 distinct bra measurement data points**.
+
+## User Research & Recruitment
+I led comprehensive customer research and usability studies, engaging directly with over **150 individuals and 15+ potential small business apparel clients** to capture qualitative feature preferences.
 
 ## Impact
-- **+12% body measurement accuracy** vs. legacy industry standards.
-- **$15,000+** in non-dilutive grants and startup competition awards.
-- **3,000+ waitlisted** beta users at launch.`,
+By proving both technical viability and market demand, Loop achieved significant early momentum:
+
+Our custom computer vision approach achieved a **12% increase in body measurement accuracy** compared to legacy apparel industry standards.
+
+We pitched at several competitions, winning **over $15,000 in non-dilutive grants and startup competition awards** to fund our initial pre-seed engineering runway.
+
+Driven by our user research initiatives, I successfully scale-recruited a beta testing cohort of **3,000+ waitlisted target users**.`,
   },
   {
     id: "pm-03",
