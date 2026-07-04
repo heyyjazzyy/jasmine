@@ -282,14 +282,14 @@ export const bySlug = (slug: string) => allItems.find((i) => i.slug === slug);
 // -----------------------------
 export const education = [
   {
-    degree: "B.S. Arts, Technology, and Business of Innovation",
-    institution: "Iovine and Young Academy, University of Southern California",
-    dateRange: "2020 – 2024",
-  },
-  {
     degree: "Masters of Business Administration",
     institution: "Yale School of Management",
     dateRange: "2024-2026",
+  },
+  {
+    degree: "B.S. Arts, Technology, and Business of Innovation",
+    institution: "Iovine and Young Academy, University of Southern California",
+    dateRange: "2020 – 2024",
   },
 ];
 

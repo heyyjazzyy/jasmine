@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FridgeBoard from "@/components/FridgeBoard";
@@ -46,6 +47,16 @@ const HeroSentence = () => (
 
 const Home = () => {
   const { mode } = useMode();
+  const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
+
+  const toggleTool = (cat: string) => {
+    setOpenTools((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      return next;
+    });
+  };
 
   if (mode === "fridge") {
     return (
@@ -164,28 +175,45 @@ const Home = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="max-w-3xl">
                 <h3 className="font-display text-2xl mb-6">Tools</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
-                  {toolGroups.map((group) => (
-                    <div key={group.category}>
-                      <div className="section-header !mb-3">{group.category}</div>
-                      <div className="space-y-3">
-                        {group.subgroups.map((sg, i) => (
-                          <div key={i}>
-                            {sg.label && (
-                              <div className="font-ui text-xs text-muted-foreground mb-1.5">{sg.label}</div>
-                            )}
-                            <div className="flex flex-wrap gap-1.5">
-                              {sg.items.map((t) => (
-                                <span key={t} className="tool-badge">{t}</span>
-                              ))}
-                            </div>
+                <div className="space-y-0 border-t border-border/60">
+                  {toolGroups.map((group) => {
+                    const isOpen = openTools.has(group.category);
+                    return (
+                      <div key={group.category} className="border-b border-border/60">
+                        <button
+                          onClick={() => toggleTool(group.category)}
+                          className="w-full flex items-center justify-between py-3 text-left group"
+                        >
+                          <span className="font-display text-xl">{group.category}</span>
+                          <ChevronDown
+                            className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                          />
+                        </button>
+                        {isOpen && (
+                          <div className="pb-4 space-y-4">
+                            {group.subgroups.map((sg, i) => (
+                              <div key={i}>
+                                {sg.label && (
+                                  <div className="font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">
+                                    {sg.label}
+                                  </div>
+                                )}
+                                <ul className="space-y-1">
+                                  {sg.items.map((item) => (
+                                    <li key={item} className="font-ui text-sm text-foreground/80">
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
