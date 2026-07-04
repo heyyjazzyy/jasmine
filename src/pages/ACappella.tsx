@@ -79,7 +79,7 @@ const trogonsVideos: Video[] = [
 
 const VideoCard = ({ video }: { video: Video }) => (
   <div className="flex flex-col gap-2">
-    <div className="aspect-video max-w-xl overflow-hidden rounded-md border border-border/60 bg-muted">
+    <div className="aspect-video max-w-lg overflow-hidden rounded-md border border-border/60 bg-muted">
       <iframe
         src={`https://www.youtube.com/embed/${video.youtubeId}`}
         loading="lazy"
