@@ -43,6 +43,9 @@ export const pmProjects: PortfolioItem[] = [
 
 Over the summer of 2025, I joined the core product team at Duolingo HQ in Pittsburgh to shape the **Video Call with Lily** — the platform's AI-driven feature designed to help language learners overcome the anxiety of real-world speaking. I embedded myself into the technical stack and prompt mechanics to optimize AI reasoning, conversational scaffolding, and system-level pacing. Over 12 weeks, I ran **6 live feature experiments**, authored **7 product specs**, and drove features aimed at keeping millions of users in their linguistic "Goldilocks Zone."
 
+![Helping users find the goldilocks zone](/__l5e/assets-v1/69b90c94-1a9c-42ac-abfb-ea6cf26792b5/frame_23.png)
+
+
 ## The Challenge
 A "breakdown" occurs when a learner or the AI fails to understand one another in real time. If left unsupported, frustration spikes and retention craters. My mandate was twofold: **improve breakdown recovery** so mistakes didn't lead to churn, and **build a dynamic difficulty engine** that shifts complexity based on real-time performance.
 
@@ -81,6 +84,8 @@ Shifts a learner's CEFR level between calls based on feedback. "Too Easy" → **
 
 ## Intro
 **80% of women wear bras that don't fit** due to outdated sizing methods — driving a **50% return rate** for bras online. As Co-Founder and CPO, my team and I built **Loop**: a women-led sizing startup using computer vision and ML to match women with their perfect bra.
+
+![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
 
 ## The 3-Step Journey
 1. **Scan** — front + side photo in a snug tube top via web/mobile.
