@@ -77,7 +77,7 @@ const DishRow = ({ dish }: { dish: Dish }) => (
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4 }}
   >
-    <h3 className="font-display text-sm font-medium uppercase tracking-[0.15em] leading-snug" style={{ color: ACCENT }}>
+    <h3 className="font-display text-base font-medium tracking-[0.03em] leading-snug" style={{ color: ACCENT }}>
       {dish.name}
     </h3>
     <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
@@ -159,7 +159,7 @@ const JasmineSupperClub = () => {
             <div className="mt-14 max-w-4xl space-y-10">
               {menu.map((course, i) => (
                 <section key={course.heading} className={i > 0 ? "border-t border-border/40 pt-10" : ""}>
-                  <h2 className="template-header uppercase">
+                  <h2 className="template-header">
                     {course.heading}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
