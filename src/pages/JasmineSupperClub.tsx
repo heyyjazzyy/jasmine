@@ -128,7 +128,7 @@ const JasmineSupperClub = () => {
                 className="font-ui text-xs uppercase tracking-[0.28em] mb-4"
                 style={{ color: ACCENT }}
               >
-                A SERIES OF DINNERS
+                &nbsp;
               </p>
               <h1 className="display-heading" style={{ color: ACCENT }}>
                 Jasmine Supper Club
