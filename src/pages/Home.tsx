@@ -186,11 +186,8 @@ const Home = () => {
                           onClick={() => toggleTool(group.category)}
                           className="w-full flex items-center justify-between py-3 text-left group"
                         >
-                          <span className={`font-display ${
-                            group.category === "Business" ? "text-2xl" :
-                            group.category === "Technology" ? "text-xl" :
-                            "text-lg"
-                          }`}>{group.category}</span>
+                          <span className="font-display text-lg">{group.category}</span>
+
                           <ChevronDown
                             className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                           />
