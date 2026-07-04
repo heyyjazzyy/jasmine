@@ -59,21 +59,25 @@ const Home = () => {
 
   if (mode === "fridge") {
     return (
-      <div className="min-h-screen bg-background p-6 lg:p-8">
-        <div>
-          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
-            Jasmine Liao
-          </Link>
-          <button
-            onClick={toggle}
-            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
-          >
-            professional mode →
-          </button>
+      <div className="min-h-screen bg-background">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+          <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
+            <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+              Jasmine Liao
+            </Link>
+            <button
+              onClick={toggle}
+              className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+            >
+              professional mode →
+            </button>
+          </aside>
+          <div className="lg:col-span-10" />
         </div>
       </div>
     );
   }
+
 
 
   return (
