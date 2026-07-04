@@ -118,7 +118,7 @@ const ACappella = () => {
         </motion.aside>
 
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-10 pt-16 md:pt-24">
+          <div className="flex-1 p-6 lg:p-12 py-12 lg:py-20">
             <h1 className="display-heading" style={{ color: "#F0CE6E" }}>
               A Cappella
             </h1>
