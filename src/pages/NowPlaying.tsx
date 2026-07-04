@@ -26,36 +26,78 @@ const allTimeGames: Entry[] = [
   { label: "Pokémon Pearl / Diamond", href: "https://diamondpearl.pokemon.com/en-us/", color: "#E8687B" },
 ];
 
-const EntryLink = ({ entry }: { entry: Entry }) => (
-  <li>
-    <a
-      href={entry.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="body-text underline decoration-2 underline-offset-4 decoration-foreground/40 transition-colors"
-      style={{ ["--hover" as any]: entry.color }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = entry.color;
-        e.currentTarget.style.textDecorationColor = entry.color;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = "";
-        e.currentTarget.style.textDecorationColor = "";
-      }}
-    >
-      {entry.label}
-    </a>
-  </li>
+const EntryLink = ({
+  entry,
+  isLast,
+}: {
+  entry: Entry;
+  isLast: boolean;
+}) => (
+  <a
+    href={entry.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="body-text no-underline transition-colors"
+    onMouseEnter={(e) => {
+      e.currentTarget.style.color = entry.color;
+      e.currentTarget.style.textDecoration = "underline";
+      e.currentTarget.style.textDecorationColor = entry.color;
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.color = "";
+      e.currentTarget.style.textDecoration = "";
+      e.currentTarget.style.textDecorationColor = "";
+    }}
+  >
+    {entry.label}
+    {!isLast && ", "}
+  </a>
 );
 
-const Section = ({ title, entries }: { title: string; entries: Entry[] }) => (
+const SectionList = ({ title, entries }: { title: string; entries: Entry[] }) => (
   <section className="mb-12">
     <h2 className="template-header">{title}</h2>
     <ul className="space-y-3">
       {entries.map((e) => (
-        <EntryLink key={e.label} entry={e} />
+        <li key={e.label}>
+          <a
+            href={e.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="body-text no-underline transition-colors"
+            onMouseEnter={(ev) => {
+              ev.currentTarget.style.color = e.color;
+              ev.currentTarget.style.textDecoration = "underline";
+              ev.currentTarget.style.textDecorationColor = e.color;
+            }}
+            onMouseLeave={(ev) => {
+              ev.currentTarget.style.color = "";
+              ev.currentTarget.style.textDecoration = "";
+              ev.currentTarget.style.textDecorationColor = "";
+            }}
+          >
+            {e.label}
+          </a>
+        </li>
       ))}
     </ul>
+  </section>
+);
+
+const ParagraphSection = ({
+  title,
+  entries,
+}: {
+  title: string;
+  entries: Entry[];
+}) => (
+  <section className="mb-12">
+    <h2 className="template-header">{title}</h2>
+    <p className="body-text">
+      {entries.map((e, i) => (
+        <EntryLink key={e.label} entry={e} isLast={i === entries.length - 1} />
+      ))}
+    </p>
   </section>
 );
 
