@@ -5,7 +5,7 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FridgeBoard from "@/components/FridgeBoard";
-import ModeSwitch from "@/components/ModeSwitch";
+
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, allItems, education, courses } from "@/data/portfolio";
 
@@ -46,7 +46,7 @@ const HeroSentence = () => (
 );
 
 const Home = () => {
-  const { mode } = useMode();
+  const { mode, toggle } = useMode();
   const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
 
   const toggleTool = (cat: string) => {
@@ -81,9 +81,17 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
           >
-            <Link to="/" className="font-display text-lg leading-tight hover:text-primary transition-colors">
-              Jasmine<br />Liao
-            </Link>
+            <div>
+              <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
+                Jasmine Liao
+              </Link>
+              <button
+                onClick={toggle}
+                className="font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+              >
+                fun →
+              </button>
+            </div>
             <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
               <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
@@ -99,13 +107,10 @@ const Home = () => {
             className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
-              <div className="flex items-start justify-between gap-6">
-                <p className="body-text max-w-lg whitespace-pre-line">
-                  Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
-                  I'm so glad you're here!
-                </p>
-                <ModeSwitch />
-              </div>
+              <p className="body-text max-w-lg whitespace-pre-line">
+                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
+                I'm so glad you're here!
+              </p>
             </section>
 
             <section id="work" className="mb-16">
@@ -149,30 +154,17 @@ const Home = () => {
                 From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation that has prepared me to create and lead in a rapidly evolving digital landscape.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mb-16">
-                <div>
-                  <h3 className="font-display text-2xl mb-4">Education</h3>
-                  <ul className="space-y-4">
-                    {education.map((e) => (
-                      <li key={e.degree}>
-                        <div className="font-ui text-xs text-muted-foreground">{e.dateRange}</div>
-                        <div className="text-base font-medium mt-0.5">{e.degree}</div>
-                        <div className="text-sm text-muted-foreground">{e.institution}</div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl mb-4">Relevant Courses</h3>
-                  <ul className="space-y-2 font-ui text-sm">
-                    {courses.map((c) => (
-                      <li key={c} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="max-w-5xl mb-16">
+                <h3 className="font-display text-2xl mb-4">Education</h3>
+                <ul className="space-y-4">
+                  {education.map((e) => (
+                    <li key={e.degree}>
+                      <div className="font-ui text-xs text-muted-foreground">{e.dateRange}</div>
+                      <div className="text-base font-medium mt-0.5">{e.degree}</div>
+                      <div className="text-sm text-muted-foreground">{e.institution}</div>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="max-w-3xl">
