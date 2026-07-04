@@ -5,9 +5,9 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FridgeBoard from "@/components/FridgeBoard";
-import ModeSwitch from "@/components/ModeSwitch";
+
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, allItems, education, courses } from "@/data/portfolio";
+import { pmProjects, allItems, education } from "@/data/portfolio";
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
   {
@@ -46,7 +46,7 @@ const HeroSentence = () => (
 );
 
 const Home = () => {
-  const { mode } = useMode();
+  const { mode, toggle } = useMode();
   const [openTools, setOpenTools] = useState<Set<string>>(new Set(toolGroups.map((g) => g.category)));
 
   const toggleTool = (cat: string) => {
@@ -79,11 +79,19 @@ const Home = () => {
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
+            className="lg:col-span-3 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
           >
-            <Link to="/" className="font-display text-lg leading-tight hover:text-primary transition-colors">
-              Jasmine<br />Liao
-            </Link>
+            <div>
+              <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
+                Jasmine Liao
+              </Link>
+              <button
+                onClick={toggle}
+                className="font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+              >
+                fun →
+              </button>
+            </div>
             <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
               <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
@@ -96,16 +104,13 @@ const Home = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
+            className="lg:col-span-9 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
-              <div className="flex items-start justify-between gap-6">
-                <p className="body-text max-w-lg whitespace-pre-line">
-                  Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
-                  I'm so glad you're here!
-                </p>
-                <ModeSwitch />
-              </div>
+              <p className="body-text max-w-lg whitespace-pre-line">
+                Hi, I’m Jasmine! I strive to build impactful tech with heart and vision.{"\n\n\n"}
+                I'm so glad you're here!
+              </p>
             </section>
 
             <section id="work" className="mb-16">
@@ -140,8 +145,8 @@ const Home = () => {
         {/* About */}
         <section id="about" className="border-t border-border/60">
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-2 border-r border-border/60" />
-            <div className="lg:col-span-10 p-6 lg:p-10 py-16 lg:py-20">
+            <div className="lg:col-span-3 border-r border-border/60" />
+            <div className="lg:col-span-9 p-6 lg:p-10 py-16 lg:py-20">
               <h2 className="section-header">About Me</h2>
 
               <p className="body-text max-w-3xl mb-14 whitespace-pre-line">
@@ -149,30 +154,17 @@ const Home = () => {
                 From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation that has prepared me to create and lead in a rapidly evolving digital landscape.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mb-16">
-                <div>
-                  <h3 className="font-display text-2xl mb-4">Education</h3>
-                  <ul className="space-y-4">
-                    {education.map((e) => (
-                      <li key={e.degree}>
-                        <div className="font-ui text-xs text-muted-foreground">{e.dateRange}</div>
-                        <div className="text-base font-medium mt-0.5">{e.degree}</div>
-                        <div className="text-sm text-muted-foreground">{e.institution}</div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl mb-4">Relevant Courses</h3>
-                  <ul className="space-y-2 font-ui text-sm">
-                    {courses.map((c) => (
-                      <li key={c} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="max-w-5xl mb-16">
+                <h3 className="font-display text-2xl mb-4">Education</h3>
+                <ul className="space-y-4">
+                  {education.map((e) => (
+                    <li key={e.degree}>
+                      <div className="font-ui text-xs text-muted-foreground">{e.dateRange}</div>
+                      <div className="text-base font-medium mt-0.5">{e.degree}</div>
+                      <div className="text-sm text-muted-foreground">{e.institution}</div>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="max-w-3xl">
@@ -186,7 +178,11 @@ const Home = () => {
                           onClick={() => toggleTool(group.category)}
                           className="w-full flex items-center justify-between py-3 text-left group"
                         >
-                          <span className="font-display text-xl">{group.category}</span>
+                          <span className={`font-display ${
+                            group.category === "Business" ? "text-2xl" :
+                            group.category === "Technology" ? "text-xl" :
+                            "text-lg"
+                          }`}>{group.category}</span>
                           <ChevronDown
                             className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                           />
@@ -200,13 +196,13 @@ const Home = () => {
                                     {sg.label}
                                   </div>
                                 )}
-                                <ul className="space-y-1">
+                                <div className="flex flex-wrap gap-2">
                                   {sg.items.map((item) => (
-                                    <li key={item} className="font-ui text-sm text-foreground/80">
+                                    <span key={item} className="tool-badge">
                                       {item}
-                                    </li>
+                                    </span>
                                   ))}
-                                </ul>
+                                </div>
                               </div>
                             ))}
                           </div>
