@@ -49,19 +49,28 @@ Over the summer of 2025, I joined the core product team at Duolingo HQ in Pittsb
 ## The Challenge
 A "breakdown" occurs when a learner or the AI fails to understand one another in real time. If left unsupported, frustration spikes and retention craters. My mandate was twofold: **improve breakdown recovery** so mistakes didn't lead to churn, and **build a dynamic difficulty engine** that shifts complexity based on real-time performance.
 
-## What I Did
-### 1. Engineered turn-extension scaffolding
-Authored and launched system specs to grant users **+1 extra turn** when a breakdown was detected. After v2 users hit the max extension cap (breakdowns cluster), I overhauled v3 prompt logic to focus strictly on *perceived* breakdowns.
+## Turn-Extensions
+I authored and launched system specifications to grant users  +1 extra conversational turn when a breakdown or interruption was detected
 
-### 2. Built the automated Breakdown Recovery Evaluator
-Created a Python/Colab pipeline pulling raw call transcripts from Arize, running dual-tier LLM evals (breakdown vs no_breakdown, then recovered vs unrecovered) and pushing validated accuracy back to the data dashboard. Meta-prompt tuning **boosted breakdown eval accuracy from 69% → 78%** and **doubled the Recovered Breakdown F1 score**.
 
-### 3. Architected the real-time dynamic difficulty engine
-Shifts a learner's CEFR level between calls based on feedback. "Too Easy" → **+1 CEFR step**, unlocking longer turns and advanced sentence lengths. "Too Hard" → step down and activate scaffolding.
+After analyzing the v2 experiment—where users hit the maximum extension cap because breakdowns naturally cluster—I completely overhauled the prompt logic for v3. I pivoted the LLM classifier to focus strictly on perceived user breakdowns rather than objective ones.
 
-### 4. Shipped native scaffolding features
-- **Phrasal Pauses:** real-time TTS adjustments injecting fluid pauses after a breakdown.
-- **Onboarding Survival Phrases:** system-prompt override delivering situational prompts (e.g. *"No entiendo" / "Slow down, please"*) on loading screens for A1 learners.
+### Breakdown Recovery Evaluator
+Before my internship, parsing true breakdowns vs. AI overfiring was a black box. I created a Python backend/Colab evaluation pipeline that pulls raw call transcripts from Arize, runs automated dual-tier LLM evaluations (detecting \`breakdown\` vs \`no_breakdown\`, then sorting into \`recovered\` vs \`unrecovered\`), and pushes the validated accuracy metrics right back to the data engineering dashboard.
+
+
+I utilized meta-prompts via OpenAI models to fine-tune the classifier, increasing the system's breakdown evaluation accuracy from 69% to 78%, and doubling the Recovered Breakdown F1 classification score.
+
+### Dynamic Difficulty
+I developed the system architecture to shift a learner's CEFR level between calls based on direct user feedback loops and performance indicators.
+
+
+If a user rates a call "Too Easy," the engine increments their profile by +1 CEFR step, unlocking longer turns, advanced sentence lengths, and lower Flesch readability text. If they choose "Too Hard," it steps down their rating and activates automated scaffolding features.
+
+### Scaffolding
+- If a user rates a call "Too Easy," the engine increments their profile by +1 CEFR step, unlocking longer turns, advanced sentence lengths, and lower Flesch readability text. If they choose "Too Hard," it steps down their rating and activates automated scaffolding features.
+- I Spec'd and shipped real-time adjustments to Lily's Text-to-Speech (TTS) behavior, injecting fluid phrasing pauses immediately after a user breakdown to increase user comprehension.
+I also designed a system-prompt override feature to deliver situational survival prompts (e.g., "No entiendo" / "Slow down, please") on the loading screens for early-stage (A1) learners
 
 ## Impact
 - **+14.9%** Total Words Spoken per Max DAU
