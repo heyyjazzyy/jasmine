@@ -123,7 +123,7 @@ const ACappella = () => {
               A Cappella
             </h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground">
-              I've been singing in a cappella groups for 9 years!
+              I've been singing in a cappella groups since 2017!
             </p>
 
             <div className="mt-12 max-w-6xl space-y-14">
