@@ -130,15 +130,18 @@ const NowPlaying = () => {
               A media log of what's on rotation lately.
             </p>
 
-            <div className="mt-12 max-w-2xl">
+            <div className="mt-12 max-w-3xl">
               <section className="mb-12">
                 <h2 className="template-header">Current Hyperfixation</h2>
                 <p className="body-text">Herb gardening, making magnets.</p>
               </section>
 
-              <Section title="Currently Playing" entries={gamesPlaying} />
-              <Section title="Currently Listening To" entries={listening} />
-              <Section title="All-Time Favorite Games" entries={allTimeGames} />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <ParagraphSection title="Currently Playing" entries={gamesPlaying} />
+                <ParagraphSection title="Currently Listening To" entries={listening} />
+              </div>
+
+              <SectionList title="All-Time Favorite Games" entries={allTimeGames} />
             </div>
           </div>
 
