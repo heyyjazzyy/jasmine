@@ -181,7 +181,7 @@ const ItemDetail = () => {
                       <p className="text-foreground">{timeline}</p>
                     </div>
                   )}
-                  {team && (
+                  {team && team !== "\n" && (
                     <div>
                       <p className="font-ui text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">Team</p>
                       <p className="text-foreground">{team}</p>
