@@ -61,7 +61,7 @@ const App = () => (
                   category="photography"
                   title="Photography"
                   titleColor="#9B72CF"
-                  description="\n"
+                  description=""
                 />
               }
             />
