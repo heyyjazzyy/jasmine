@@ -138,20 +138,20 @@ Driven by our user research initiatives, I successfully scale-recruited a beta t
     fridgeStyle: "memo",
     year: "2023",
     accent: "sky",
-    body: `# PayPal — Optimizing Mobile Checkout Efficiency & Platform Integration
-**Product Manager Intern** · Mobile Checkout & PayPal.com · Summers 2022 & 2023
-
-## Intro
-Across two consecutive summers, I tackled five platform initiatives split between core PayPal.com and Mobile Checkout, blending data-driven personalization with technical standardization to drive transaction success, explore emerging economies, and improve web compliance.
+    body: `# Optimizing Mobile Checkout Efficiency & Platform Integration
+\n
+\n
+\n
+Across two consecutive summers, I tackled four platform initiatives split between core PayPal.com and Mobile Checkout, blending data-driven personalization with technical standardization to drive transaction success, explore emerging economies, and improve web compliance.
 
 ## Core Projects
-### 1. AI/ML for Shipping Address Predictions
+### AI/ML for Shipping Address Predictions
 Built a predictive model to correct shipping-address errors and enhance checkout delivery accuracy. Designed personalization models analyzing quantitative + behavioral data to predict drop-off in the funnel.
 
-### 2. Metaverse Integration Analysis & Strategy
+### Metaverse Integration Analysis & Strategy
 Researched decentralized checkout architectures and digital payment frameworks. Delivered executive-level integration frameworks scoped to a **$200B emerging consumer landscape**.
 
-### 3. Website Integration & Compliance
+### Website Integration & Compliance
 Standardized integration flows across PayPal.com surfaces to improve compliance and reduce checkout friction.`,
   },
 ];
