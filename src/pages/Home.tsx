@@ -223,7 +223,11 @@ const Home = () => {
                                   )}
                                   <div className="flex flex-wrap gap-2">
                                     {sg.items.map((item) => (
-                                      <span key={item} className="tool-badge">
+                                      <span
+                                        key={item}
+                                        className="tool-badge"
+                                        style={{ backgroundColor: badgeColorFor(item) }}
+                                      >
                                         {item}
                                       </span>
                                     ))}
