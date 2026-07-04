@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
-import SiteHeader from "@/components/SiteHeader";
+import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
-import FridgeBoard from "@/components/FridgeBoard";
 
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, allItems, education } from "@/data/portfolio";
+import { pmProjects, education } from "@/data/portfolio";
+
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
   {
