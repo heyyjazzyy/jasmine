@@ -226,7 +226,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-4 bg-background border-r border-border/60" />
+            <div className="hidden lg:block lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-5 bg-background border-r border-border/60" />
           </div>
         </section>
 
