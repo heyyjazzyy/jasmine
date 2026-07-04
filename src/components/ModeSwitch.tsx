@@ -3,7 +3,7 @@ import { useMode } from "@/context/ModeContext";
 const ModeSwitch = () => {
   const { mode, setMode } = useMode();
   return (
-    <div className="mode-switch" role="tablist" aria-label="View mode">
+    <div className="mode-switch font-display" role="tablist" aria-label="View mode">
       <button
         role="tab"
         data-active={mode === "list"}
