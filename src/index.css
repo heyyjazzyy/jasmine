@@ -74,19 +74,19 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Source Serif Pro', Georgia, serif;
     font-optical-sizing: auto;
   }
 }
 
 @layer components {
-  .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
   .font-hand { font-family: 'Caveat', cursive; }
   .font-ui { font-family: 'Inter', system-ui, sans-serif; }
 
   .display-heading {
     @apply text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight;
-    font-family: 'DM Serif Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   .section-header {
