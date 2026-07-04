@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import JasmineSupperClub from "./pages/JasmineSupperClub";
 import NowPlaying from "./pages/NowPlaying";
 import ACappella from "./pages/ACappella";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
