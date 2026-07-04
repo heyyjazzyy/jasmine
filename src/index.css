@@ -102,8 +102,9 @@
   }
 
   .mode-switch {
-    @apply inline-flex items-center gap-1 p-1 rounded-full border border-border bg-card font-ui text-xs;
+    @apply inline-flex items-center gap-1 p-1 rounded-full border border-border bg-card text-sm;
   }
+
   .mode-switch button {
     @apply px-3 py-1.5 rounded-full transition-colors text-muted-foreground;
   }
