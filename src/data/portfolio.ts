@@ -287,9 +287,9 @@ export const education = [
     dateRange: "2020 – 2024",
   },
   {
-    degree: "Study Abroad — Design & Innovation",
-    institution: "Copenhagen Institute of Interaction Design",
-    dateRange: "2024",
+    degree: "Masters of Business Administration",
+    institution: "Yale School of Management",
+    dateRange: "2024-2026",
   },
 ];
 
