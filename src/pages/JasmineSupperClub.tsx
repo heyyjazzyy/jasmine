@@ -77,10 +77,10 @@ const DishRow = ({ dish }: { dish: Dish }) => (
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4 }}
   >
-    <h3 className="font-ui text-xs font-medium uppercase tracking-[0.18em] leading-snug" style={{ color: ACCENT }}>
+    <h3 className="font-display text-sm font-medium uppercase tracking-[0.15em] leading-snug" style={{ color: ACCENT }}>
       {dish.name}
     </h3>
-    <p className="font-ui text-xs text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
+    <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
   </motion.div>
 );
 
