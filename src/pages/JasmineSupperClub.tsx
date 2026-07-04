@@ -72,16 +72,15 @@ const menu: Course[] = [
 
 const DishRow = ({ dish }: { dish: Dish }) => (
   <motion.div
-    initial={{ opacity: 0, y: 12 }}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-80px" }}
+    viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.4 }}
-    className="py-6"
   >
-    <h3 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: ACCENT }}>
+    <h3 className="font-ui text-xs font-medium uppercase tracking-[0.18em] leading-snug" style={{ color: ACCENT }}>
       {dish.name}
     </h3>
-    <p className="body-text mt-2 text-muted-foreground">{dish.blurb}</p>
+    <p className="font-ui text-xs text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
   </motion.div>
 );
 
