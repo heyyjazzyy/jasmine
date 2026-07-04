@@ -134,7 +134,7 @@ const NowPlaying = () => {
           <div className="flex-1 p-6 lg:p-10 pt-10 md:pt-14">
             <h1 className="display-heading">Now Playing</h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground">
-              A media log of what's on rotation lately.
+              A media log of what's on rotation
             </p>
 
             <div className="mt-12 max-w-3xl">
