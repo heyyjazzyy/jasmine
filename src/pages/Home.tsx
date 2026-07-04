@@ -7,7 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import FridgeBoard from "@/components/FridgeBoard";
 
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, allItems, education, courses } from "@/data/portfolio";
+import { pmProjects, allItems, education } from "@/data/portfolio";
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
   {
@@ -79,7 +79,7 @@ const Home = () => {
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
+            className="lg:col-span-3 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between"
           >
             <div>
               <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block">
@@ -104,7 +104,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="lg:col-span-10 p-6 lg:p-10 flex flex-col"
+            className="lg:col-span-9 p-6 lg:p-10 flex flex-col"
           >
             <section className="mb-14">
               <p className="body-text max-w-lg whitespace-pre-line">
