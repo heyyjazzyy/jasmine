@@ -114,22 +114,31 @@ const Home = () => {
             <section id="work" className="mb-10">
               <h2 className="template-header">Work</h2>
               <ul className="space-y-6">
-                {pmProjects.map((p, i) => (
-                  <motion.li
-                    key={p.id}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-                  >
-                    <Link to={`/work/${p.slug}`} className="group block">
-                      <div className="font-display text-3xl md:text-4xl leading-tight transition-colors group-hover:text-primary">
-                        {p.title}
-                      </div>
-                      <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
-                    </Link>
-
-                  </motion.li>
-                ))}
+                {pmProjects.map((p, i) => {
+                  const hoverColor =
+                    p.slug === "duolingo"
+                      ? "group-hover:text-brand-duolingo"
+                      : p.slug === "loop"
+                        ? "group-hover:text-brand-loop"
+                        : p.slug === "paypal"
+                          ? "group-hover:text-brand-paypal"
+                          : "group-hover:text-primary";
+                  return (
+                    <motion.li
+                      key={p.id}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                    >
+                      <Link to={`/work/${p.slug}`} className="group block">
+                        <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
+                          {p.title}
+                        </div>
+                        <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </section>
 
