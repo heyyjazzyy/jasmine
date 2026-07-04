@@ -42,12 +42,7 @@ const AnimatedRoutes = () => {
           path="/music"
           element={
             <PageTransition>
-              <CategoryPage
-                category="music"
-                title="Music for Games"
-                titleColor="#E8687B"
-                description="Original scores, ambient loops, and interactive audio written for indie games and interactive media."
-              />
+              <MusicForGames />
             </PageTransition>
           }
         />
