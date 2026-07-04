@@ -116,7 +116,7 @@ const JasmineSupperClub = () => {
 
         {/* Content */}
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-10 pt-16 md:pt-24">
+          <div className="flex-1 p-6 lg:p-10 pt-10 md:pt-14">
             {/* Hero */}
             <motion.header
               initial={{ opacity: 0, y: 16 }}
