@@ -167,7 +167,7 @@ const ItemDetail = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-b border-border/60 py-8"
+                  className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-6 border-t border-b border-border/60 py-8"
                 >
                   {role && role !== "\n" && (
                     <div>
