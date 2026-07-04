@@ -187,7 +187,7 @@ const Home = () => {
 
             <div className="lg:col-start-3 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-8">
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-4 max-w-lg">
                   <h3 className="template-header">Education</h3>
                   <ul className="space-y-4">
                     {education.map((e) => (
