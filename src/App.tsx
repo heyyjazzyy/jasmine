@@ -58,7 +58,7 @@ const App = () => (
                 <CategoryPage
                   category="photography"
                   title="Photography"
-                  description="Film and digital work — mostly quiet mornings, kitchen light, and coastlines."
+                  description="\n"
                 />
               }
             />
