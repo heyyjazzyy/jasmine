@@ -4,8 +4,34 @@ import { ArrowUpRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FridgeBoard from "@/components/FridgeBoard";
+import ModeSwitch from "@/components/ModeSwitch";
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, allItems, education, courses, tools } from "@/data/portfolio";
+import { pmProjects, allItems, education, courses } from "@/data/portfolio";
+
+const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
+  {
+    category: "Business",
+    subgroups: [
+      { items: ["Accounting", "Statistics", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau"] },
+    ],
+  },
+  {
+    category: "Technology",
+    subgroups: [
+      { label: "Dev", items: ["Web (CSS, HTML, JS)", "iOS (Swift)", "PHP", "Python", "Git"] },
+      { label: "Data", items: ["Node.js", "SQL", "MongoDB"] },
+      { label: "Creative", items: ["Unity (C#)", "AutoCAD", "Blender"] },
+    ],
+  },
+  {
+    category: "Art and Design",
+    subgroups: [
+      { label: "Visual/Multimedia", items: ["Figma", "Adobe Suite (Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom, etc.)", "Procreate", "Unity"] },
+      { label: "Music Creation", items: ["Logic Pro", "Ableton Live", "Wwise", "Musescore", "Piano"] },
+    ],
+  },
+];
+
 
 const HeroSentence = () => (
   <p className="body-text max-w-3xl">
