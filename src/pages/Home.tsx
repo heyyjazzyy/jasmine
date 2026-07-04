@@ -145,8 +145,8 @@ const Home = () => {
         {/* About */}
         <section id="about" className="border-t border-border/60">
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-2 border-r border-border/60" />
-            <div className="lg:col-span-10 p-6 lg:p-10 py-16 lg:py-20">
+            <div className="lg:col-span-3 border-r border-border/60" />
+            <div className="lg:col-span-9 p-6 lg:p-10 py-16 lg:py-20">
               <h2 className="section-header">About Me</h2>
 
               <p className="body-text max-w-3xl mb-14 whitespace-pre-line">
