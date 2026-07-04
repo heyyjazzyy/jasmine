@@ -34,7 +34,7 @@ const CategoryPage = ({ category, title, description }: Props) => {
               Back
             </Link>
             <h1 className="display-heading">{title}</h1>
-            <p className="body-text mt-4 max-w-2xl">{description}</p>
+            {description !== "\n" && <p className="body-text mt-4 max-w-2xl">{description}</p>}
 
 
             <div className="mt-12">
