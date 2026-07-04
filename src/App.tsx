@@ -38,7 +38,7 @@ const App = () => (
                 <CategoryPage
                   category="music"
                   title="Music for Games"
-                  titleColor="#E85D3A"
+                  titleColor="#E8687B"
                   description="Original scores, ambient loops, and interactive audio written for indie games and interactive media."
                 />
               }
