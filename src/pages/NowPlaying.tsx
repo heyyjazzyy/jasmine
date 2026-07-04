@@ -17,7 +17,7 @@ const listening: Entry[] = [
   { label: "you seem pretty sad for a girl so in love\n", href: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4?si=7289d1d19c9b406a", color: "#E8687B" },
   { label: "Japanese", href: "https://open.spotify.com/track/1YXot2MLAG9sttepCtBRM7?si=5d86155c9e004394", color: "#9B72CF", noComma: true },
   { label: " and ", href: "", color: "" },
-  { label: "Spanish indie", href: "https://open.spotify.com/track/1UtlYwIzZtj2tvtsqixSJv?si=5be1dae4325743fc", color: "#F0CE6E" },
+  { label: "Spanish indie", href: "https://open.spotify.com/track/1UtlYwIzZtj2tvtsqixSJv?si=5be1dae4325743fc", color: "#F0CE6E", noComma: true },
   { label: "\nBloc Party", href: "https://open.spotify.com/track/5OVHnu9SgsdAravy4UyGq4?si=0942c37e9cc641f1", color: "#2D8A9E" },
 ];
 
