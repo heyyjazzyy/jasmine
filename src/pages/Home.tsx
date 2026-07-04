@@ -72,25 +72,34 @@ const Home = () => {
     });
   };
 
-  if (mode === "fridge") {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
-          <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
-            <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
-              Jasmine Liao
-            </Link>
-            <button
-              onClick={toggle}
-              className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
-            >
-              professional mode →
-            </button>
-          </aside>
-          <div className="lg:col-span-10" />
-        </div>
+  const fridgeContent = (
+    <motion.div
+      key="fridge"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-screen bg-background"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
+        <aside className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8">
+          <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+            Jasmine Liao
+          </Link>
+          <button
+            onClick={toggle}
+            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
+          >
+            professional mode →
+          </button>
+        </aside>
+        <div className="lg:col-span-10" />
       </div>
-    );
+    </motion.div>
+  );
+
+  if (mode === "fridge") {
+    return <AnimatePresence mode="wait">{fridgeContent}</AnimatePresence>;
   }
 
 
