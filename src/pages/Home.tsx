@@ -135,11 +135,11 @@ const Home = () => {
                 {pmProjects.map((p, i) => {
                   const hoverColor =
                     p.slug === "duolingo"
-                      ? "group-hover:text-brand-duolingo"
+                      ? "group-hover:text-[#58CC02]"
                       : p.slug === "loop"
-                        ? "group-hover:text-brand-loop"
+                        ? "group-hover:text-[#DF7FB9]"
                         : p.slug === "paypal"
-                          ? "group-hover:text-brand-paypal"
+                          ? "group-hover:text-[#003087]"
                           : "group-hover:text-primary";
                   return (
                     <motion.li
