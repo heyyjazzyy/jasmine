@@ -13,6 +13,22 @@ export default {
       },
     },
     extend: {
+      colors: {
+        brand: {
+          duolingo: "#58CC02",
+          loop: "#DF7FB9",
+          paypal: "#003087",
+        },
+        cycle: {
+          coral: "#E85D3A",
+          teal: "#2D8A9E",
+          butter: "#F3D68A",
+          lilac: "#C9A0DC",
+          mint: "#A8D5BA",
+          peach: "#F4A261",
+          sky: "#7DD3FC",
+        },
+      },
       fontFamily: {
         sans: ['Source Serif 4', 'Georgia', 'serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
