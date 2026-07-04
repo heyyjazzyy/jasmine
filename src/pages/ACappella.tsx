@@ -130,8 +130,8 @@ const ACappella = () => {
               {/* Yale Citations */}
               <section>
                 <h2 className="template-header">Yale Citations</h2>
-                <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                  <div className="flex flex-col gap-4">
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                  <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
                       src={citationsPhoto.url}
                       alt="Yale Citations group photo"
@@ -141,7 +141,7 @@ const ACappella = () => {
                       Throughout my time in business school, I sang in the Yale Citations, Yale's only graduate a cappella group. I served as assistant music director and arranged music. Here are some of my arrangements!
                     </p>
                   </div>
-                  <div className="flex flex-col gap-6">
+                  <div className="lg:col-span-3 flex flex-col gap-6">
                     {citationsVideos.map((v) => (
                       <VideoCard key={v.youtubeId} video={v} />
                     ))}
@@ -154,8 +154,8 @@ const ACappella = () => {
               {/* Trogons */}
               <section>
                 <h2 className="template-header">Trogons</h2>
-                <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                  <div className="flex flex-col gap-4">
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                  <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
                       src={trogonsPhoto.url}
                       alt="Trogons group photo"
@@ -165,7 +165,7 @@ const ACappella = () => {
                       I've been so incredibly grateful to be a part of Trogons A Cappella at USC from 2021–2024. Here are some of the performances of the arrangements I've written!
                     </p>
                   </div>
-                  <div className="flex flex-col gap-6">
+                  <div className="lg:col-span-3 flex flex-col gap-6">
                     {trogonsVideos.map((v) => (
                       <VideoCard key={v.youtubeId} video={v} />
                     ))}
