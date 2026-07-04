@@ -23,7 +23,7 @@ type Game = {
 };
 
 const YouTube = ({ id }: { id: string }) => (
-  <div className="relative w-full max-w-xl overflow-hidden rounded-md" style={{ paddingTop: "56.25%" }}>
+  <div className="relative w-full max-w-lg overflow-hidden rounded-md" style={{ paddingTop: "56.25%" }}>
     <iframe
       src={`https://www.youtube.com/embed/${id}`}
       title="YouTube video player"
