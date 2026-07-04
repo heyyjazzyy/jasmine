@@ -233,15 +233,12 @@ const Home = () => {
 
       </main>
 
-      <div className="relative">
-        <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-1/6 border-r border-border/60" />
-        <div className="border-t border-border/60" />
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="hidden lg:block lg:col-span-2" />
-          <div className="lg:col-span-10 pt-24">
-            <SiteFooter />
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="col-span-full border-t border-border/60" />
+        <div className="lg:col-start-3 lg:col-end-13 pt-24">
+          <SiteFooter />
         </div>
+        <div className="hidden lg:block lg:col-start-1 lg:col-end-3 row-start-1 row-end-3 bg-background border-r border-border/60" />
       </div>
     </div>
   );
