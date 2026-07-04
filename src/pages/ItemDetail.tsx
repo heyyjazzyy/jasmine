@@ -159,10 +159,10 @@ const ItemDetail = () => {
             <div className="max-w-3xl">{renderBody(item.body)}</div>
           </article>
 
-          <footer className="border-t border-border/60 p-6 lg:p-12 flex justify-between items-center font-ui text-sm text-muted-foreground">
+          <footer className="border-t border-border/60 p-6 lg:p-12 font-ui text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} Jasmine Liao</p>
-            <Link to={backHref} className="hover:text-foreground transition-colors">← Back</Link>
           </footer>
+
         </div>
       </div>
     </main>
