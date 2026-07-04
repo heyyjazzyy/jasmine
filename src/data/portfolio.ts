@@ -33,7 +33,7 @@ export const pmProjects: PortfolioItem[] = [
     id: "pm-01",
     slug: "duolingo",
     title: "Duolingo",
-    subtitle: "PM Intern · Video Call w/ Lily · Summer 2025",
+    subtitle: "PM Intern · Video Call Experience · Summer 2025",
     category: "pm",
     fridgeStyle: "memo",
     year: "2025",
