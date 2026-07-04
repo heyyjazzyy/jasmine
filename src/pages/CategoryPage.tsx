@@ -26,8 +26,16 @@ const CategoryPage = ({ category, title, description }: Props) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[70vh]">
           <SideNav />
           <div className="lg:col-span-10 p-6 lg:p-10">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back
+            </Link>
             <h1 className="display-heading">{title}</h1>
             <p className="body-text mt-4 max-w-2xl">{description}</p>
+
 
             <div className="mt-12">
               {isPhotography ? (
