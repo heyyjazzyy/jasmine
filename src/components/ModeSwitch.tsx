@@ -1,5 +1,4 @@
 import { useMode } from "@/context/ModeContext";
-import { List, Sparkles } from "lucide-react";
 
 const ModeSwitch = () => {
   const { mode, setMode } = useMode();
@@ -11,8 +10,7 @@ const ModeSwitch = () => {
         aria-selected={mode === "list"}
         onClick={() => setMode("list")}
       >
-        <List className="inline w-3 h-3 mr-1 -mt-0.5" />
-        List
+        professional
       </button>
       <span className="text-muted-foreground/60 px-0.5">⇄</span>
       <button
@@ -21,8 +19,7 @@ const ModeSwitch = () => {
         aria-selected={mode === "fridge"}
         onClick={() => setMode("fridge")}
       >
-        <Sparkles className="inline w-3 h-3 mr-1 -mt-0.5" />
-        Fridge
+        fun
       </button>
     </div>
   );
