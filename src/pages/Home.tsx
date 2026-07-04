@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 import SideNav from "@/components/SideNav";
 
 import { useMode } from "@/context/ModeContext";
-import { pmProjects, education } from "@/data/portfolio";
+import { pmProjects } from "@/data/portfolio";
 
 
 const toolGroups: { category: string; subgroups: { label?: string; items: string[] }[] }[] = [
