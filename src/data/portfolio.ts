@@ -152,11 +152,11 @@ Built a predictive model to correct shipping-address errors and enhance checkout
 
 Researched decentralized checkout architectures and digital payment frameworks. Formulated implementation recommendations for gaming and Web3 metaverses to deliver executive-level integration frameworks scoped to a $200B emerging consumer landscape.
 
-## Website Integration Playbook
+### Website Integration Playbook
 
 Tasked with creating a unified strategy to merge legacy consumer web assets. Conducted cross-functional interviews across 20 product and engineering teams to trace cross-domain integration, ultimately authoring and scaling PayPal's first-ever Website Integration Playbook to standardize complex deprecation protocols.
 
-## Drive Quality & Digital Accessibility Compliance
+### Drive Quality & Digital Accessibility Compliance
 
 Promoted internal product quality and compliance initiatives by introducing inclusive design enhancements to executives. Audited 10 major product lines to implement color contrast, screen reader compatibility, and targeted branding mechanics, successfully boosting digital web accessibility metrics by 14% across 5 core applications.`,
   },
