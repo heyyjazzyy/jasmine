@@ -99,7 +99,6 @@ const Home = () => {
             </section>
 
             <section id="free-time" className="mt-auto">
-              <h2 className="section-header">In my free time</h2>
               <HeroSentence />
             </section>
           </motion.div>
