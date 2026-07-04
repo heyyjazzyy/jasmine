@@ -111,8 +111,8 @@ const ItemDetail = () => {
 
         {/* Content */}
         <div className="lg:col-span-10">
-          <article className="p-6 lg:p-12 py-12 lg:py-20">
-            <div className="max-w-3xl mb-16">
+          <article className="py-12 lg:py-20">
+            <div className="px-6 lg:px-12 max-w-3xl mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
