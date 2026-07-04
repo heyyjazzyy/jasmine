@@ -42,6 +42,24 @@ const heroLinkColors = [
   "inline-link-mint",
 ];
 
+const badgePalette = [
+  "#F3D68A", // butter
+  "#E85D3A", // tomato / coral
+  "#7DD3FC", // sky
+  "#C9A0DC", // lilac
+  "#A8D5BA", // mint
+  "#F4A261", // peach
+];
+
+const badgeColorFor = (item: string) => {
+  let hash = 0;
+  for (let i = 0; i < item.length; i++) {
+    hash = item.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const idx = Math.abs(hash) % badgePalette.length;
+  return badgePalette[idx];
+};
+
 const HeroSentence = () => (
   <p className="body-text max-w-3xl">
     In my free time, I{" "}
