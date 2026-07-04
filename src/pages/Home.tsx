@@ -46,7 +46,7 @@ const HeroSentence = () => (
     <Link to="/jasmine-supper-club" className={`${linkBase} hover:text-[#2D8A9E] hover:decoration-[#2D8A9E]`}>
       host dinners
     </Link>,{" "}
-    <Link to="/singing" className={`${linkBase} hover:text-[#E5B547] hover:decoration-[#E5B547]`}>
+    <Link to="/singing" className={`${linkBase} hover:text-[#F0CE6E] hover:decoration-[#F0CE6E]`}>
       sing
     </Link>,{" "}
     <Link to="/photography" className={`${linkBase} hover:text-[#9B72CF] hover:decoration-[#9B72CF]`}>
