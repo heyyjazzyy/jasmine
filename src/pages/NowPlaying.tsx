@@ -132,7 +132,7 @@ const NowPlaying = () => {
 
             <div className="mt-12 max-w-3xl">
               <section className="mb-12">
-                <h2 className="template-header">Current Hyperfixation</h2>
+                <h2 className="template-header">Current Hyperfixations</h2>
                 <p className="body-text">Herb gardening, making magnets.</p>
               </section>
 
