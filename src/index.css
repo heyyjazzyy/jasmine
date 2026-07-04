@@ -80,13 +80,13 @@
 }
 
 @layer components {
-  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+  .font-display { font-family: 'DM Serif Display', Georgia, serif; }
   .font-hand { font-family: 'Caveat', cursive; }
   .font-ui { font-family: 'Inter', system-ui, sans-serif; }
 
   .display-heading {
     @apply text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'DM Serif Display', Georgia, serif;
   }
 
   .section-header {
