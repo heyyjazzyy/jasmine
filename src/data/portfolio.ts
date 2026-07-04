@@ -33,15 +33,14 @@ export const pmProjects: PortfolioItem[] = [
     id: "pm-01",
     slug: "duolingo",
     title: "Duolingo",
-    subtitle: "PM Intern · Video Call w/ Lily · Summer 2025",
+    subtitle: "PM Intern · Video Call Experience · Summer 2025",
     category: "pm",
     fridgeStyle: "memo",
     year: "2025",
     accent: "mint",
     body: `# Breakdown Recovery & Dynamic Difficulty for Immersive Language Learning
-**Product Management Intern — Video Call Experience Core** · Summer 2025 (Pittsburgh, PA)
 
-## Intro
+
 Over the summer of 2025, I joined the core product team at Duolingo HQ in Pittsburgh to shape the **Video Call with Lily** — the platform's AI-driven feature designed to help language learners overcome the anxiety of real-world speaking. I embedded myself into the technical stack and prompt mechanics to optimize AI reasoning, conversational scaffolding, and system-level pacing. Over 12 weeks, I ran **6 live feature experiments**, authored **7 product specs**, and drove features aimed at keeping millions of users in their linguistic "Goldilocks Zone."
 
 ## The Challenge
