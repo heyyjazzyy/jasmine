@@ -149,9 +149,6 @@ const Home = () => {
               </ul>
             </section>
 
-            <section id="free-time" className="mt-8">
-              <HeroSentence />
-            </section>
           </motion.div>
 
         </div>
