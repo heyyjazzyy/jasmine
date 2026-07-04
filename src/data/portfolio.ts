@@ -97,17 +97,14 @@ Using this composite framework, I proved that migrating our global control promp
     body: `# Re-engineering Bra Sizing with Computer Vision
 
 
-## Intro
-**80% of women wear bras that don't fit** due to outdated sizing methods — driving a **50% return rate** for bras online. As Co-Founder and CPO, my team and I built **Loop**: a women-led sizing startup using computer vision and ML to match women with their perfect bra.
+80% of women end up wearing bras that don't fit properly due to inconsistent, outdated sizing methods? This is an issue of comfort, long-lasting health implications and e-commerce, forcing retailers to contend with a staggering 50% return rate for bras.
+
+
+As the Co-Founder and Head of Product, my team and I set out to build a win-win ecosystem for both apparel shoppers and fashion brands. We launched Loop, a women-led bra sizing startup using advanced computer vision and machine learning to accurately match women with their perfect bra recommendations.
 
 ![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/07704a47-5c82-4a14-8a11-7ad34f6d57da/frame_22.png)
 
-## The 3-Step Journey
-1. **Scan** — front + side photo in a snug tube top via web/mobile.
-2. **Select** — preference filters for support, style, color, occasion.
-3. **Shop** — curated matches with direct shopping links and a personalized fit breakdown.
-
-## What I Did
+## The Challenge
 - **Computer Vision Optimization:** partnered with our CTO to design training loops that convert 2D photos into a private 3D body model.
 - **Database & Recommendation Architecture:** scalable SQL with indexing + normalization; backend algorithms cross-reference profiles against **150,000+ distinct bra measurement data points**.
 - **User Research:** led studies with **150+ individuals and 15+ apparel clients** to capture qualitative feature preferences.
