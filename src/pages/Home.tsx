@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
       {/* Persistent left sidebar */}
-      <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between">
+      <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen">
         <div>
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
