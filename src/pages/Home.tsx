@@ -81,7 +81,7 @@ const Home = () => {
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className="min-h-screen"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen pt-10 md:pt-14">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
         <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 lg:p-8">
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
