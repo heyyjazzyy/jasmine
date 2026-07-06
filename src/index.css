@@ -75,7 +75,7 @@
   body {
     @apply text-foreground antialiased;
     background-color: hsl(var(--background));
-    background-image: url("/__l5e/assets-v1/811f267d-796f-4850-8e26-cd9013ab589b/paper-texture.jpg");
+    background-image: url("/__l5e/assets-v1/290ff9a3-c319-4948-93f8-19f8da21ce43/paper-texture.jpg");
     background-size: 400px 400px;
     font-family: 'Source Serif Pro', Georgia, serif;
     font-optical-sizing: auto;
