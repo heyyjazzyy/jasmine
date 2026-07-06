@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
       {/* Persistent left sidebar */}
-      <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 pt-10 md:pt-14 lg:p-8 lg:pt-14 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen">
+      <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen">
         <div>
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
@@ -83,7 +83,7 @@ const Home = () => {
             onClick={toggle}
             className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
           >
-            {mode === "fridge" ? "professional mode →" : "fun mode →"}
+            {mode === "fridge" ? "9-5 →" : "5-9 →"}
           </button>
         </div>
         {mode !== "fridge" && (
