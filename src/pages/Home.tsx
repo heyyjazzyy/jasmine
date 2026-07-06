@@ -83,7 +83,7 @@ const Home = () => {
             onClick={toggle}
             className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
           >
-            {mode === "fridge" ? "9-5 →" : "5-9 →"}
+            {mode === "fridge" ? "5-9 →" : "9-5 →"}
           </button>
         </div>
         {mode !== "fridge" && (
