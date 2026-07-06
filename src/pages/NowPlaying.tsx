@@ -62,7 +62,7 @@ const EntryLink = ({
 };
 
 const SectionList = ({ title, entries }: { title: string; entries: Entry[] }) => (
-  <section className="mb-12">
+  <section className="mb-8 md:mb-12">
     <h2 className="template-header">{title}</h2>
     <ul className="space-y-3">
       {entries.map((e) => (
@@ -98,7 +98,7 @@ const ParagraphSection = ({
   title: string;
   entries: Entry[];
 }) => (
-  <section className="mb-12">
+  <section className="mb-8 md:mb-12">
     <h2 className="template-header">{title}</h2>
     <p className="body-text">
       {entries.map((e, i) => (
@@ -116,7 +116,7 @@ const NowPlaying = () => {
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-12 lg:pt-20 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
+          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-16 md:pt-20 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
@@ -131,19 +131,19 @@ const NowPlaying = () => {
         </motion.aside>
 
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-12 py-12 lg:py-20">
+          <div className="flex-1 p-6 lg:p-12 pt-10 pb-12 lg:py-20">
             <h1 className="display-heading">Now Playing</h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground whitespace-pre-wrap">
               {"\n"}
             </p>
 
-            <div className="mt-12 max-w-3xl">
-              <section className="mb-12">
+            <div className="mt-8 md:mt-12 max-w-3xl">
+              <section className="mb-8 md:mb-12">
                 <h2 className="template-header">Current Hyperfixations</h2>
                 <p className="body-text">Herb gardening, making magnets.</p>
               </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
                 <ParagraphSection title="Currently Playing" entries={gamesPlaying} />
                 <ParagraphSection title="Currently Listening To" entries={listening} />
               </div>
