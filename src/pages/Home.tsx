@@ -75,7 +75,7 @@ const Home = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
       {/* Persistent left sidebar */}
-      <aside className="lg:col-span-2 bg-background border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen">
+      <aside className="lg:col-span-2 bg-background border-b lg:border-b-0 lg:border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-row lg:flex-col justify-between items-start lg:sticky lg:top-0 lg:h-screen">
         <div>
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
@@ -88,14 +88,54 @@ const Home = () => {
           </button>
         </div>
         {mode !== "fridge" && (
-          <nav className="flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
-            <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
-            <Link to="/now-playing" className="text-muted-foreground hover:text-foreground transition-colors">Now Playing</Link>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
-          </nav>
+          <>
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex flex-col gap-2 font-ui text-sm mt-8 mb-4">
+              <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
+              <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
+              <Link to="/now-playing" className="text-muted-foreground hover:text-foreground transition-colors">Now Playing</Link>
+              <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+            </nav>
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setMobileNavOpen(true)}
+              aria-label="Open menu"
+              className="lg:hidden text-foreground p-2 -mr-2"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </>
         )}
       </aside>
+
+      {/* Mobile nav overlay */}
+      <AnimatePresence>
+        {mobileNavOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col p-6 pt-16"
+          >
+            <button
+              onClick={() => setMobileNavOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-6 right-6 p-2"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <nav className="flex flex-col gap-6 font-display text-3xl mt-8">
+              <a href="#about" onClick={() => setMobileNavOpen(false)} className="hover:text-primary transition-colors">About</a>
+              <a href="#work" onClick={() => setMobileNavOpen(false)} className="hover:text-primary transition-colors">Work</a>
+              <Link to="/now-playing" onClick={() => setMobileNavOpen(false)} className="hover:text-primary transition-colors">Now Playing</Link>
+              <a href="#contact" onClick={() => setMobileNavOpen(false)} className="hover:text-primary transition-colors">Contact</a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
 
       {/* Right side: only this area animates on mode switch */}
       <div className="lg:col-span-10 relative">
