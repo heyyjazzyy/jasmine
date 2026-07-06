@@ -62,7 +62,7 @@ const EntryLink = ({
 };
 
 const SectionList = ({ title, entries }: { title: string; entries: Entry[] }) => (
-  <section className="mb-12">
+  <section className="mb-8 md:mb-12">
     <h2 className="template-header">{title}</h2>
     <ul className="space-y-3">
       {entries.map((e) => (
@@ -98,7 +98,7 @@ const ParagraphSection = ({
   title: string;
   entries: Entry[];
 }) => (
-  <section className="mb-12">
+  <section className="mb-8 md:mb-12">
     <h2 className="template-header">{title}</h2>
     <p className="body-text">
       {entries.map((e, i) => (
@@ -131,7 +131,7 @@ const NowPlaying = () => {
         </motion.aside>
 
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-12 py-12 lg:py-20">
+          <div className="flex-1 p-6 lg:p-12 pt-10 pb-12 lg:py-20">
             <h1 className="display-heading">Now Playing</h1>
             <p className="body-text mt-4 max-w-2xl text-muted-foreground whitespace-pre-wrap">
               {"\n"}
