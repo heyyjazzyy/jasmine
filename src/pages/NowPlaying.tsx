@@ -137,8 +137,8 @@ const NowPlaying = () => {
               {"\n"}
             </p>
 
-            <div className="mt-12 max-w-3xl">
-              <section className="mb-12">
+            <div className="mt-8 md:mt-12 max-w-3xl">
+              <section className="mb-8 md:mb-12">
                 <h2 className="template-header">Current Hyperfixations</h2>
                 <p className="body-text">Herb gardening, making magnets.</p>
               </section>
