@@ -150,7 +150,7 @@ const JasmineSupperClub = () => {
                 being present — has stayed with me.
               </p>
               <p className="body-text text-muted-foreground">
-                As I grew up, this sense has turned into a love for hosting. I invite my friends for dinner – to Jasmine Supper Club – once a month, where I bring&nbsp;childhood flavors, comfort foods, and dishes I've remixed and re-imagined. Here are some of the dishes I've served.
+                As I grew up, this sense has turned into a love for hosting. I invite my friends for dinner – to Jasmine Supper Club – once a month, where I bring&nbsp;childhood flavors, comfort foods, and dishes I've remixed and re-imagined. Here are some of the dishes I've made.
               </p>
             </motion.section>
 
