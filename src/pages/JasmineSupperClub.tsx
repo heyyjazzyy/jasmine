@@ -150,12 +150,7 @@ const JasmineSupperClub = () => {
                 being present — has stayed with me.
               </p>
               <p className="body-text text-muted-foreground">
-                This supper club is a reflection of the places that have shaped me. I grew up in
-                Hong Kong, surrounded by a deeply international food culture, and later moved to
-                the United States, where my relationship to food shifted out of necessity but
-                expanded for good. The menu brings those layers together — childhood flavors,
-                comfort foods, and the dishes I've discovered along the way — reimagined and set
-                on one table.
+                As I grew up, this sense has turned into a love for hosting. I invite my friends for dinner – to Jasmine Supper Club – once a month, where I bring&nbsp;childhood flavors, comfort foods, and dishes I've remixed and re-imagined. Here are some of the dishes I've served.
               </p>
             </motion.section>
 
