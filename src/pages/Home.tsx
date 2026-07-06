@@ -160,7 +160,7 @@ const Home = () => {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="relative min-h-screen flex flex-col bg-background"
             >
-              <main className="flex-1 pt-10 md:pt-14">
+              <main className="flex-1 pt-4 md:pt-6 lg:pt-14">
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
