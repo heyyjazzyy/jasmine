@@ -62,6 +62,8 @@ const HeroSentence = () => (
 const Home = () => {
   const { mode, toggle } = useMode();
   const [openTools, setOpenTools] = useState<Set<string>>(new Set());
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
 
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
