@@ -68,8 +68,9 @@ const renderBody = (body: string) => {
 const parseSubtitle = (subtitle?: string, category?: string) => {
   if (!subtitle) return { role: "", team: "", timeline: "" };
   const parts = subtitle.split("·").map((s) => s.trim()).filter(Boolean);
-  if (category === "writing" && parts.length >= 3) {
-    return { role: "", team: parts[1] || "", timeline: parts[2] || "" };
+  if (category === "writing") {
+    const withoutRole = parts.length >= 3 ? parts.slice(1) : parts;
+    return { role: "", team: withoutRole[0] || "", timeline: withoutRole[1] || "" };
   }
   return {
     role: parts[0] || "",
