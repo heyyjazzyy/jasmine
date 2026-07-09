@@ -182,45 +182,34 @@ const Home = () => {
                   </section>
 
                   <section id="work" className="mb-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h2 className="template-header">Work</h2>
-                        <ul className="space-y-6">
-                          {pmProjects.map((p, i) => {
-                            const hoverColor =
-                              p.slug === "duolingo"
-                                ? "group-hover:text-[#58CC02]"
-                                : p.slug === "loop"
-                                  ? "group-hover:text-[#DF7FB9]"
-                                  : p.slug === "paypal"
-                                    ? "group-hover:text-[#0079C1]"
-                                    : "group-hover:text-primary";
-                            return (
-                              <motion.li
-                                key={p.id}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-                              >
-                                <Link to={`/work/${p.slug}`} className="group inline-block">
-                                  <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
-                                    {p.title}
-                                  </div>
-                                  <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
-                                </Link>
-                              </motion.li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div className="hidden lg:block">
-                        <img
-                          src={portraitAsset.url}
-                          alt="Portrait of Jasmine Liao"
-                          className="w-[220px] h-[300px] object-cover rounded-sm"
-                        />
-                      </div>
-                    </div>
+                    <h2 className="template-header">Work</h2>
+                    <ul className="space-y-6 mt-4">
+                      {pmProjects.map((p, i) => {
+                        const hoverColor =
+                          p.slug === "duolingo"
+                            ? "group-hover:text-[#58CC02]"
+                            : p.slug === "loop"
+                              ? "group-hover:text-[#DF7FB9]"
+                              : p.slug === "paypal"
+                                ? "group-hover:text-[#0079C1]"
+                                : "group-hover:text-primary";
+                        return (
+                          <motion.li
+                            key={p.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                          >
+                            <Link to={`/work/${p.slug}`} className="group inline-block">
+                              <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
+                                {p.title}
+                              </div>
+                              <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
+                            </Link>
+                          </motion.li>
+                        );
+                      })}
+                    </ul>
                   </section>
 
                   <section id="free-time" className="mt-auto">
