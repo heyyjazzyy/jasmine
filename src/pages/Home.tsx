@@ -170,7 +170,7 @@ const Home = () => {
                   <img
                     src={portraitAsset.url}
                     alt="Portrait of Jasmine Liao"
-                    className="lg:hidden w-36 h-48 object-cover rounded-sm mb-6 self-start"
+                    className="lg:hidden w-36 h-48 object-cover rounded-sm mb-6 mx-auto"
                   />
 
                   <section className="mb-14">
