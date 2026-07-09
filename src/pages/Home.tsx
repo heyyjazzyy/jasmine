@@ -14,7 +14,7 @@ const toolGroups: { category: string; subgroups: { label?: string; items: string
   {
     category: "Business",
     subgroups: [
-      { items: ["Accounting", "Statistics", "Linear Regression", "Logistic Regression", "Hypothesis Testing", "A/B Testing", "Financial Modeling", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau", "Excel"] },
+      { items: ["Accounting", "Statistics", "Linear Regression", "A/B Testing", "Financial Modeling", "Jira", "Economics", "Google Analytics", "Hootsuite", "Tableau", "Excel"] },
     ],
   },
   {
