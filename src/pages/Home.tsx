@@ -76,9 +76,6 @@ const Home = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
 
-  const toggleTool = (cat: string) => {
-    setOpenTools((prev) => {
-      const next = new Set(prev);
   const [hoveredWork, setHoveredWork] = useState<string | null>(null);
 
   const toggleTool = (cat: string) => {
