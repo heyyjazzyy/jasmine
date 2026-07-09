@@ -79,6 +79,11 @@ const Home = () => {
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
       const next = new Set(prev);
+  const [hoveredWork, setHoveredWork] = useState<string | null>(null);
+
+  const toggleTool = (cat: string) => {
+    setOpenTools((prev) => {
+      const next = new Set(prev);
       if (next.has(cat)) next.delete(cat);
       else next.add(cat);
       return next;
