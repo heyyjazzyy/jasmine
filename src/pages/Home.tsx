@@ -80,16 +80,12 @@ const Home = () => {
       {/* Persistent left sidebar */}
       <aside className="lg:col-span-2 bg-background border-b lg:border-b-0 lg:border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-row lg:flex-col justify-between items-start lg:sticky lg:top-0 lg:h-screen">
         <div>
-          <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
+          <Link to="/">
+            <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
+          </Link>
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
           </Link>
-          <button
-            onClick={toggle}
-            className="font-display text-sm text-muted-foreground hover:text-foreground transition-colors mt-2"
-          >
-            {mode === "fridge" ? "5-9 →" : "9-5 →"}
-          </button>
         </div>
         {mode !== "fridge" && (
           <>
