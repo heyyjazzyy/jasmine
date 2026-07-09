@@ -100,8 +100,8 @@ const JasmineSupperClub = () => {
           transition={{ duration: 0.5 }}
           className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-12 lg:pt-20 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
-          <div>
-            <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
+          <div className="flex items-center gap-2 lg:block">
+            <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
             <Link
               to="/"
               className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
