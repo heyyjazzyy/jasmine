@@ -137,9 +137,6 @@ const NowPlaying = () => {
         <div className="lg:col-span-10 flex flex-col">
           <div className="flex-1 p-6 lg:p-12 pt-10 pb-12 lg:py-20">
             <h1 className="display-heading">Now Playing</h1>
-            <p className="body-text mt-4 max-w-2xl text-muted-foreground whitespace-pre-wrap">
-              {"\n"}
-            </p>
 
             <div className="mt-8 md:mt-12 max-w-3xl">
               <section className="mb-8 md:mb-12">
