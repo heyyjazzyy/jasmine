@@ -166,13 +166,6 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: 0.05 }}
                   className="relative p-6 lg:p-10 flex flex-col min-h-[70vh]"
                 >
-                  {/* Mobile portrait */}
-                  <img
-                    src={portraitAsset.url}
-                    alt="Portrait of Jasmine Liao"
-                    className="lg:hidden w-36 h-48 object-cover rounded-sm mb-6 mx-auto"
-                  />
-
                   <section className="mb-14">
                     <p className="body-text max-w-lg whitespace-pre-line">
                       Hi, I'm Jasmine!{"\n"}
@@ -182,45 +175,34 @@ const Home = () => {
                   </section>
 
                   <section id="work" className="mb-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h2 className="template-header">Work</h2>
-                        <ul className="space-y-6">
-                          {pmProjects.map((p, i) => {
-                            const hoverColor =
-                              p.slug === "duolingo"
-                                ? "group-hover:text-[#58CC02]"
-                                : p.slug === "loop"
-                                  ? "group-hover:text-[#DF7FB9]"
-                                  : p.slug === "paypal"
-                                    ? "group-hover:text-[#0079C1]"
-                                    : "group-hover:text-primary";
-                            return (
-                              <motion.li
-                                key={p.id}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-                              >
-                                <Link to={`/work/${p.slug}`} className="group inline-block">
-                                  <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
-                                    {p.title}
-                                  </div>
-                                  <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
-                                </Link>
-                              </motion.li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div className="hidden lg:block">
-                        <img
-                          src={portraitAsset.url}
-                          alt="Portrait of Jasmine Liao"
-                          className="w-[220px] h-[300px] object-cover rounded-sm"
-                        />
-                      </div>
-                    </div>
+                    <h2 className="template-header">Work</h2>
+                    <ul className="space-y-6 mt-4">
+                      {pmProjects.map((p, i) => {
+                        const hoverColor =
+                          p.slug === "duolingo"
+                            ? "group-hover:text-[#58CC02]"
+                            : p.slug === "loop"
+                              ? "group-hover:text-[#DF7FB9]"
+                              : p.slug === "paypal"
+                                ? "group-hover:text-[#0079C1]"
+                                : "group-hover:text-primary";
+                        return (
+                          <motion.li
+                            key={p.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                          >
+                            <Link to={`/work/${p.slug}`} className="group inline-block">
+                              <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
+                                {p.title}
+                              </div>
+                              <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
+                            </Link>
+                          </motion.li>
+                        );
+                      })}
+                    </ul>
                   </section>
 
                   <section id="free-time" className="mt-auto">
@@ -234,10 +216,17 @@ const Home = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   <div className="lg:col-start-1 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
                     <h2 className="template-header">About</h2>
-                    <p className="body-text max-w-3xl whitespace-pre-line">
-                      I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
-                      From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
-                    </p>
+                    <div className="mt-4 flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
+                      <img
+                        src={portraitAsset.url}
+                        alt="Portrait of Jasmine Liao"
+                        className="w-36 h-48 lg:w-[220px] lg:h-[300px] object-cover rounded-sm"
+                      />
+                      <p className="body-text max-w-3xl whitespace-pre-line">
+                        I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
+                        From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
+                      </p>
+                    </div>
                   </div>
 
                   <div className="col-span-full border-b border-border/60" />
