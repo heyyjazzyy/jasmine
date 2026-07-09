@@ -216,7 +216,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   <div className="lg:col-start-1 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
                     <h2 className="template-header">About</h2>
-                    <div className="mt-4 grid grid-cols-1 md:grid-cols-6 gap-3 items-start">
+                    <div className="mt-4 grid grid-cols-1 md:grid-cols-6 gap-1 items-start">
                       <img
                         src={portraitAsset.url}
                         alt="Portrait of Jasmine Liao"
