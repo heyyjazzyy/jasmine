@@ -125,7 +125,7 @@ const ItemDetail = () => {
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
+          className="lg:col-span-2 border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
           <div>
             <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
