@@ -223,10 +223,17 @@ const Home = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   <div className="lg:col-start-1 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
                     <h2 className="template-header">About</h2>
-                    <p className="body-text max-w-3xl whitespace-pre-line">
-                      I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
-                      From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
-                    </p>
+                    <div className="mt-4 flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
+                      <img
+                        src={portraitAsset.url}
+                        alt="Portrait of Jasmine Liao"
+                        className="w-36 h-48 lg:w-[220px] lg:h-[300px] object-cover rounded-sm"
+                      />
+                      <p className="body-text max-w-3xl whitespace-pre-line">
+                        I'm a problem solver, strategist, and creator passionate about building tools and products that make an impact.{"\n\n"}
+                        From motion graphics to machine learning, and data visualisation to business strategy, my interdisciplinary education has given me a comprehensive foundation, preparing me to build and lead in a rapidly evolving digital landscape.
+                      </p>
+                    </div>
                   </div>
 
                   <div className="col-span-full border-b border-border/60" />
