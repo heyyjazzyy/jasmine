@@ -218,7 +218,7 @@ const Home = () => {
                     </ul>
 
                     {/* Desktop-only hover preview */}
-                    <div className="hidden lg:block pointer-events-none absolute top-1/2 -translate-y-1/2 left-[340px] xl:left-[400px] w-[300px] h-[240px]">
+                    <div className="hidden lg:block pointer-events-none absolute top-1/2 -translate-y-1/2 left-[280px] xl:left-[340px] w-[340px] h-[270px]">
                       {pmProjects.map((p) => {
                         const src = workHoverImages[p.slug];
                         if (!src) return null;
