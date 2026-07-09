@@ -185,7 +185,7 @@ const Home = () => {
                     </p>
                   </section>
 
-                  <section id="work" className="mb-10">
+                  <section id="work" className="mb-10 relative">
                     <h2 className="template-header">Work</h2>
                     <ul className="space-y-6 mt-4">
                       {pmProjects.map((p, i) => {
@@ -203,6 +203,8 @@ const Home = () => {
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                            onMouseEnter={() => setHoveredWork(p.slug)}
+                            onMouseLeave={() => setHoveredWork((cur) => (cur === p.slug ? null : cur))}
                           >
                             <Link to={`/work/${p.slug}`} className="group inline-block">
                               <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
@@ -214,6 +216,22 @@ const Home = () => {
                         );
                       })}
                     </ul>
+
+                    {/* Desktop-only hover preview */}
+                    <div className="hidden lg:block pointer-events-none absolute top-1/2 -translate-y-1/2 right-8 xl:right-24 w-[420px] h-[360px]">
+                      {pmProjects.map((p) => {
+                        const src = workHoverImages[p.slug];
+                        if (!src) return null;
+                        return (
+                          <img
+                            key={p.slug}
+                            src={src}
+                            alt=""
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${hoveredWork === p.slug ? "opacity-100" : "opacity-0"}`}
+                          />
+                        );
+                      })}
+                    </div>
                   </section>
 
                   <section id="free-time" className="mt-auto">
