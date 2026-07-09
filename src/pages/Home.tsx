@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 
+import flowerAsset from "@/assets/flower.png.asset.json";
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
