@@ -166,12 +166,14 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: 0.05 }}
                   className="relative p-6 lg:p-10 flex flex-col min-h-[70vh]"
                 >
+                  {/* Mobile portrait */}
                   <img
                     src={portraitAsset.url}
                     alt="Portrait of Jasmine Liao"
-                    className="hidden lg:block absolute top-36 right-32 w-[220px] h-[300px] object-cover rounded-sm"
+                    className="lg:hidden w-36 h-48 object-cover rounded-sm mb-6 self-start"
                   />
-                  <section className="mb-14 lg:pr-[360px] xl:pr-[420px]">
+
+                  <section className="mb-14">
                     <p className="body-text max-w-lg whitespace-pre-line">
                       Hi, I'm Jasmine!{"\n"}
                       I strive to build impactful tech with heart and vision.{"\n\n"}
@@ -179,35 +181,46 @@ const Home = () => {
                     </p>
                   </section>
 
-                  <section id="work" className="mb-10 lg:pr-[360px] xl:pr-[420px]">
-                    <h2 className="template-header">Work</h2>
-                    <ul className="space-y-6">
-                      {pmProjects.map((p, i) => {
-                        const hoverColor =
-                          p.slug === "duolingo"
-                            ? "group-hover:text-[#58CC02]"
-                            : p.slug === "loop"
-                              ? "group-hover:text-[#DF7FB9]"
-                              : p.slug === "paypal"
-                                ? "group-hover:text-[#0079C1]"
-                                : "group-hover:text-primary";
-                        return (
-                          <motion.li
-                            key={p.id}
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-                          >
-                            <Link to={`/work/${p.slug}`} className="group inline-block">
-                              <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
-                                {p.title}
-                              </div>
-                              <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
-                            </Link>
-                          </motion.li>
-                        );
-                      })}
-                    </ul>
+                  <section id="work" className="mb-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h2 className="template-header">Work</h2>
+                        <ul className="space-y-6">
+                          {pmProjects.map((p, i) => {
+                            const hoverColor =
+                              p.slug === "duolingo"
+                                ? "group-hover:text-[#58CC02]"
+                                : p.slug === "loop"
+                                  ? "group-hover:text-[#DF7FB9]"
+                                  : p.slug === "paypal"
+                                    ? "group-hover:text-[#0079C1]"
+                                    : "group-hover:text-primary";
+                            return (
+                              <motion.li
+                                key={p.id}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                              >
+                                <Link to={`/work/${p.slug}`} className="group inline-block">
+                                  <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
+                                    {p.title}
+                                  </div>
+                                  <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
+                                </Link>
+                              </motion.li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                      <div className="hidden lg:block">
+                        <img
+                          src={portraitAsset.url}
+                          alt="Portrait of Jasmine Liao"
+                          className="w-[220px] h-[300px] object-cover rounded-sm"
+                        />
+                      </div>
+                    </div>
                   </section>
 
                   <section id="free-time" className="mt-auto">
