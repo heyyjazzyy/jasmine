@@ -5,6 +5,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 
 import flowerAsset from "@/assets/flower.png.asset.json";
+import portraitAsset from "@/assets/jasmine-portrait.jpg.asset.json";
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
@@ -163,9 +164,14 @@ const Home = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.05 }}
-                  className="p-6 lg:p-10 flex flex-col min-h-[70vh]"
+                  className="relative p-6 lg:p-10 flex flex-col min-h-[70vh]"
                 >
-                  <section className="mb-14">
+                  <img
+                    src={portraitAsset.url}
+                    alt="Portrait of Jasmine Liao"
+                    className="hidden lg:block absolute top-10 right-10 w-[320px] xl:w-[380px] aspect-[3/4] object-cover rounded-sm"
+                  />
+                  <section className="mb-14 lg:pr-[360px] xl:pr-[420px]">
                     <p className="body-text max-w-lg whitespace-pre-line">
                       Hi, I'm Jasmine!{"\n"}
                       I strive to build impactful tech with heart and vision.{"\n\n"}
@@ -173,7 +179,7 @@ const Home = () => {
                     </p>
                   </section>
 
-                  <section id="work" className="mb-10">
+                  <section id="work" className="mb-10 lg:pr-[360px] xl:pr-[420px]">
                     <h2 className="template-header">Work</h2>
                     <ul className="space-y-6">
                       {pmProjects.map((p, i) => {
@@ -208,6 +214,7 @@ const Home = () => {
                     <HeroSentence />
                   </section>
                 </motion.div>
+
               </main>
 
               <section id="about" className="border-t border-border/60">
