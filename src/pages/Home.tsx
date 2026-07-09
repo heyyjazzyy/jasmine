@@ -6,6 +6,15 @@ import SiteFooter from "@/components/SiteFooter";
 
 import flowerAsset from "@/assets/flower.png.asset.json";
 import portraitAsset from "@/assets/jasmine-portrait.jpg.asset.json";
+import duolingoHover from "@/assets/duolingo-hover.png.asset.json";
+import loopHover from "@/assets/loop-hover.png.asset.json";
+import paypalHover from "@/assets/paypal-hover.png.asset.json";
+
+const workHoverImages: Record<string, string> = {
+  duolingo: duolingoHover.url,
+  loop: loopHover.url,
+  paypal: paypalHover.url,
+};
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
