@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import flowerAsset from "@/assets/flower.png.asset.json";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
@@ -118,6 +119,7 @@ const NowPlaying = () => {
           transition={{ duration: 0.5 }}
           className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-16 md:pt-20 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
+          <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
           </Link>
