@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useMode } from "@/context/ModeContext";
+import flowerAsset from "@/assets/flower.png.asset.json";
 
 const SideNav = () => {
   const { toggle } = useMode();
@@ -17,6 +18,7 @@ const SideNav = () => {
       className="lg:col-span-2 p-6 lg:p-8 flex flex-col justify-between"
     >
       <div>
+        <img src={flowerAsset.url} alt="" className="w-16 h-16 mb-3" />
         <Link
           to="/"
           className="font-display text-2xl leading-tight hover:text-primary transition-colors block"
