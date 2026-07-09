@@ -166,13 +166,6 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: 0.05 }}
                   className="relative p-6 lg:p-10 flex flex-col min-h-[70vh]"
                 >
-                  {/* Mobile portrait */}
-                  <img
-                    src={portraitAsset.url}
-                    alt="Portrait of Jasmine Liao"
-                    className="lg:hidden w-36 h-48 object-cover rounded-sm mb-6 mx-auto"
-                  />
-
                   <section className="mb-14">
                     <p className="body-text max-w-lg whitespace-pre-line">
                       Hi, I'm Jasmine!{"\n"}
