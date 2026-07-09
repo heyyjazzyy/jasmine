@@ -6,6 +6,15 @@ import SiteFooter from "@/components/SiteFooter";
 
 import flowerAsset from "@/assets/flower.png.asset.json";
 import portraitAsset from "@/assets/jasmine-portrait.jpg.asset.json";
+import duolingoHover from "@/assets/duolingo-hover.png.asset.json";
+import loopHover from "@/assets/loop-hover.png.asset.json";
+import paypalHover from "@/assets/paypal-hover.png.asset.json";
+
+const workHoverImages: Record<string, string> = {
+  duolingo: duolingoHover.url,
+  loop: loopHover.url,
+  paypal: paypalHover.url,
+};
 
 import { useMode } from "@/context/ModeContext";
 import { pmProjects, education } from "@/data/portfolio";
@@ -66,6 +75,8 @@ const Home = () => {
   const [openTools, setOpenTools] = useState<Set<string>>(new Set());
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
+
+  const [hoveredWork, setHoveredWork] = useState<string | null>(null);
 
   const toggleTool = (cat: string) => {
     setOpenTools((prev) => {
@@ -174,7 +185,7 @@ const Home = () => {
                     </p>
                   </section>
 
-                  <section id="work" className="mb-10">
+                  <section id="work" className="mb-10 relative">
                     <h2 className="template-header">Work</h2>
                     <ul className="space-y-6 mt-4">
                       {pmProjects.map((p, i) => {
@@ -192,6 +203,8 @@ const Home = () => {
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                            onMouseEnter={() => setHoveredWork(p.slug)}
+                            onMouseLeave={() => setHoveredWork((cur) => (cur === p.slug ? null : cur))}
                           >
                             <Link to={`/work/${p.slug}`} className="group inline-block">
                               <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
@@ -203,6 +216,22 @@ const Home = () => {
                         );
                       })}
                     </ul>
+
+                    {/* Desktop-only hover preview */}
+                    <div className="hidden lg:block pointer-events-none absolute top-1/2 -translate-y-1/2 right-8 xl:right-24 w-[420px] h-[360px]">
+                      {pmProjects.map((p) => {
+                        const src = workHoverImages[p.slug];
+                        if (!src) return null;
+                        return (
+                          <img
+                            key={p.slug}
+                            src={src}
+                            alt=""
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${hoveredWork === p.slug ? "opacity-100" : "opacity-0"}`}
+                          />
+                        );
+                      })}
+                    </div>
                   </section>
 
                   <section id="free-time" className="mt-auto">
@@ -216,7 +245,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   <div className="lg:col-start-1 lg:col-end-13 px-6 lg:px-10 pt-16 lg:pt-20 pb-16 lg:pb-20">
                     <h2 className="template-header">About</h2>
-                    <div className="mt-4 flex flex-col md:flex-row gap-6 md:gap-6 items-start">
+                    <div className="mt-4 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                       <img
                         src={portraitAsset.url}
                         alt="Portrait of Jasmine Liao"
