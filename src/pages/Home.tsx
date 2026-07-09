@@ -169,7 +169,7 @@ const Home = () => {
                   <img
                     src={portraitAsset.url}
                     alt="Portrait of Jasmine Liao"
-                    className="hidden lg:block absolute top-10 right-10 w-[320px] xl:w-[380px] aspect-[3/4] object-cover rounded-sm"
+                    className="hidden lg:block absolute top-36 right-32 w-[220px] h-[300px] object-cover rounded-sm"
                   />
                   <section className="mb-14 lg:pr-[360px] xl:pr-[420px]">
                     <p className="body-text max-w-lg whitespace-pre-line">
