@@ -208,14 +208,8 @@ const ItemDetail = () => {
                   )}
                 </motion.div>
               )}
-              <Link
-                to={backHref}
-                className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-6"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Link>
             </div>
+
 
             {interleaved}
           </article>
