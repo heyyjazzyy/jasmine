@@ -206,12 +206,20 @@ const Home = () => {
                             onMouseEnter={() => setHoveredWork(p.slug)}
                             onMouseLeave={() => setHoveredWork((cur) => (cur === p.slug ? null : cur))}
                           >
-                            <Link to={`/work/${p.slug}`} className="group inline-block">
+                            <Link to={`/work/${p.slug}`} className="group block lg:inline-block">
+                              {workHoverImages[p.slug] && (
+                                <img
+                                  src={workHoverImages[p.slug]}
+                                  alt=""
+                                  className="lg:hidden w-full max-w-[280px] h-auto object-contain mb-3"
+                                />
+                              )}
                               <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
                                 {p.title}
                               </div>
                               <div className="font-ui text-xs text-muted-foreground mt-1">{p.year}</div>
                             </Link>
+
                           </motion.li>
                         );
                       })}
