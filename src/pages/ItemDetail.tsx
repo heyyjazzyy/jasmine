@@ -127,12 +127,22 @@ const ItemDetail = () => {
           transition={{ duration: 0.5 }}
           className="lg:col-span-2 border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
-          <div className="flex items-center gap-2 lg:block">
-            <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
-            <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
-              Jasmine Liao
+          <div>
+            <div className="flex items-center gap-2 lg:block">
+              <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
+              <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
+                Jasmine Liao
+              </Link>
+            </div>
+            <Link
+              to={backHref}
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-4"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
             </Link>
           </div>
+
           <Link
             to={backHref}
             className="hidden lg:inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -198,14 +208,8 @@ const ItemDetail = () => {
                   )}
                 </motion.div>
               )}
-              <Link
-                to={backHref}
-                className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-6"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Link>
             </div>
+
 
             {interleaved}
           </article>
