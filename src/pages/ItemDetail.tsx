@@ -136,7 +136,7 @@ const ItemDetail = () => {
             </div>
             <Link
               to={backHref}
-              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-4"
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-8"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
@@ -154,7 +154,7 @@ const ItemDetail = () => {
 
         {/* Content */}
         <div className="lg:col-span-10">
-          <article className="py-12 lg:py-20">
+          <article className="pt-2 pb-12 lg:py-20">
             <div className="px-6 lg:px-12 max-w-3xl mb-10 md:mb-12 lg:mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
