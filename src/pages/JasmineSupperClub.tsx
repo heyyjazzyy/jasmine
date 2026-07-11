@@ -100,18 +100,27 @@ const JasmineSupperClub = () => {
           transition={{ duration: 0.5 }}
           className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-12 lg:pt-20 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
-          <div className="flex items-center gap-2 lg:block">
-            <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
+          <div>
+            <div className="flex items-center gap-2 lg:block">
+              <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
+              <Link
+                to="/"
+                className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
+              >
+                Jasmine Liao
+              </Link>
+            </div>
             <Link
               to="/"
-              className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-8"
             >
-              Jasmine Liao
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
             </Link>
           </div>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="hidden lg:inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
@@ -120,7 +129,8 @@ const JasmineSupperClub = () => {
 
         {/* Content */}
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-12 py-12 lg:py-20">
+          <div className="flex-1 p-6 lg:p-12 pt-2 pb-12 lg:py-20">
+
             {/* Hero */}
             <motion.header
               initial={{ opacity: 0, y: 16 }}
