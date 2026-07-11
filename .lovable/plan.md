@@ -1,11 +1,12 @@
-Fix the sidebar top padding on work (item detail) pages so the flower icon and "Jasmine Liao" text align vertically with the home page and other sub-pages.
+## Plan: Tablet/mobile treatment for Work images
 
-**Current state:**
-- `ItemDetail.tsx` (work pages): sidebar uses `p-6 lg:p-8` with no responsive top padding, so the flower/name sit too high/too low compared to the rest of the site.
-- `Home.tsx`: sidebar uses `pt-16 md:pt-20 lg:p-8 lg:pt-24`
-- `NowPlaying.tsx`: sidebar uses `pt-16 md:pt-20 lg:pt-24` (matches home)
-- Other sub-pages (`CategoryPage.tsx`, `MusicForGames.tsx`, `JasmineSupperClub.tsx`, `ACappella.tsx`): sidebar uses `pt-12 lg:pt-20`
+On viewports below `lg`, render each project's hover image directly above its title in the Work list (always visible, no hover). Desktop behavior (hover cross-fade to the right) stays unchanged.
 
-**Plan:**
-1. Update `src/pages/ItemDetail.tsx` — change the sidebar class from `p-6 lg:p-8` to `p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24` to match the home page sidebar vertical positioning.
-2. Optionally verify visually that the flower + name on a work page (e.g. `/work/duolingo`) now aligns with the home page sidebar.
+### Changes in `src/pages/Home.tsx`
+- Inside each `pmProjects.map` `<li>`, add an `<img>` above the title link:
+  - Class: `lg:hidden w-full max-w-[280px] h-auto object-contain mb-3`
+  - `src` from `workHoverImages[p.slug]`, `alt=""`
+- Keep the existing desktop hover preview block (`hidden lg:block ...`) unchanged.
+- Keep list spacing (`space-y-6`) — the image sits inside the same `<li>` so vertical rhythm stays consistent.
+
+No changes to data, routes, or the desktop layout.
