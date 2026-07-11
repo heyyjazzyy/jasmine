@@ -211,7 +211,7 @@ const Home = () => {
                                 <img
                                   src={workHoverImages[p.slug]}
                                   alt=""
-                                  className="lg:hidden w-full max-w-[280px] h-auto object-contain mb-3"
+                                  className="lg:hidden w-full md:max-w-[480px] h-auto object-contain mb-3"
                                 />
                               )}
                               <div className={`font-display text-3xl md:text-4xl leading-tight transition-colors ${hoverColor}`}>
