@@ -49,7 +49,7 @@ const clubs: Club[] = [
     ],
     image: jsc1.url,
     imageAlt: "Illustrations of fusion dishes: ceviche, carbonara, crème brûlée",
-    imageSide: "left",
+    imageSide: "right",
   },
   {
     number: "No. 02",
@@ -75,7 +75,7 @@ const clubs: Club[] = [
     ],
     image: jsc3.url,
     imageAlt: "Illustrations of new favorites: focaccia, whipped ricotta, rigatoni, brownie pudding",
-    imageSide: "left",
+    imageSide: "right",
   },
 ];
 
@@ -89,7 +89,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
       transition={{ duration: 0.6 }}
       className={index > 0 ? "border-t border-border/40 pt-14" : ""}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 items-center">
         {/* Image */}
         <div className={`${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
           <img
