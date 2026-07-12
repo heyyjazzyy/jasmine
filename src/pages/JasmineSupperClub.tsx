@@ -10,6 +10,22 @@ import jsc1 from "@/assets/supper-club/jsc-1-fusion.png.asset.json";
 import jsc2 from "@/assets/supper-club/jsc-2-classics.png.asset.json";
 import jsc3 from "@/assets/supper-club/jsc-3-new-faves.png.asset.json";
 import dessertsVideo from "@/assets/supper-club/desserts.mp4.asset.json";
+import butterSampling from "@/assets/supper-club/butter/butter_sampling.jpg.asset.json";
+import cevicheButter from "@/assets/supper-club/butter/ceviche_butter.jpg.asset.json";
+import chickenButter from "@/assets/supper-club/butter/roasted_chicken_butter.jpg.asset.json";
+import thaiTeaButter from "@/assets/supper-club/butter/thai_tea_butter.jpg.asset.json";
+import matchaButter from "@/assets/supper-club/butter/matcha_butter.jpg.asset.json";
+import coffeeButter from "@/assets/supper-club/butter/coffee_chocolate_butter.jpg.asset.json";
+import garlicButter from "@/assets/supper-club/butter/garlic_parmesan_butter.jpg.asset.json";
+
+const butters = [
+  { name: "Ceviche Butter", subtitle: "red onion, lime, cilantro", image: cevicheButter.url },
+  { name: "Roasted Chicken Butter", subtitle: "thyme, rosemary, crispy chicken skin", image: chickenButter.url },
+  { name: "Thai Tea Butter", subtitle: "", image: thaiTeaButter.url },
+  { name: "Matcha Butter", subtitle: "", image: matchaButter.url },
+  { name: "Coffee Chocolate Butter", subtitle: "", image: coffeeButter.url },
+  { name: "Garlic Parmesan Butter", subtitle: "", image: garlicButter.url },
+];
 
 const ACCENT = "#2D8A9E";
 
@@ -73,14 +89,14 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
       transition={{ duration: 0.6 }}
       className={index > 0 ? "border-t border-border/40 pt-14" : ""}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
         {/* Image */}
         <div className={`${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
           <img
             src={club.image}
             alt={club.imageAlt}
             loading="lazy"
-            className="w-full h-auto max-w-md mx-auto"
+            className={`w-full h-auto max-w-md ${imageOnLeft ? "md:ml-auto md:mr-0 mx-auto" : "md:mr-auto md:ml-0 mx-auto"}`}
           />
         </div>
 
@@ -93,7 +109,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
             Supper Club {club.number}
           </p>
           <h2
-            className="font-display text-4xl md:text-5xl leading-tight mb-6"
+            className="font-display text-2xl md:text-3xl leading-tight mb-6"
             style={{ color: ACCENT }}
           >
             {club.theme}
@@ -115,7 +131,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
 };
 
 const JasmineSupperClub = () => {
-  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url]);
+  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url, butterSampling.url]);
   if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
@@ -193,6 +209,62 @@ const JasmineSupperClub = () => {
                 <ClubSection key={club.number} club={club} index={i} />
               ))}
             </div>
+
+            {/* Will it Butter? */}
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="mt-20 border-t border-border/40 pt-14"
+            >
+              <div className="max-w-5xl">
+                <h2
+                  className="font-display text-3xl md:text-4xl leading-tight mb-8"
+                  style={{ color: ACCENT }}
+                >
+                  Will it Butter?
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center mb-12">
+                  <img
+                    src={butterSampling.url}
+                    alt="A spread of homemade compound butters"
+                    loading="lazy"
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <p className="body-text text-muted-foreground">
+                    I love bread and butter. What can't I turn into butter?!
+                  </p>
+                </div>
+              </div>
+
+              {/* Butter grid — full width */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                {butters.map((b) => (
+                  <div key={b.name} className="flex flex-col">
+                    <div className="aspect-square overflow-hidden rounded-lg bg-muted/30">
+                      <img
+                        src={b.image}
+                        alt={b.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      className="font-display text-lg md:text-xl mt-3 leading-snug"
+                      style={{ color: ACCENT }}
+                    >
+                      {b.name}
+                    </h3>
+                    {b.subtitle && (
+                      <p className="font-ui text-sm text-muted-foreground italic mt-1">
+                        {b.subtitle}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.section>
 
             {/* Video */}
             <motion.section
