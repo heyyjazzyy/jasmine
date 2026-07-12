@@ -6,89 +6,116 @@ import SiteFooter from "@/components/SiteFooter";
 import LoadingScreen from "@/components/LoadingScreen";
 import { useImagesLoaded } from "@/hooks/useImagesLoaded";
 
-import dishesSavory from "@/assets/supper-club/pdf-dishes-savory.jpg.asset.json";
-import dishesSweet from "@/assets/supper-club/pdf-dishes-sweet.jpg.asset.json";
-import prepSupper from "@/assets/supper-club/pdf-prep-supper.jpg.asset.json";
+import jsc1 from "@/assets/supper-club/jsc-1-fusion.png.asset.json";
+import jsc2 from "@/assets/supper-club/jsc-2-classics.png.asset.json";
+import jsc3 from "@/assets/supper-club/jsc-3-new-faves.png.asset.json";
+import dessertsVideo from "@/assets/supper-club/desserts.mp4.asset.json";
 
 const ACCENT = "#2D8A9E";
 
-type Dish = { name: string; blurb: string };
-type Course = { heading: string; dishes: Dish[] };
+type Club = {
+  number: string;
+  theme: string;
+  dishes: string[];
+  image: string;
+  imageAlt: string;
+  imageSide: "left" | "right";
+};
 
-const menu: Course[] = [
+const clubs: Club[] = [
   {
-    heading: "To Start",
+    number: "No. 01",
+    theme: "Fusion",
     dishes: [
-      {
-        name: "Japanese-Peruvian Ceviche",
-        blurb:
-          "I grew up eating a lot of sushi, so raw fish has always felt pretty natural. But when I went to Peru, ceviche completely changed how I thought about it. The versions I had in Lima were so fresh and bright — it felt like rediscovering something I already loved. I first made a version of it for Mauricio's birthday, and it's become tied to that trip and that memory for us. This dish is my way of bringing those pieces together — something familiar, something new, and the person who made it meaningful.",
-      },
-      {
-        name: "Crab Rangoon Garlic Bread",
-        blurb:
-          "Crab rangoons were the first Chinese American dish I ever had. When I moved to the U.S. at 14 and was living in New Hampshire, my roommate convinced me to try them from the one Chinese restaurant in town. I remember being confused since this wasn't anything I had grown up eating in Hong Kong. But I took a bite and was immediately in love (it was also my first real introduction to cream cheese, which felt kind of life-changing at the time). Over Spring Break, I had some really good garlic bread in Brazil that stuck with me. I'm afraid I've created somewhat of a monstrosity, but it's nostalgic, chaotic, and insanely good.",
-      },
+      "Japanese-Peruvian Ceviche",
+      "Gochujang Carbonara",
+      "Earl Grey Crème Brûlée",
     ],
+    image: jsc1.url,
+    imageAlt: "Illustrations of fusion dishes: ceviche, carbonara, crème brûlée",
+    imageSide: "right",
   },
   {
-    heading: "Mains",
+    number: "No. 02",
+    theme: "Hometown Classics",
     dishes: [
-      {
-        name: "Gochujang Carbonara",
-        blurb:
-          "Carbonara was something my mom would make for us as a treat. She traveled to Italy a lot for work, and every once in a while she'd bring that back to our kitchen. It wasn't traditional — she always added cream and didn't use any eggs — but growing up, that was just what carbonara tasted like to me. Later, when I moved to LA for college, I started cooking more for myself and was surrounded by Korean food in K-town. That's where I came across their creamy \"rosé\" noodles with gochujang, and I thought, why don't I combine the two? Italian-Korean fusion feels surprisingly natural once you try it.",
-      },
-      {
-        name: "Tomato and Egg",
-        blurb:
-          "Tomato and egg is one of those dishes almost every Chinese family has their own version of. Even in my own family, my mom makes it one way, my uncle makes it another. My sister and I have always preferred my uncle's: thicker, a little sweeter, a bit more jammy. That's the version I make now. It's also one of the first dishes I ever learned how to cook, and it's something I come back to often.",
-      },
-      {
-        name: "Braised Pork Belly",
-        blurb:
-          "Braised pork belly — hong shao rou — is a classic Shanghainese dish (and was Mao Zedong's favorite). China's food culture is incredibly regional, and Shanghainese cuisine has always been one of my favorites: rich, slightly sweet, deeply comforting. I didn't grow up eating it that often in Hong Kong, but it was always something I loved. When I moved to the U.S. for college, I started missing those flavors more, and this was one of the dishes I taught myself to make.",
-      },
+      "Cucumber Salad",
+      "Crab Rangoon Garlic Bread",
+      "Tomato and Egg",
+      "Braised Pork Belly",
+      "Filipino Mango Ice Box Cake",
     ],
+    image: jsc2.url,
+    imageAlt: "Illustrations of hometown classics: garlic bread, cucumbers, pork belly, tomato and egg, mango cake",
+    imageSide: "left",
   },
   {
-    heading: "Desserts",
+    number: "No. 03",
+    theme: "New Faves",
     dishes: [
-      {
-        name: "Black Sesame Tangyuan Cookie",
-        blurb:
-          "Tangyuan — a glutinous rice dumpling usually filled with black sesame or peanut, served warm in a lightly sweet soup during the lantern festival. Growing up, it was something we only had during holidays. I never really grew up eating cookies (I was always more of a cake person), but everyone at SOM seems to love them, especially the ones from McKnays. So I wanted to reshape this celebratory dessert into something more everyday. This cookie keeps the black sesame filling and that familiar chew, but reimagines it in a completely different form.",
-      },
-      {
-        name: "Earl Grey Crème Brûlée",
-        blurb:
-          "Crème brûlée was always one of my mom's favorite desserts, and as a result it made its way into my life early on. At the same time, I grew up drinking a lot of tea — mostly the kinds you'd find across Asia, like green tea or milk tea. I didn't discover Earl Grey until I moved to the U.S. at 14, when I walked into a café in New Hampshire asking for milk tea and was handed a London Fog instead. I had no idea what it was, but I fell in love — and it's probably still one of my go-to orders today.",
-      },
-      {
-        name: "Filipino Mango Ice Box Cake",
-        blurb:
-          "I didn't know the name of this dessert for most of my life. Our family had a Filipina helper who was with us for nine years, and every summer during mango season, she would make this layered, frozen dessert with graham crackers, cream, condensed milk, and ripe mangoes. I always just called it the \"frozen mango dessert.\" Years later, I realized how much I missed it and reached out to her to ask what it was called and how to make it. That's how I learned it's a Filipino mango float — a small piece of the Philippines that found its way into my childhood, and something I still carry with me now.",
-      },
+      "Whipped Ricotta with Homemade Focaccia",
+      "Rigatoni alla Vodka",
+      "Ina Garten's Brownie Pudding",
     ],
+    image: jsc3.url,
+    imageAlt: "Illustrations of new favorites: focaccia, whipped ricotta, rigatoni, brownie pudding",
+    imageSide: "right",
   },
 ];
 
-const DishRow = ({ dish }: { dish: Dish }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-60px" }}
-    transition={{ duration: 0.4 }}
-  >
-    <h3 className="font-display text-base font-medium tracking-[0.03em] leading-snug" style={{ color: ACCENT }}>
-      {dish.name}
-    </h3>
-    <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{dish.blurb}</p>
-  </motion.div>
-);
+const ClubSection = ({ club, index }: { club: Club; index: number }) => {
+  const imageOnLeft = club.imageSide === "left";
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6 }}
+      className={index > 0 ? "border-t border-border/40 pt-14" : ""}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        {/* Image */}
+        <div className={`${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
+          <img
+            src={club.image}
+            alt={club.imageAlt}
+            loading="lazy"
+            className="w-full h-auto max-w-md mx-auto"
+          />
+        </div>
+
+        {/* Text */}
+        <div className={`${imageOnLeft ? "md:order-2" : "md:order-1"}`}>
+          <p
+            className="font-ui text-xs uppercase tracking-[0.28em] mb-3"
+            style={{ color: ACCENT }}
+          >
+            Supper Club {club.number}
+          </p>
+          <h2
+            className="font-display text-4xl md:text-5xl leading-tight mb-6"
+            style={{ color: ACCENT }}
+          >
+            {club.theme}
+          </h2>
+          <ul className="space-y-2">
+            {club.dishes.map((dish) => (
+              <li
+                key={dish}
+                className="font-display text-lg md:text-xl text-foreground leading-snug"
+              >
+                {dish}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
 
 const JasmineSupperClub = () => {
-  const imagesLoaded = useImagesLoaded([dishesSavory.url, dishesSweet.url, prepSupper.url]);
+  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url]);
   if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
@@ -138,79 +165,66 @@ const JasmineSupperClub = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <p
-                className="font-ui text-xs uppercase tracking-[0.28em] mb-4"
-                style={{ color: ACCENT }}
-              >
-                &nbsp;
-              </p>
               <h1 className="display-heading" style={{ color: ACCENT }}>
                 Jasmine Supper Club
               </h1>
             </motion.header>
 
-            {/* Letter */}
+            {/* Intro */}
             <motion.section
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-2xl mt-12 border-l-2 pl-6 py-2 space-y-4"
+              className="max-w-2xl mt-10 border-l-2 pl-6 py-2"
               style={{ borderColor: ACCENT }}
             >
               <p className="body-text text-muted-foreground">
-                Food has always been my love language. My parents showed care through cooking,
-                through taking me out to meals, through the simple act of sitting down together
-                at the end of the day. That sense of gathering — slowing down, sharing stories,
-                being present — has stayed with me.
-              </p>
-              <p className="body-text text-muted-foreground">
-                As I grew up, this sense has turned into a love for hosting. I invite my friends for dinner – to Jasmine Supper Club – once a month, where I bring&nbsp;childhood flavors, comfort foods, and dishes I've remixed and re-imagined. Here are some of the dishes I've made.
+                My love language is making elaborate meals nobody asked for,
+                insisting that it's not my best work, then staring at you until
+                you tell me it's the best thing you've ever eaten. Welcome to
+                Jasmine Supper Club, serving up childhood nostalgia, comfort
+                classics, and culinary experiments straight from my dreams.
               </p>
             </motion.section>
 
-            {/* Menu */}
-            <div className="mt-14 max-w-4xl space-y-10">
-              {menu.map((course, i) => (
-                <section key={course.heading} className={i > 0 ? "border-t border-border/40 pt-10" : ""}>
-                  <h2 className="template-header">
-                    {course.heading}
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
-                    {course.dishes.map((dish) => (
-                      <DishRow key={dish.name} dish={dish} />
-                    ))}
-                  </div>
-                </section>
+            {/* Club sections */}
+            <div className="mt-16 max-w-5xl space-y-14">
+              {clubs.map((club, i) => (
+                <ClubSection key={club.number} club={club} index={i} />
               ))}
             </div>
 
-            {/* Photos */}
-            <section className="mt-16 max-w-4xl">
-              <div className="flex items-baseline gap-4 mb-6">
-                <h2 className="font-ui text-xs uppercase tracking-[0.2em] text-muted-foreground">Photos</h2>
-                <div className="flex-1 h-px bg-border/60" />
+            {/* Video */}
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="mt-20 max-w-5xl border-t border-border/40 pt-14"
+            >
+              <p
+                className="font-ui text-xs uppercase tracking-[0.28em] mb-3"
+                style={{ color: ACCENT }}
+              >
+                From the table
+              </p>
+              <h2
+                className="font-display text-4xl md:text-5xl leading-tight mb-8"
+                style={{ color: ACCENT }}
+              >
+                Desserts, on parade
+              </h2>
+              <div className="max-w-md mx-auto md:mx-0 rounded-lg overflow-hidden bg-muted/30">
+                <video
+                  src={dessertsVideo.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto block"
+                />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <img
-                  src={dishesSavory.url}
-                  alt="Savory dishes from the Jasmine Supper Club menu"
-                  loading="lazy"
-                  className="w-full h-auto rounded-md"
-                />
-                <img
-                  src={dishesSweet.url}
-                  alt="Desserts from the Jasmine Supper Club menu"
-                  loading="lazy"
-                  className="w-full h-auto rounded-md"
-                />
-                <img
-                  src={prepSupper.url}
-                  alt="Dinner prep and members of the Jasmine Supper Club"
-                  loading="lazy"
-                  className="w-full h-auto rounded-md"
-                />
-              </div>
-            </section>
+            </motion.section>
           </div>
 
           <div className="border-t border-border/60 mt-16">
