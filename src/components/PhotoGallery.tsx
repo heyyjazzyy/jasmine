@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { motion } from "framer-motion";
 import { useImagesLoaded } from "@/hooks/useImagesLoaded";
 
@@ -14,7 +15,7 @@ const photos = Object.values(modules)
   });
 
 const PhotoGallery = () => {
-  const loaded = useImagesLoaded(photos.map((p) => p.url));
+  const loaded = useImagesLoaded(photos.map((p) => assetUrl(p.url)));
 
   if (!loaded) {
     return (
@@ -36,9 +37,9 @@ const PhotoGallery = () => {
       style={{ gap: "20px" }}
     >
       {photos.map((p, i) => (
-        <figure key={p.url} className="bg-muted">
+        <figure key={assetUrl(p.url)} className="bg-muted">
           <img
-            src={p.url}
+            src={assetUrl(p.url)}
             alt={`Photograph ${i + 1}`}
             className="w-full h-auto block"
           />

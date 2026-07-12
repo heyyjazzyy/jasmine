@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,9 +12,9 @@ import loopHover from "@/assets/loop-hover.png.asset.json";
 import paypalHover from "@/assets/paypal-hover.png.asset.json";
 
 const workHoverImages: Record<string, string> = {
-  duolingo: duolingoHover.url,
-  loop: loopHover.url,
-  paypal: paypalHover.url,
+  duolingo: assetUrl(duolingoHover.url),
+  loop: assetUrl(loopHover.url),
+  paypal: assetUrl(paypalHover.url),
 };
 
 import { useMode } from "@/context/ModeContext";
@@ -93,7 +94,7 @@ const Home = () => {
       <aside className="lg:col-span-2 bg-background border-b lg:border-b-0 lg:border-r border-border/60 p-6 pt-16 md:pt-20 lg:p-8 lg:pt-24 flex flex-row lg:flex-col justify-between items-start lg:sticky lg:top-0 lg:h-screen">
         <div className="flex items-center gap-2 lg:block">
           <Link to="/">
-            <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
+            <img src={assetUrl(flowerAsset.url)} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
           </Link>
           <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
             Jasmine Liao
@@ -255,7 +256,7 @@ const Home = () => {
                     <h2 className="template-header">About</h2>
                     <div className="mt-4 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                       <img
-                        src={portraitAsset.url}
+                        src={assetUrl(portraitAsset.url)}
                         alt="Portrait of Jasmine Liao"
                         className="w-36 h-48 md:w-[180px] md:h-[240px] lg:w-[220px] lg:h-[300px] object-cover rounded-sm flex-shrink-0"
                       />

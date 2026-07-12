@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { Link } from "react-router-dom";
 import flowerAsset from "@/assets/flower.png.asset.json";
 import { motion } from "framer-motion";
@@ -19,12 +20,12 @@ import coffeeButter from "@/assets/supper-club/butter/coffee_chocolate_butter.jp
 import garlicButter from "@/assets/supper-club/butter/garlic_parmesan_butter.jpg.asset.json";
 
 const butters = [
-  { name: "Ceviche Butter", subtitle: "red onion, lime, cilantro", image: cevicheButter.url },
-  { name: "Roasted Chicken Butter", subtitle: "thyme, rosemary, crispy chicken skin", image: chickenButter.url },
-  { name: "Garlic Parmesan Butter", subtitle: "", image: garlicButter.url },
-  { name: "Matcha Butter", subtitle: "", image: matchaButter.url },
-  { name: "Coffee Chocolate Butter", subtitle: "", image: coffeeButter.url },
-  { name: "Thai Tea Butter", subtitle: "", image: thaiTeaButter.url },
+  { name: "Ceviche Butter", subtitle: "red onion, lime, cilantro", image: assetUrl(cevicheButter.url) },
+  { name: "Roasted Chicken Butter", subtitle: "thyme, rosemary, crispy chicken skin", image: assetUrl(chickenButter.url) },
+  { name: "Garlic Parmesan Butter", subtitle: "", image: assetUrl(garlicButter.url) },
+  { name: "Matcha Butter", subtitle: "", image: assetUrl(matchaButter.url) },
+  { name: "Coffee Chocolate Butter", subtitle: "", image: assetUrl(coffeeButter.url) },
+  { name: "Thai Tea Butter", subtitle: "", image: assetUrl(thaiTeaButter.url) },
 ];
 
 const ACCENT = "#2D8A9E";
@@ -47,7 +48,7 @@ const clubs: Club[] = [
       "Gochujang Carbonara",
       "Earl Grey Crème Brûlée",
     ],
-    image: jsc1.url,
+    image: assetUrl(jsc1.url),
     imageAlt: "Illustrations of fusion dishes: ceviche, carbonara, crème brûlée",
     imageSide: "right",
   },
@@ -61,7 +62,7 @@ const clubs: Club[] = [
       "Braised Pork Belly",
       "Filipino Mango Ice Box Cake",
     ],
-    image: jsc2.url,
+    image: assetUrl(jsc2.url),
     imageAlt: "Illustrations of hometown classics: garlic bread, cucumbers, pork belly, tomato and egg, mango cake",
     imageSide: "left",
   },
@@ -73,7 +74,7 @@ const clubs: Club[] = [
       "Rigatoni alla Vodka",
       "Ina Garten's Brownie Pudding",
     ],
-    image: jsc3.url,
+    image: assetUrl(jsc3.url),
     imageAlt: "Illustrations of new favorites: focaccia, whipped ricotta, rigatoni, brownie pudding",
     imageSide: "right",
   },
@@ -131,7 +132,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
 };
 
 const JasmineSupperClub = () => {
-  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url, butterSampling.url]);
+  const imagesLoaded = useImagesLoaded([assetUrl(jsc1.url), assetUrl(jsc2.url), assetUrl(jsc3.url), assetUrl(butterSampling.url)]);
   if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
@@ -145,7 +146,7 @@ const JasmineSupperClub = () => {
         >
           <div>
             <div className="flex items-center gap-2 lg:block">
-              <Link to="/" aria-label="Home"><img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
+              <Link to="/" aria-label="Home"><img src={assetUrl(flowerAsset.url)} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
               <Link
                 to="/"
                 className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
@@ -233,7 +234,7 @@ const JasmineSupperClub = () => {
               </h2>
               <div className="max-w-md mx-auto md:mx-0 rounded-lg overflow-hidden bg-muted/30">
                 <video
-                  src={dessertsVideo.url}
+                  src={assetUrl(dessertsVideo.url)}
                   autoPlay
                   muted
                   loop
@@ -260,7 +261,7 @@ const JasmineSupperClub = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center mb-12">
                   <img
-                    src={butterSampling.url}
+                    src={assetUrl(butterSampling.url)}
                     alt="A spread of homemade compound butters"
                     loading="lazy"
                     className="w-full h-auto rounded-lg"
