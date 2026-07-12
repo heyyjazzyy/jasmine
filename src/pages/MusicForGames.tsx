@@ -118,7 +118,7 @@ const MusicForGames = () => {
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-12 lg:pt-20 pb-2 lg:pb-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
+          className="lg:col-span-2 border-r border-border/60 p-6 lg:p-8 pt-12 lg:pt-20 pb-0 lg:pb-8 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen"
         >
           <div>
             <div className="flex items-center gap-2 lg:block">
@@ -132,7 +132,7 @@ const MusicForGames = () => {
             </div>
             <Link
               to="/"
-              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-2"
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-1"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
