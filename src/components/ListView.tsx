@@ -14,7 +14,7 @@ const ListView = ({ items }: { items: PortfolioItem[] }) => (
           className="group grid grid-cols-12 items-baseline gap-4 py-5 md:py-6 px-1 hover:bg-secondary/40 transition-colors"
         >
           <span className="col-span-1 font-ui text-xs text-muted-foreground">{item.year}</span>
-          <span className="col-span-7 md:col-span-6 font-display text-2xl md:text-3xl leading-tight">
+          <span className="col-span-11 md:col-span-6 font-display text-2xl md:text-3xl leading-tight">
             {item.title}
             <ArrowUpRight className="inline w-4 h-4 ml-1 opacity-0 -translate-y-0.5 group-hover:opacity-100 transition-opacity" />
           </span>
