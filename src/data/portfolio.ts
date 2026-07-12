@@ -43,7 +43,7 @@ export const pmProjects: PortfolioItem[] = [
 
 Over the summer of 2025, I joined the core product team at Duolingo HQ in Pittsburgh to shape the **Video Call with Lily** — the platform's AI-driven feature designed to help language learners overcome the anxiety of real-world speaking. I embedded myself into the technical stack and prompt mechanics to optimize AI reasoning, conversational scaffolding, and system-level pacing. Over 12 weeks, I ran **6 live feature experiments**, authored **7 product specs**, and drove features aimed at keeping millions of users in their linguistic "Goldilocks Zone."
 
-![Helping users find the goldilocks zone](/__l5e/assets-v1/69b90c94-1a9c-42ac-abfb-ea6cf26792b5/frame_23.png)
+![Helping users find the goldilocks zone](/cdn-assets/69b90c94-1a9c-42ac-abfb-ea6cf26792b5/frame_23.png)
 
 
 ## The Challenge
@@ -107,7 +107,7 @@ Traditional sizing charts rely on tape measurements that fail to account for uni
 
 ## Solution
 
-![Loop app flow: Scan, Select, Shop](/__l5e/assets-v1/6f1a54cd-5a0f-4aba-964d-9bd6f92bc824/Frame_22_1.png)
+![Loop app flow: Scan, Select, Shop](/cdn-assets/6f1a54cd-5a0f-4aba-964d-9bd6f92bc824/Frame_22_1.png)
 
 \n
 ## Computer Vision Optimization
