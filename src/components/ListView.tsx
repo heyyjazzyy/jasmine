@@ -18,7 +18,7 @@ const ListView = ({ items }: { items: PortfolioItem[] }) => (
             {item.title}
             <ArrowUpRight className="inline w-4 h-4 ml-1 opacity-0 -translate-y-0.5 group-hover:opacity-100 transition-opacity" />
           </span>
-          <span className="col-span-4 md:col-span-5 font-ui text-sm text-muted-foreground">
+          <span className="hidden md:block md:col-span-5 font-ui text-sm text-muted-foreground">
             {item.subtitle}
           </span>
         </Link>
