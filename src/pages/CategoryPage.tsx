@@ -33,7 +33,7 @@ const CategoryPage = ({ category, title, description, titleColor }: Props) => {
         >
           <div>
             <div className="flex items-center gap-2 lg:block">
-              <img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3" />
+              <Link to="/" aria-label="Home"><img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
               <Link to="/" className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap">
                 Jasmine Liao
               </Link>
