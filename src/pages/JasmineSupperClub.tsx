@@ -49,7 +49,7 @@ const clubs: Club[] = [
     ],
     image: jsc1.url,
     imageAlt: "Illustrations of fusion dishes: ceviche, carbonara, crème brûlée",
-    imageSide: "right",
+    imageSide: "left",
   },
   {
     number: "No. 02",
@@ -75,7 +75,7 @@ const clubs: Club[] = [
     ],
     image: jsc3.url,
     imageAlt: "Illustrations of new favorites: focaccia, whipped ricotta, rigatoni, brownie pudding",
-    imageSide: "right",
+    imageSide: "left",
   },
 ];
 
