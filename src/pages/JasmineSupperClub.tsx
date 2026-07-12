@@ -211,6 +211,38 @@ const JasmineSupperClub = () => {
               ))}
             </div>
 
+            {/* Video */}
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="mt-20 max-w-5xl border-t border-border/40 pt-14"
+            >
+              <p
+                className="font-ui text-xs uppercase tracking-[0.28em] mb-3"
+                style={{ color: ACCENT }}
+              >
+                From the table
+              </p>
+              <h2
+                className="font-display text-4xl md:text-5xl leading-tight mb-8"
+                style={{ color: ACCENT }}
+              >
+                Desserts, on parade
+              </h2>
+              <div className="max-w-md mx-auto md:mx-0 rounded-lg overflow-hidden bg-muted/30">
+                <video
+                  src={dessertsVideo.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto block"
+                />
+              </div>
+            </motion.section>
+
             {/* Will it Butter? */}
             <motion.section
               initial={{ opacity: 0, y: 24 }}
@@ -267,37 +299,6 @@ const JasmineSupperClub = () => {
               </div>
             </motion.section>
 
-            {/* Video */}
-            <motion.section
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6 }}
-              className="mt-20 max-w-5xl border-t border-border/40 pt-14"
-            >
-              <p
-                className="font-ui text-xs uppercase tracking-[0.28em] mb-3"
-                style={{ color: ACCENT }}
-              >
-                From the table
-              </p>
-              <h2
-                className="font-display text-4xl md:text-5xl leading-tight mb-8"
-                style={{ color: ACCENT }}
-              >
-                Desserts, on parade
-              </h2>
-              <div className="max-w-md mx-auto md:mx-0 rounded-lg overflow-hidden bg-muted/30">
-                <video
-                  src={dessertsVideo.url}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto block"
-                />
-              </div>
-            </motion.section>
           </div>
 
           <div className="border-t border-border/60 mt-16">
