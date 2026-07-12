@@ -89,14 +89,14 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
       transition={{ duration: 0.6 }}
       className={index > 0 ? "border-t border-border/40 pt-14" : ""}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
         {/* Image */}
         <div className={`${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
           <img
             src={club.image}
             alt={club.imageAlt}
             loading="lazy"
-            className="w-full h-auto max-w-md mx-auto"
+            className={`w-full h-auto max-w-md ${imageOnLeft ? "md:ml-auto md:mr-0 mx-auto" : "md:mr-auto md:ml-0 mx-auto"}`}
           />
         </div>
 
@@ -109,7 +109,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
             Supper Club {club.number}
           </p>
           <h2
-            className="font-display text-4xl md:text-5xl leading-tight mb-6"
+            className="font-display text-2xl md:text-3xl leading-tight mb-6"
             style={{ color: ACCENT }}
           >
             {club.theme}
