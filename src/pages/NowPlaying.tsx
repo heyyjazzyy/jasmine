@@ -128,7 +128,7 @@ const NowPlaying = () => {
             </div>
             <Link
               to="/"
-              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-1"
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-8"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
