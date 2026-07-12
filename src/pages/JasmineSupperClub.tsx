@@ -198,8 +198,9 @@ const JasmineSupperClub = () => {
                 My love language is making elaborate meals nobody asked for,
                 insisting that it's not my best work, then staring at you until
                 you tell me it's the best thing you've ever eaten. Welcome to
-                Jasmine Supper Club, serving up childhood nostalgia, comfort
-                classics, and culinary experiments straight from my dreams.
+                Jasmine Supper Club, a monthly dinner party serving up childhood
+                nostalgia, comfort classics, and culinary experiments straight
+                from my dreams.
               </p>
             </motion.section>
 
