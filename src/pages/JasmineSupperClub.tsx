@@ -96,7 +96,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
             src={club.image}
             alt={club.imageAlt}
             loading="lazy"
-            className={`w-full h-auto max-w-md ${imageOnLeft ? "md:ml-auto md:mr-0 mx-auto" : "md:mr-auto md:ml-0 mx-auto"}`}
+            className="w-full h-auto max-w-md md:mr-auto md:ml-0"
           />
         </div>
 
