@@ -10,6 +10,22 @@ import jsc1 from "@/assets/supper-club/jsc-1-fusion.png.asset.json";
 import jsc2 from "@/assets/supper-club/jsc-2-classics.png.asset.json";
 import jsc3 from "@/assets/supper-club/jsc-3-new-faves.png.asset.json";
 import dessertsVideo from "@/assets/supper-club/desserts.mp4.asset.json";
+import butterSampling from "@/assets/supper-club/butter/butter_sampling.jpg.asset.json";
+import cevicheButter from "@/assets/supper-club/butter/ceviche_butter.jpg.asset.json";
+import chickenButter from "@/assets/supper-club/butter/roasted_chicken_butter.jpg.asset.json";
+import thaiTeaButter from "@/assets/supper-club/butter/thai_tea_butter.jpg.asset.json";
+import matchaButter from "@/assets/supper-club/butter/matcha_butter.jpg.asset.json";
+import coffeeButter from "@/assets/supper-club/butter/coffee_chocolate_butter.jpg.asset.json";
+import garlicButter from "@/assets/supper-club/butter/garlic_parmesan_butter.jpg.asset.json";
+
+const butters = [
+  { name: "Ceviche Butter", subtitle: "red onion, lime, cilantro", image: cevicheButter.url },
+  { name: "Roasted Chicken Butter", subtitle: "thyme, rosemary, crispy chicken skin", image: chickenButter.url },
+  { name: "Thai Tea Butter", subtitle: "", image: thaiTeaButter.url },
+  { name: "Matcha Butter", subtitle: "", image: matchaButter.url },
+  { name: "Coffee Chocolate Butter", subtitle: "", image: coffeeButter.url },
+  { name: "Garlic Parmesan Butter", subtitle: "", image: garlicButter.url },
+];
 
 const ACCENT = "#2D8A9E";
 
