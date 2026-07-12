@@ -103,7 +103,7 @@ const App = () => (
       <ModeProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/jasmine">
+        <BrowserRouter>
           <ScrollToTop />
           <AnimatedRoutes />
         </BrowserRouter>
