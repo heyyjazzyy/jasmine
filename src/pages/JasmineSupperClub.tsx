@@ -96,7 +96,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
             src={club.image}
             alt={club.imageAlt}
             loading="lazy"
-            className="w-full h-auto max-w-md md:mr-auto md:ml-0"
+            className="w-full h-auto max-w-md md:ml-0 md:mr-auto"
           />
         </div>
 
