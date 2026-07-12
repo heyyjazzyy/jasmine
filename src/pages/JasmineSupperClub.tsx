@@ -89,19 +89,19 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
       transition={{ duration: 0.6 }}
       className={index > 0 ? "border-t border-border/40 pt-14" : ""}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 items-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
         {/* Image */}
-        <div className={`${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
+        <div className={`shrink-0 w-full md:w-auto ${imageOnLeft ? "md:order-1" : "md:order-2"}`}>
           <img
             src={club.image}
             alt={club.imageAlt}
             loading="lazy"
-            className="w-full h-auto max-w-md md:ml-0 md:mr-auto"
+            className="w-full h-auto max-w-md"
           />
         </div>
 
         {/* Text */}
-        <div className={`${imageOnLeft ? "md:order-2" : "md:order-1"}`}>
+        <div className={`w-full md:w-auto ${imageOnLeft ? "md:order-2" : "md:order-1"}`}>
           <p
             className="font-ui text-xs uppercase tracking-[0.28em] mb-3"
             style={{ color: ACCENT }}
