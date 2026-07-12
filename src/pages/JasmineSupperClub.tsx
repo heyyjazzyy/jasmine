@@ -131,7 +131,7 @@ const ClubSection = ({ club, index }: { club: Club; index: number }) => {
 };
 
 const JasmineSupperClub = () => {
-  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url]);
+  const imagesLoaded = useImagesLoaded([jsc1.url, jsc2.url, jsc3.url, butterSampling.url]);
   if (!imagesLoaded) return <LoadingScreen label="Setting the table" />;
   return (
     <main className="relative min-h-screen bg-background">
