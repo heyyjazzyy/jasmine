@@ -115,7 +115,7 @@ const ACappella = () => {
             </div>
             <Link
               to="/"
-              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-8"
+              className="lg:hidden inline-flex items-center gap-2 font-ui text-sm text-muted-foreground hover:text-foreground transition-colors pt-2"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
@@ -131,7 +131,7 @@ const ACappella = () => {
         </motion.aside>
 
         <div className="lg:col-span-10 flex flex-col">
-          <div className="flex-1 p-6 lg:p-12 pt-2 pb-12 lg:py-20">
+          <div className="flex-1 p-6 lg:p-12 pt-0 pb-12 lg:py-20">
 
             <h1 className="display-heading" style={{ color: "#F0CE6E" }}>
               A Cappella
