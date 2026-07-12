@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { Link } from "react-router-dom";
 import flowerAsset from "@/assets/flower.png.asset.json";
 import { motion } from "framer-motion";
@@ -105,7 +106,7 @@ const ACappella = () => {
         >
           <div>
             <div className="flex items-center gap-2 lg:block">
-              <Link to="/" aria-label="Home"><img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
+              <Link to="/" aria-label="Home"><img src={assetUrl(flowerAsset.url)} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
               <Link
                 to="/"
                 className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
@@ -147,7 +148,7 @@ const ACappella = () => {
                 <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                   <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
-                      src={citationsPhoto.url}
+                      src={assetUrl(citationsPhoto.url)}
                       alt="Yale Citations group photo"
                       className="w-full rounded-md border border-border/60"
                     />
@@ -171,7 +172,7 @@ const ACappella = () => {
                 <div className="mt-6 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
                   <div className="lg:col-span-2 flex flex-col gap-4">
                     <img
-                      src={trogonsPhoto.url}
+                      src={assetUrl(trogonsPhoto.url)}
                       alt="Trogons group photo"
                       className="w-full rounded-md border border-border/60"
                     />

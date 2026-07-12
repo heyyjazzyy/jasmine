@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { Link } from "react-router-dom";
 import flowerAsset from "@/assets/flower.png.asset.json";
 import { motion } from "framer-motion";
@@ -76,7 +77,7 @@ const GameSection = ({
 
 const sorelle: Game = {
   title: "Sorelle",
-  image: sorelleImg.url,
+  image: assetUrl(sorelleImg.url),
   synopsis:
     "A whimsical 3D puzzle-platformer that immerses you in the magical seaside town of Isola Chiara. Play as sisters Alessandra, Bella, and Capri as you explore the magic of sisterhood in a puzzle-solving adventure to restore magic and save the summer festival.",
   linkLabel: "Play the game!",
@@ -85,7 +86,7 @@ const sorelle: Game = {
 
 const checkItOut: Game = {
   title: "Check it Out",
-  image: checkItOutImg.url,
+  image: assetUrl(checkItOutImg.url),
   synopsis:
     "Ever dreamt of working a cash register with no pay or real-life customer interaction? Look no further! This simulation game brings a fresh-take to the notoriously dull tasks of customer service, introducing you to a cast of wacky characters and the baggage they carry.",
   linkLabel: "Download the game!",
@@ -94,7 +95,7 @@ const checkItOut: Game = {
 
 const equinox: Game = {
   title: "Equinox",
-  image: equinoxImg.url,
+  image: assetUrl(equinoxImg.url),
   synopsis:
     "The moon has shattered. Plunged into darkness, the world looks to an unlikely hero: a tiny yet tenacious bunny. Defy all odds and reach for the stars in this whimsical 2D platformer.",
   linkLabel: "Play the game!",
@@ -103,7 +104,7 @@ const equinox: Game = {
 
 const sinkingInn: Game = {
   title: "Sinking Inn",
-  image: sinkingInnImg.url,
+  image: assetUrl(sinkingInnImg.url),
   synopsis:
     "A small, lonely boy on a hopeful quest navigates through a dark and dreary motel. Dive into its mysterious, eerie atmosphere and find your way through the motel's strange puzzles, as it becomes increasingly clear that reality is not as it seems.",
   linkLabel: "Play the game!",
@@ -122,7 +123,7 @@ const MusicForGames = () => {
         >
           <div>
             <div className="flex items-center gap-2 lg:block">
-              <Link to="/" aria-label="Home"><img src={flowerAsset.url} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
+              <Link to="/" aria-label="Home"><img src={assetUrl(flowerAsset.url)} alt="" className="w-10 h-10 lg:w-16 lg:h-16 mb-0 lg:mb-3 hover:opacity-80 transition-opacity" /></Link>
               <Link
                 to="/"
                 className="font-display text-2xl leading-tight hover:text-primary transition-colors block whitespace-nowrap"
@@ -173,7 +174,7 @@ const MusicForGames = () => {
               </GameSection>
 
               <GameSection game={sinkingInn}>
-                <AudioPlayer title="Dark Waters" src={darkWaters.url} />
+                <AudioPlayer title="Dark Waters" src={assetUrl(darkWaters.url)} />
                 <p className="body-text text-sm text-muted-foreground">
                   Entering the pool transports you to another dimension. The tracks{" "}
                   <em>The Deep End</em>/<em>The Shallow End</em> and{" "}
@@ -182,10 +183,10 @@ const MusicForGames = () => {
                   different instrumentation to denote the environment change.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <AudioPlayer title="The Deep End" src={deepEnd.url} />
-                  <AudioPlayer title="Underwater Exploration" src={underwater.url} />
-                  <AudioPlayer title="The Shallow End" src={shallowEnd.url} />
-                  <AudioPlayer title="Returning Home" src={returningHome.url} />
+                  <AudioPlayer title="The Deep End" src={assetUrl(deepEnd.url)} />
+                  <AudioPlayer title="Underwater Exploration" src={assetUrl(underwater.url)} />
+                  <AudioPlayer title="The Shallow End" src={assetUrl(shallowEnd.url)} />
+                  <AudioPlayer title="Returning Home" src={assetUrl(returningHome.url)} />
                 </div>
               </GameSection>
             </div>
