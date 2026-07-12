@@ -21,10 +21,10 @@ import garlicButter from "@/assets/supper-club/butter/garlic_parmesan_butter.jpg
 const butters = [
   { name: "Ceviche Butter", subtitle: "red onion, lime, cilantro", image: cevicheButter.url },
   { name: "Roasted Chicken Butter", subtitle: "thyme, rosemary, crispy chicken skin", image: chickenButter.url },
-  { name: "Thai Tea Butter", subtitle: "", image: thaiTeaButter.url },
+  { name: "Garlic Parmesan Butter", subtitle: "", image: garlicButter.url },
   { name: "Matcha Butter", subtitle: "", image: matchaButter.url },
   { name: "Coffee Chocolate Butter", subtitle: "", image: coffeeButter.url },
-  { name: "Garlic Parmesan Butter", subtitle: "", image: garlicButter.url },
+  { name: "Thai Tea Butter", subtitle: "", image: thaiTeaButter.url },
 ];
 
 const ACCENT = "#2D8A9E";
