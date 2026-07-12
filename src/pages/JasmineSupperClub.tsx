@@ -210,6 +210,62 @@ const JasmineSupperClub = () => {
               ))}
             </div>
 
+            {/* Will it Butter? */}
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="mt-20 border-t border-border/40 pt-14"
+            >
+              <div className="max-w-5xl">
+                <h2
+                  className="font-display text-3xl md:text-4xl leading-tight mb-8"
+                  style={{ color: ACCENT }}
+                >
+                  Will it Butter?
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center mb-12">
+                  <img
+                    src={butterSampling.url}
+                    alt="A spread of homemade compound butters"
+                    loading="lazy"
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <p className="body-text text-muted-foreground">
+                    I love bread and butter. What can't I turn into butter?!
+                  </p>
+                </div>
+              </div>
+
+              {/* Butter grid — full width */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                {butters.map((b) => (
+                  <div key={b.name} className="flex flex-col">
+                    <div className="aspect-square overflow-hidden rounded-lg bg-muted/30">
+                      <img
+                        src={b.image}
+                        alt={b.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      className="font-display text-lg md:text-xl mt-3 leading-snug"
+                      style={{ color: ACCENT }}
+                    >
+                      {b.name}
+                    </h3>
+                    {b.subtitle && (
+                      <p className="font-ui text-sm text-muted-foreground italic mt-1">
+                        {b.subtitle}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+
             {/* Video */}
             <motion.section
               initial={{ opacity: 0, y: 24 }}
