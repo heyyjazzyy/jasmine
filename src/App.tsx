@@ -24,7 +24,7 @@ const AnimatedRoutes = () => {
   useEffect(() => {
     const w = window as unknown as { gtag?: (...args: unknown[]) => void };
     if (typeof w.gtag === "function") {
-      w.gtag("event", "page_view", {
+      w.gtag("config", "G-J7MT985FCB", {
         page_path: location.pathname + location.search,
         page_location: window.location.href,
         page_title: document.title,
